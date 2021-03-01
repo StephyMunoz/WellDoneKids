@@ -4,7 +4,10 @@ const Home = () => {
 
     return(
         <>
-            Landing Page
+            Placeholder text
+            <div id="top logo">
+                <img src="\src\images\welldonekidslogo.png"/>
+            </div>
 
         </>
     );
