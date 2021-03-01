@@ -1,5 +1,6 @@
 const Routes ={
     HOME: '/',
-    TRIALGAME: '/trialgame'
+    TRIALGAME: '/trialgame',
+    LANDING: '/landing'
 }
 export default Routes;

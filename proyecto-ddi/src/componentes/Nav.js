@@ -17,6 +17,9 @@ const Nav = () => {
                 <Menu.Item key="3">
                     <Link to={Routes.TRIALGAME}>Something else</Link>
                 </Menu.Item>
+                <Menu.Item key="4">
+                    <Link to={Routes.TRIALGAME}>LANDING</Link>
+                </Menu.Item>
             </Menu>
 
     );

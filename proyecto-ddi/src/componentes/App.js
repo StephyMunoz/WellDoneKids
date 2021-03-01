@@ -8,6 +8,7 @@ import {
 import TrialGame from "../pages/TrialGame";
 import Home from "../pages/Home";
 import MainLayout from "./MainLayout";
+import Landing from './Landing';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
               </Route>
               <Route exact path="/trialgame">
                   <TrialGame />
+              </Route>
+              <Route exact path="/landing">
+                <Landing/>
               </Route>
           </Switch>
 
