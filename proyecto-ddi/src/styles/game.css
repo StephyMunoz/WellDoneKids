@@ -2,6 +2,17 @@
     float: left;
     width: 120px;
     height: 31px;
-    margin: 16px 24px 16px 0;
-    background-image: url("../images/welldonekidslogo.png");
+    margin: -25px 24px 16px 0;
+}
+.TrialGame{
+    background-color: #A8E065;
+    min-height: 100vh;
+
+}
+.TrialGame h1{
+    color: #ffffff;
+}
+.TrialGame button{
+    background-color: #de4383;
+    color: #ffffff;
 }

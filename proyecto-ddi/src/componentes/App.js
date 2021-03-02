@@ -9,6 +9,10 @@ import TrialGame from "../pages/TrialGame";
 import Home from "../pages/Home";
 import MainLayout from "./MainLayout";
 import Landing from './Landing';
+import TrialGame1 from "../pages/TrialGame1";
+import TrialGame2 from "../pages/TrialGame2";
+import TrialGame3 from "../pages/TrialGame3";
+import TrialGame4 from "../pages/TrialGame4";
 
 function App() {
   return (
@@ -25,6 +29,18 @@ function App() {
               </Route>
               <Route exact path="/landing">
                 <Landing/>
+              </Route>
+              <Route exact path="/trialgame1">
+                  <TrialGame1/>
+              </Route>
+              <Route exact path="/trialgame2">
+                  <TrialGame2/>
+              </Route>
+              <Route exact path="/trialgame3">
+                  <TrialGame3/>
+              </Route>
+              <Route exact path="/trialgame4">
+                  <TrialGame4/>
               </Route>
           </Switch>
 
