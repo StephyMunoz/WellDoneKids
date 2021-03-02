@@ -24,8 +24,9 @@ const TrialGame2 = () => {
                             url='https://www.youtube.com/watch?v=W08ToPMihhw'
                             className='react-player'
                             playing
-                            width='100%'
-                            height='100%'
+                            width='60em'
+                            height='30em'
+                            controls='true'
                         />
                     </div>
                 </Col>

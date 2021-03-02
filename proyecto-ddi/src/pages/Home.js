@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../images/welldonekidslogo.png";
 
 const Home = () => {
 
@@ -6,7 +7,7 @@ const Home = () => {
         <>
             Placeholder text
             <div id="top logo">
-                <img src="\src\images\welldonekidslogo.png"/>
+                <img src={logo}/>
             </div>
 
         </>
