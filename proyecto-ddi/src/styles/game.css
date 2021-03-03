@@ -37,9 +37,26 @@
 }
 #colored_button {
     background-color: #de4383;
+    margin-top: 20px;
 }
 #row_margin {
     margin-bottom: 20px;
+}
+#title {
+    padding: 30px;
+    font-size: large; 
+    font-weight: bold;     
+}
+#trophy {
+    background-color: #00a8b5;
+    padding: 15px;
+    color: #ffffff;
+    width: 50%;
+    margin-bottom: 10px;
+}
+ul li {
+    font-size: smaller;
+    font-weight: normal;
 }
 .Game{
     background-color: #774898;
