@@ -14,6 +14,15 @@ import TrialGame2 from "../pages/TrialGame2";
 import TrialGame3 from "../pages/TrialGame3";
 import TrialGame4 from "../pages/TrialGame4";
 
+import Login from "../pages/Login";
+
+import Game from "../pages/Game";
+import Game1 from "../pages/Game1";
+import Game2 from "../pages/Game2";
+import Game3 from "../pages/Game3";
+import Game4 from "../pages/Game4";
+
+
 function App() {
   return (
     <>
@@ -42,6 +51,26 @@ function App() {
               <Route exact path="/trialgame4">
                   <TrialGame4/>
               </Route>
+
+              <Route exact path="/login">
+                  <Login/>
+                  </Route>
+              <Route exact path="/game">
+                  <Game/>
+              </Route>
+              <Route exact path="/game1">
+                  <Game1/>
+              </Route>
+              <Route exact path="/game2">
+                  <Game2/>
+              </Route>
+              <Route exact path="/game3">
+                  <Game3/>
+              </Route>
+              <Route exact path="/game4">
+                  <Game4/>
+              </Route>
+
           </Switch>
 
       </MainLayout>

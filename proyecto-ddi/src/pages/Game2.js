@@ -1,17 +1,17 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col} from "antd";
-import GameTrialNav from "../componentes/GameTrialNav";
+import GameNav from "../componentes/GameNav";
 import ReactPlayer from 'react-player';
 
-const TrialGame2 = () => {
+const Game2 = () => {
 
     return(
-        <div className="TrialGame">
-            <GameTrialNav />
+        <div className="Game">
+            <GameNav />
             <Row justify='center'>
                 <Col justify='center'>
-                    <h1>Buen trabajo!!!</h1>
+                    <h1>Buen trabajo USERNAME!!!</h1>
                     <h1>Disfruta este video que hemos</h1>
                     <h1>preparado para ti.</h1>
                     <h1>Te lo has ganado</h1>
@@ -26,7 +26,7 @@ const TrialGame2 = () => {
                             playing
                             width='60em'
                             height='30em'
-                            
+                            controls='true'
                         />
                     </div>
                 </Col>
@@ -39,4 +39,4 @@ const TrialGame2 = () => {
         </div>
     );
 }
-export default TrialGame2;
+export default Game2;

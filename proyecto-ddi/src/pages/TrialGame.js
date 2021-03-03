@@ -1,12 +1,18 @@
 import React from 'react';
 import '../styles/game.css';
-import {Col, Row, Select} from "antd";
+import {Button, Col, Row, Select} from "antd";
 import GameTrialNav from "../componentes/GameTrialNav";
+import {Link} from "react-router-dom";
+import Routes from "../constants/Routes";
 const { Option } = Select;
+
 
 const TrialGame = () => {
     function handleChange(value) {
         console.log(`selected ${value}`);
+    }
+    const handleNext = () => {
+
     }
     return(
         <div className="TrialGame">
@@ -25,7 +31,7 @@ const TrialGame = () => {
             </Row>
             <Row justify='center'>
                 <Col justify='center'>
-                    <button type="primary" >SIGUIENTE :)</button>
+                    <Button type="primary" onClick={handleNext}>SIGUIENTE :)</Button>
                 </Col>
             </Row>
         </div>
