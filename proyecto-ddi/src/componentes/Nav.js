@@ -31,26 +31,26 @@ const Nav = () => {
                 <Menu.Item key="7">
                     <Link to={Routes.USERSPROFILE}>Perfil de usuario</Link>
                 </Menu.Item>
-                <Menu.Item key="7">
+                <Menu.Item key="8">
                     <Link to={Routes.INFO}>INFO</Link>
                 </Menu.Item>
-                <Menu.Item key="8">
+                <Menu.Item key="9">
 
                     <Link to={Routes.LOGIN}>LOGIN</Link>
                 </Menu.Item>
-                <Menu.Item key="9">
+                <Menu.Item key="10">
                     <Link to={Routes.GAME}>Game</Link>
                 </Menu.Item>
-                <Menu.Item key="9">
+                <Menu.Item key="11">
                     <Link to={Routes.GAME1}>Game1</Link>
                 </Menu.Item>
-                <Menu.Item key="9">
+                <Menu.Item key="12">
                     <Link to={Routes.GAME2}>Game2</Link>
                 </Menu.Item>
-                <Menu.Item key="9">
+                <Menu.Item key="13">
                     <Link to={Routes.GAME3}>Game3</Link>
                 </Menu.Item>
-                <Menu.Item key="9">
+                <Menu.Item key="14">
                     <Link to={Routes.GAME4}>Game4</Link>
                 </Menu.Item>
             </Menu>
