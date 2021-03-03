@@ -16,3 +16,28 @@
     background-color: #de4383;
     color: #ffffff;
 }
+#landing_logo {
+    margin-top: 60px;
+    
+}
+#background {
+    background-color: #f3ae4b;
+    padding-bottom: 20px;
+}
+#center_paragraph {
+    text-align: center;
+}
+#rectangle {
+    background-color: #774898;
+    padding: 10px;
+}
+#sub_paragraph {
+    color: #ffffff;
+    text-align: center;
+}
+#colored_button {
+    background-color: #de4383;
+}
+#row_margin {
+    margin-bottom: 20px;
+}
