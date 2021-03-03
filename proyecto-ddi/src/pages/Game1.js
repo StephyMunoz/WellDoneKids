@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col, Input} from "antd";
-import GameTrialNav from "../componentes/GameTrialNav";
+import GameNav from "../componentes/GameNav";
 
-const TrialGame1 = () => {
+const Game1 = () => {
 
     return(
-        <div className="TrialGame">
-            <GameTrialNav />
+        <div className="Game">
+            <GameNav />
             <Row justify='center'>
                 <Col justify='center'>
                     <h1>Escribe el resultado:</h1>
@@ -32,4 +32,4 @@ const TrialGame1 = () => {
         </div>
     );
 }
-export default TrialGame1;
+export default Game1;

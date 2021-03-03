@@ -31,7 +31,21 @@ const Nav = () => {
                 <Menu.Item key="7">
                     <Link to={Routes.LANDING}>LANDING</Link>
                 </Menu.Item>
-                
+                <Menu.Item key="8">
+                    <Link to={Routes.GAME}>Game</Link>
+                </Menu.Item>
+                <Menu.Item key="9">
+                    <Link to={Routes.GAME1}>Game1</Link>
+                </Menu.Item>
+                <Menu.Item key="9">
+                    <Link to={Routes.GAME2}>Game2</Link>
+                </Menu.Item>
+                <Menu.Item key="9">
+                    <Link to={Routes.GAME3}>Game3</Link>
+                </Menu.Item>
+                <Menu.Item key="9">
+                    <Link to={Routes.GAME4}>Game4</Link>
+                </Menu.Item>
             </Menu>
 
     );

@@ -4,10 +4,10 @@ import {Button, Row, Col, Image} from "antd";
 import apple from "../images/apple.png";
 import logo from "../images/welldonekidslogo.png";
 
-const TrialGame4 = () => {
+const Game4 = () => {
 
     return(
-        <div className="TrialGame">
+        <div className="Game">
             <Row>
                 <Col flex={2}>
                     <Image
@@ -100,4 +100,4 @@ const TrialGame4 = () => {
         </div>
     );
 }
-export default TrialGame4;
+export default Game4;

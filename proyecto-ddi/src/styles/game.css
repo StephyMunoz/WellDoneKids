@@ -7,12 +7,17 @@
 .TrialGame{
     background-color: #A8E065;
     min-height: 100vh;
-
+    padding: 200px;
 }
-.TrialGame h1{
+.TrialGame h1, .Game h1{
     color: #ffffff;
 }
-.TrialGame button{
+.TrialGame Button, .Game Button{
     background-color: #de4383;
     color: #ffffff;
+}
+.Game{
+    background-color: #774898;
+    min-height: 100vh;
+    padding: 200px;
 }
