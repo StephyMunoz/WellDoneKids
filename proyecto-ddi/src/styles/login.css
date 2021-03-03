@@ -1,0 +1,14 @@
+#form1{
+    padding-top: 250px;
+    
+    
+}
+
+#form2{
+    padding-top: 100px;
+}
+
+Form,
+Select{
+    width: 800px; 
+}
