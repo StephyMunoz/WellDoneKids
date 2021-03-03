@@ -23,9 +23,12 @@ const Login = () =>{
         };
     
         return (
-            <div>
+            <div if="form">
             <div id="form1">
-              <Row justify='center'>
+          <Row>
+            
+          </Row>    
+          <Row justify='center'>
                   <Col justify='center'>
                <p><h1>Ingresa</h1></p> 
           <Form
