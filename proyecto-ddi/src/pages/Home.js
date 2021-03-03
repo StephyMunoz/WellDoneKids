@@ -69,7 +69,7 @@ const Home = () => {
                                     <Image height={100} width={100} src={trophy_u} alt="No image found"/>
                                 </Col>
                                 <Col span={16}>
-                                    <h3>La ventura comienza! (desbloqueado)</h3>
+                                    <h3>La aventura comienza! (desbloqueado)</h3>
                                     <h4>Realiza tu primera actividad</h4>
                                 </Col>
                             </Row>
