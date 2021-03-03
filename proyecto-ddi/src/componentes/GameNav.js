@@ -2,9 +2,9 @@ import React from 'react';
 import {Button, Row, Col, Image} from "antd";
 import logo from "../images/welldonekidslogo.png";
 
-const GameTrialNav = () => {
+const GameNav = () => {
     return(
-        <>
+        <div >
             <Row>
                 <Col flex={2}>
                     <Image
@@ -15,19 +15,19 @@ const GameTrialNav = () => {
 
                 <Row>
                     <Col flex={3}>
-                        <h1>Bienvenido a la versión de prueba</h1>
+                        <h1>Bienvenido UserName</h1>
                     </Col>
 
                 </Row>
                 <Row>
                     <Col span={24}>
-                        <Button >SALIR</Button>
-                        <Button >Crear cuenta</Button>
+                        <Button >Cerrar sesión</Button>
+                        <Button >Ver estadísticas</Button>
                     </Col>
                 </Row>
             </Row>
-        </>
+        </div>
     );
 
 }
-export default GameTrialNav;
+export default GameNav;
