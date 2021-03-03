@@ -23,9 +23,12 @@ const Login = () =>{
         };
     
         return (
-            <div>
+            <div if="form">
             <div id="form1">
-              <Row justify='center'>
+          <Row>
+            
+          </Row>    
+          <Row justify='center'>
                   <Col justify='center'>
                <p><h1>Ingresa</h1></p> 
           <Form
@@ -98,6 +101,7 @@ const Login = () =>{
             >
               <Input.Password placeholder="Confirmar contraseña" />
             </Form.Item>
+            <div id="seelect-year">
             <Select defaultValue="Ingrese la edad del niño o niña" style={{ width: 320 }} >
                         <Option value="6">6 años</Option>
                         <Option value="7">7 años</Option>
@@ -105,7 +109,7 @@ const Login = () =>{
                         <Option value="9">9 años</Option>
                         <Option value="10">10 años</Option>
                         <Option value="11">11 años</Option>
-                    </Select>
+                    </Select></div>
                     
             <Form.Item {...tailLayout}>
             <br></br>

@@ -29,7 +29,7 @@ const Nav = () => {
                     <Link to={Routes.TRIALGAME4}>TrialGame4</Link>
                 </Menu.Item>
                 <Menu.Item key="7">
-                    <Link to={Routes.LANDING}>LANDING</Link>
+                    <Link to={Routes.USERSPROFILE}>Perfil de usuario</Link>
                 </Menu.Item>
                 <Menu.Item key="7">
                     <Link to={Routes.INFO}>INFO</Link>

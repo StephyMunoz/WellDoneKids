@@ -1,7 +1,5 @@
 #form1{
-    padding-top: 250px;
-    
-    
+    padding-top: 250px;   
 }
 
 #form2{
@@ -9,6 +7,24 @@
 }
 
 Form,
-Select{
+Select,
+#seelect-year{
     width: 800px; 
+}
+
+#form1,
+#form2, Form.Item button{
+    background-color: #A8E065;
+    padding: 100px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+#form input{
+    padding: 300px;
+}
+#seelect-year{
+    padding: 0px;
+    text-align: left;
 }

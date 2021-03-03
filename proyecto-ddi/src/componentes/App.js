@@ -32,13 +32,13 @@ function App() {
       <MainLayout >
           <Switch>
               <Route exact path="/">
-                  <Home/>
+                  <Landing/>
               </Route>
               <Route exact path="/trialgame">
                   <TrialGame />
               </Route>
-              <Route exact path="/landing">
-                <Landing/>
+              <Route exact path="/usersprofile">
+                <Home/>
               </Route>
               <Route exact path="/trialgame1">
                   <TrialGame1/>
