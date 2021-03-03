@@ -13,15 +13,15 @@ import TrialGame1 from "../pages/TrialGame1";
 import TrialGame2 from "../pages/TrialGame2";
 import TrialGame3 from "../pages/TrialGame3";
 import TrialGame4 from "../pages/TrialGame4";
-<<<<<<< HEAD
+
 import Login from "../pages/Login";
-=======
+
 import Game from "../pages/Game";
 import Game1 from "../pages/Game1";
 import Game2 from "../pages/Game2";
 import Game3 from "../pages/Game3";
 import Game4 from "../pages/Game4";
->>>>>>> 19d94b2b4ac20fb95f3a2688802c4e472cd10484
+
 
 function App() {
   return (
@@ -51,10 +51,10 @@ function App() {
               <Route exact path="/trialgame4">
                   <TrialGame4/>
               </Route>
-<<<<<<< HEAD
+
               <Route exact path="/login">
                   <Login/>
-=======
+                  </Route>
               <Route exact path="/game">
                   <Game/>
               </Route>
@@ -69,8 +69,8 @@ function App() {
               </Route>
               <Route exact path="/game4">
                   <Game4/>
->>>>>>> 19d94b2b4ac20fb95f3a2688802c4e472cd10484
               </Route>
+
           </Switch>
 
       </MainLayout>

@@ -7,7 +7,7 @@ import logo from '../images/welldonekidslogo.png'
 
 const Nav = () => {
     return (
-
+ <>
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} style={{padding:'0.6em'}}>
                 
                 <Menu.Item key="0">
@@ -32,11 +32,10 @@ const Nav = () => {
                     <Link to={Routes.LANDING}>LANDING</Link>
                 </Menu.Item>
                 <Menu.Item key="8">
-<<<<<<< HEAD
+
                     <Link to={Routes.LOGIN}>LOGIN</Link>
                 </Menu.Item>
-                
-=======
+                <Menu.Item key="9">
                     <Link to={Routes.GAME}>Game</Link>
                 </Menu.Item>
                 <Menu.Item key="9">
@@ -51,9 +50,8 @@ const Nav = () => {
                 <Menu.Item key="9">
                     <Link to={Routes.GAME4}>Game4</Link>
                 </Menu.Item>
->>>>>>> 19d94b2b4ac20fb95f3a2688802c4e472cd10484
             </Menu>
-
+</>
     );
 }
 
