@@ -26,7 +26,7 @@ const TrialGame2 = () => {
                             playing
                             width='60em'
                             height='30em'
-                            controls='true'
+                            
                         />
                     </div>
                 </Col>
