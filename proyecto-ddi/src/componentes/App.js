@@ -8,7 +8,8 @@ import {
 import TrialGame from "../pages/TrialGame";
 import Home from "../pages/Home";
 import MainLayout from "./MainLayout";
-import Landing from './Landing';
+import Landing from '../pages/Landing';
+import InfoPage from '../pages/InfoPage';
 import TrialGame1 from "../pages/TrialGame1";
 import TrialGame2 from "../pages/TrialGame2";
 import TrialGame3 from "../pages/TrialGame3";
@@ -51,7 +52,9 @@ function App() {
               <Route exact path="/trialgame4">
                   <TrialGame4/>
               </Route>
-
+              <Route exact path="/infopage">
+                <InfoPage/>
+              </Route>
               <Route exact path="/login">
                   <Login/>
                   </Route>

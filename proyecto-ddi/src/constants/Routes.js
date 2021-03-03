@@ -6,6 +6,7 @@ const Routes ={
     TRIALGAME3: '/trialgame3',
     TRIALGAME4: '/trialgame4',
     LANDING: '/landing',
+    INFO: '/infopage',
     LOGIN: '/login',
     GAME: '/game',
     GAME1: '/game1',
