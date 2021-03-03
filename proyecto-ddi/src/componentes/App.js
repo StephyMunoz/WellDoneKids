@@ -13,6 +13,7 @@ import TrialGame1 from "../pages/TrialGame1";
 import TrialGame2 from "../pages/TrialGame2";
 import TrialGame3 from "../pages/TrialGame3";
 import TrialGame4 from "../pages/TrialGame4";
+import Login from "../pages/Login";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
               </Route>
               <Route exact path="/trialgame4">
                   <TrialGame4/>
+              </Route>
+              <Route exact path="/login">
+                  <Login/>
               </Route>
           </Switch>
 

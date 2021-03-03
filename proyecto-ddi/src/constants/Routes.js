@@ -5,6 +5,7 @@ const Routes ={
     TRIALGAME2: '/trialgame2',
     TRIALGAME3: '/trialgame3',
     TRIALGAME4: '/trialgame4',
-    LANDING: '/landing'
+    LANDING: '/landing',
+    LOGIN: '/login'
 }
 export default Routes;
