@@ -27,12 +27,12 @@ const InfoPage = () => {
                 </p>
                 </Col>
             <Col span={8} justify="center">
-                <Image src={img1} alt="No image found" width={320}/>
+                <Image src={img1} alt="No image found" width={400} style={{margin:'auto'}}/>
             </Col>
         </Row>
         <Row style={{padding:'1em 7em', fontSize:'18px' }}>
             <Col span={12}>
-                <Image src={img2} alt="No image found" width={320}/>
+                <Image src={img2} alt="No image found" width={400}/>
             </Col>
             <Col span={12}>
                 <h1>Juega y aprende</h1>
@@ -59,12 +59,12 @@ const InfoPage = () => {
                 <Button>Ingresa o crea tu cuenta</Button>
             </Col>
             <Col span={12}>
-                <Image src={img3} alt="No image found" width={320}/>
+                <Image src={img3} alt="No image found" width={400}/>
             </Col>
         </Row>
         <Row style={{padding:'1em 7em', fontSize:'18px'}}>
             <Col span={12}>
-                <Image src={img4} alt="No image found" width={320}/>
+                <Image src={img4} alt="No image found" width={400}/>
             </Col>
             <Col span={12}>
                 <h1>¿Quiénes somos?</h1>
@@ -91,7 +91,7 @@ const InfoPage = () => {
                 <h3>Redes sociales:</h3>
             </Col>
             <Col span={12}>
-                <Image src={img5} alt="No image found" width={320}/>
+                <Image src={img5} alt="No image found" width={400}/>
             </Col>
         </Row>
         </>
