@@ -1,9 +1,8 @@
 import React from 'react';
 import '../styles/game.css';
 import {Image} from 'antd';
-import logo from "../images/welldonekidslogo.png";
 import { Row, Col } from 'antd';
-import { Button } from 'antd';
+import { Button } from 'react-bootstrap';
 import img1 from "../images/info1.jpg";
 import img2 from "../images/info2.jpg";
 import img3 from "../images/info3.jpg";
@@ -14,8 +13,10 @@ import img5 from "../images/info5.jpg";
 const InfoPage = () => {
     return(
         <>
-        <Row style={{padding:'7em', fontSize:'18px'}}>
-            <Col span={16}>
+        <div id="background">
+
+        <Row style={{padding:'3em 7em 1em', fontSize:'20px'}} >
+            <Col span={14} id="box">
                 <p>Well Done Kids! es un sitio que permite a tus hijos realizar 
                 actividades entretenidas para reforzar los conocimientos adquiridos en la 
                 escuela. Nuestra misión es ser el sitio educativo preferido por los mas 
@@ -26,15 +27,15 @@ const InfoPage = () => {
                     crear una cuenta para acceder a todas las características.
                 </p>
                 </Col>
-            <Col span={8} justify="center">
-                <Image src={img1} alt="No image found" width={400} style={{margin:'auto'}}/>
+            <Col span={8} offset={2}>
+                <Image src={img1} alt="No image found" width='100%' style={{margin:'auto'}}/>
             </Col>
         </Row>
-        <Row style={{padding:'1em 7em', fontSize:'18px' }}>
-            <Col span={12}>
-                <Image src={img2} alt="No image found" width={400}/>
+        <Row style={{padding:'1em 7em', fontSize:'18px', textAlign:'end'}}>
+            <Col span={8}>
+                <Image src={img2} alt="No image found" width='100%'/>
             </Col>
-            <Col span={12}>
+            <Col span={14} offset={2} id="box">
                 <h1>Juega y aprende</h1>
                 <p>Puedes probar las actividades que tenemos para tu hijo presionando el botón
                     al final de esta sección. Encontrarás una selección aleatoria de actividades
@@ -42,11 +43,13 @@ const InfoPage = () => {
                     conocimientos, luego de diez actividades realizadas con éxito podrás observar 
                     un link hacia un video de YouTube como recompensa a los esfuerzos de tu hijo.
                 </p>
-                <Button>Juega ahora </Button>
+                <Button id="roots_button" type="primary" size="large">Juega ahora </Button>
+                
+
             </Col>
         </Row>
-        <Row style={{padding:'1em 7em', fontSize:'18px'}}>
-            <Col span={12}>
+        <Row style={{padding:'1em 7em', fontSize:'20px'}}>
+            <Col span={14} id="box">
                 <h1>Regístrate</h1>
                 <p>Al registrar a tu peque tendrás varios beneficios como recibir vía correo 
                     electrónico los avances que ha tenido tu hijo o hija cada cierto periodo que 
@@ -56,17 +59,17 @@ const InfoPage = () => {
                     y sus intereses para que los videos recompensa sean de acuerdo con lo que le gusta.
                     Selecciona el botón a continuacion para crear una cuenta, o si ya estás registrado, ingresar.
                 </p>
-                <Button>Ingresa o crea tu cuenta</Button>
+                <Button id="roots_button" type="primary" size="large">Ingresa o crea tu cuenta</Button>
             </Col>
-            <Col span={12}>
-                <Image src={img3} alt="No image found" width={400}/>
+            <Col span={8} offset={2}>
+                <Image src={img3} alt="No image found" width='100%'/>
             </Col>
         </Row>
-        <Row style={{padding:'1em 7em', fontSize:'18px'}}>
-            <Col span={12}>
-                <Image src={img4} alt="No image found" width={400}/>
+        <Row style={{padding:'1em 7em', fontSize:'18px' , textAlign:'end'}}>
+            <Col span={8}>
+                <Image src={img4} alt="No image found" width='100%'/>
             </Col>
-            <Col span={12}>
+            <Col span={14} offset={2} id="box">
                 <h1>¿Quiénes somos?</h1>
                 <p>Somos cuatro estudiantes de la Escuela Politécnica Nacional de la Escuela de Formación 
                     de Tecnólogos.
@@ -82,18 +85,19 @@ const InfoPage = () => {
                 </p>
             </Col>
         </Row>
-        <Row style={{padding:'1em 7em', fontSize:'18px'}}>
-            <Col span={12}>
+        <Row style={{padding:'1em 7em', fontSize:'22px'}}>
+            <Col span={14} id="box">
                 <h1>Contáctanos</h1>
                 <h3>Dirección: Ladrón de Guevara E11-253</h3>
                 <h3>Correo electrónico:<br></br> Welldondekids.info@gmail.com</h3>
                 <h3>Teléfono: 55555555</h3>
                 <h3>Redes sociales:</h3>
             </Col>
-            <Col span={12}>
-                <Image src={img5} alt="No image found" width={400}/>
+            <Col span={8} offset={2}>
+                <Image src={img5} alt="No image found" width='100%'/>
             </Col>
         </Row>
+        </div>
         </>
     );
 }
