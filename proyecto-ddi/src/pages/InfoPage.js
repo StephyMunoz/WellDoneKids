@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/game.css';
 import {Image} from 'antd';
 import { Row, Col } from 'antd';
-import { Button } from 'react-bootstrap';
+import { Button } from 'antd';
 import img1 from "../images/info1.jpg";
 import img2 from "../images/info2.jpg";
 import img3 from "../images/info3.jpg";
@@ -43,8 +43,12 @@ const InfoPage = () => {
                     conocimientos, luego de diez actividades realizadas con éxito podrás observar 
                     un link hacia un video de YouTube como recompensa a los esfuerzos de tu hijo.
                 </p>
-                <Button id="roots_button" type="primary" size="large">Juega ahora </Button>
                 
+                <Row justify="center">
+                            <Col span={4}>
+                                <Button id="roots_button" type="primary" size="large">Juega ahora</Button>
+                            </Col>
+                </Row>
 
             </Col>
         </Row>
@@ -59,7 +63,11 @@ const InfoPage = () => {
                     y sus intereses para que los videos recompensa sean de acuerdo con lo que le gusta.
                     Selecciona el botón a continuacion para crear una cuenta, o si ya estás registrado, ingresar.
                 </p>
-                <Button id="roots_button" type="primary" size="large">Ingresa o crea tu cuenta</Button>
+                <Row justify="center">
+                            <Col span={7}>
+                                <Button id="roots_button" type="primary" size="large">Ingresa o crea tu cuenta</Button>
+                            </Col>
+                </Row>
             </Col>
             <Col span={8} offset={2}>
                 <Image src={img3} alt="No image found" width='100%'/>
