@@ -22,9 +22,11 @@ import Game1 from "../pages/Game1";
 import Game2 from "../pages/Game2";
 import Game3 from "../pages/Game3";
 import Game4 from "../pages/Game4";
+import Routes from "../constants/Routes";
 
 
 function App() {
+
   return (
     <>
 
@@ -34,7 +36,7 @@ function App() {
               <Route exact path="/">
                   <Landing/>
               </Route>
-              <Route exact path="/trialgame">
+              <Route exact path={Routes.TRIALGAME}>
                   <TrialGame />
               </Route>
               <Route exact path="/usersprofile">

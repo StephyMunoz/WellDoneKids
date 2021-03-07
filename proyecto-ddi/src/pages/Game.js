@@ -1,3 +1,4 @@
+import {db} from "../firebase";
 import React from 'react';
 import '../styles/game.css';
 import {Button, Col, Row, Select} from "antd";
@@ -12,6 +13,13 @@ const Game = () => {
     // const handleChangePage = () => {
     //     return(Routes.TRIALGAME4);
     // }
+    const handleSave = () => {
+        db.ref('users/ID_UNICO').set({
+           username: "stephy",
+           lastname: "munoz",
+           email: "stef_19_yo@hotmail.com"
+        });
+    }
     return(
         <div className="Game">
             <GameNav />
@@ -26,7 +34,7 @@ const Game = () => {
             </Row>
             <Row justify='center'>
                 <Col justify='center'>
-                    <Button type="primary" >SIGUIENTE :)</Button>
+                    <Button type="primary" onClick={handleSave}>SIGUIENTE :)</Button>
                 </Col>
             </Row>
         </div>
