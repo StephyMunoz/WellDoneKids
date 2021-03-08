@@ -3,6 +3,8 @@ import '../styles/game.css';
 import {Button, Row, Col, Image} from "antd";
 import apple from "../images/apple.png";
 import logo from "../images/welldonekidslogo.png";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const Game4 = () => {
 
@@ -94,7 +96,9 @@ const Game4 = () => {
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >ENTENDIDO :)</Button>
+                    <Link to={Routes.GAME1}>
+                        <Button type="primary" >ENTENDIDO :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

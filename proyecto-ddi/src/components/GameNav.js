@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button, Row, Col, Image} from "antd";
 import logo from "../images/welldonekidslogo.png";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const GameNav = () => {
     return(
@@ -22,7 +24,9 @@ const GameNav = () => {
                 <Row>
                     <Col span={24}>
                         <Button >Cerrar sesión</Button>
-                        <Button >Ver estadísticas</Button>
+                        <Link to={Routes.USERSPROFILE}>
+                            <Button >Ver estadísticas</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Row>

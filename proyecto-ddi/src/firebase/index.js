@@ -1,16 +1,19 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
+import 'firebase/database';
+import 'firebase/auth';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
-    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_DATABASE_URL,
-    projectId: process.env.REACT_APP_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_APP_ID,
-    measurementId: process.env.REACT_APP_MEASUREMENT_ID
+    apiKey: "AIzaSyAJPQ8Ln4Fc8gSYfrTPAHMtcooowhuru4w",
+    authDomain: "well-done-kids.firebaseapp.com",
+    databaseURL: "https://well-done-kids-default-rtdb.firebaseio.com",
+    projectId: "well-done-kids",
+    storageBucket: "well-done-kids.appspot.com",
+    messagingSenderId: "160406843547",
+    appId: "1:160406843547:web:d1b1470f7d1d647b5b963e",
+    measurementId: "G-8ZV79JFYJY"
 };
 const app = firebase.initializeApp(firebaseConfig);
-
 export const db = app.database();
+export const auth = app.auth();
+

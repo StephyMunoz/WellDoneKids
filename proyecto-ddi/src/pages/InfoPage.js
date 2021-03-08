@@ -8,6 +8,8 @@ import img2 from "../images/info2.jpg";
 import img3 from "../images/info3.jpg";
 import img4 from "../images/info4.jpg";
 import img5 from "../images/info5.jpg";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 
 const InfoPage = () => {
@@ -46,7 +48,9 @@ const InfoPage = () => {
                 
                 <Row justify="center">
                             <Col span={4}>
-                                <Button id="roots_button" type="primary" size="large">Juega ahora</Button>
+                                <Link to={Routes.TRIALGAME}>
+                                    <Button id="roots_button" type="primary" size="large">Juega ahora</Button>
+                                </Link>
                             </Col>
                 </Row>
 
@@ -65,7 +69,9 @@ const InfoPage = () => {
                 </p>
                 <Row justify="center">
                             <Col span={7}>
-                                <Button id="roots_button" type="primary" size="large">Ingresa o crea tu cuenta</Button>
+                                <Link to={Routes.LOGIN}>
+                                    <Button id="roots_button" type="primary" size="large">Ingresa o crea tu cuenta</Button>
+                                </Link>
                             </Col>
                 </Row>
             </Col>

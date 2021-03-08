@@ -7,6 +7,8 @@ import { Row, Col } from 'antd';
 import {Image} from 'antd';
 import { Button } from 'antd';
 import { Collapse } from 'antd';
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const { Panel } = Collapse;
 
@@ -30,7 +32,9 @@ const Home = () => {
                                 <Button id="colored_button" type="primary" size="large">Salir</Button>
                             </Col>
                             <Col span={5}>
-                                <Button id="colored_button" type="primary" size="large">Juega ahora!</Button>
+                                <Link to={Routes.GAME}>
+                                    <Button id="colored_button" type="primary" size="large">Juega ahora!</Button>
+                                </Link>
                             </Col>
                         </Row>
                     </Col>
