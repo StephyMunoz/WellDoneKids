@@ -1,8 +1,6 @@
 import React from 'react';
 import '../styles/game.css';
-import {Image} from 'antd';
-import { Row, Col } from 'antd';
-import { Button } from 'antd';
+import {Button, Col, Image, Row} from 'antd';
 import img1 from "../images/info1.jpg";
 import img2 from "../images/info2.jpg";
 import img3 from "../images/info3.jpg";

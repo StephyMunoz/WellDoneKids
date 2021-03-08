@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Col, Form, Input, Row, Select} from "antd";
 import {useAuth} from "../lib/auth";
+
 const { Option } = Select;
 
 const Register = () => {
@@ -69,7 +70,11 @@ const Register = () => {
                                     <Option value="9">9 años</Option>
                                     <Option value="10">10 años</Option>
                                     <Option value="11">11 años</Option>
-                                </Select></div>
+
+                                </Select>
+
+                            </div>
+
 
                             <Form.Item {...tailLayout}>
                                 <br></br>

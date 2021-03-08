@@ -3,10 +3,7 @@ import logo from "../images/welldonekidslogo.png";
 import trophy_n from "../images/trophy_not_unlocked.jpg";
 import trophy_u from "../images/trophy_unlocked.png"
 import '../styles/game.css';
-import { Row, Col } from 'antd';
-import {Image} from 'antd';
-import { Button } from 'antd';
-import { Collapse } from 'antd';
+import {Button, Col, Collapse, Image, Row} from 'antd';
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Menu} from 'antd';
-import { useAuth } from "../lib/auth";
+import {useAuth} from "../lib/auth";
 import {Link} from "react-router-dom";
 import Routes from "../constants/Routes";
 import logo from '../images/welldonekidslogo.png'

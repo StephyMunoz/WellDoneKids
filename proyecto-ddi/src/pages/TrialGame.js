@@ -4,6 +4,7 @@ import {Button, Col, Row, Select} from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import {Link} from "react-router-dom";
 import Routes from "../constants/Routes";
+
 const { Option } = Select;
 
 

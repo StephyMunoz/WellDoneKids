@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/game.css';
-import {Button, Row, Col, Image} from "antd";
+import {Button, Col, Image, Row} from "antd";
 import apple from "../images/apple.png";
 import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";

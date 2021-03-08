@@ -1,10 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import TrialGame from "../pages/TrialGame";
 import Home from "../pages/Home";
 import MainLayout from "./MainLayout";

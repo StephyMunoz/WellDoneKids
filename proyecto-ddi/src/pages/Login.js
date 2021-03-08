@@ -1,35 +1,25 @@
 import React, {useEffect} from 'react';
-import { useAuth } from "../lib/auth";
-import { Form, Input, Button, Checkbox } from 'antd';
-import {Col, Row, Select} from "antd";
+import {useAuth} from "../lib/auth";
+import {Space, Button, Col, Form, Input, Row} from 'antd';
 import "../styles/login.css";
-import "../styles/login.css";
-import { Link, useHistory } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import Routes from "../constants/Routes";
-const { Option } = Select;
+
 
 const Login = () =>{
 
-
-
-    // const onFinish = ( values) => {
-    //     console.log('Success:', values);
-    // };
-
-    const onFinishFailedLog = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
     const history = useHistory();
     const { login, user } = useAuth();
 
     useEffect(() => {
         if (!!user) {
-            history.replace(Routes.HOME);
+            history.replace(Routes.GAME);
         }
     }, [user]);
 
-    const onFinishLog = ({ email, password }) => {
-        login(email, password);
+    const onFinishLog = ({ email, password, username }) => {
+        login(email, password, username);
+        console.log('user', user);
     };
 
     if (user === null) {
@@ -42,12 +32,9 @@ const Login = () =>{
     return (
         <div if="form"{...tailLayout} >
             <div id="form1">
-                <Row>
-
-                </Row>
-                <Row justify='center'>
-                    <Col justify='center'>
-                        <p><h1>Ingresa</h1></p>
+                <Row justify='center' >
+                    <Col span={20}>
+                        <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
                         <Form
                             name="basic"
                             initialValues={{ remember: true }}
@@ -55,9 +42,9 @@ const Login = () =>{
                         >
                             <Form.Item
                                 name="email"
-                                rules={[{ required: true, message: 'Correo Electrónico o Usuario' }]}
+                                rules={[{ required: true, message: 'Correo Electrónico' }]}
                             >
-                                <Input placeholder="Correo Electrónico o Nombre de usuario" />
+                                <Input placeholder="Correo Electrónico" />
                             </Form.Item>
 
                             <Form.Item
@@ -69,10 +56,12 @@ const Login = () =>{
                             </Form.Item>
 
                             <Form.Item {...tailLayout}>
-                                <Button type="primary" htmlType="submit">
-                                    Entrar
-                                </Button>
-                                O <Link to={Routes.Register}>Regístrate</Link>
+                                <Space>
+                                    <Button type="primary" htmlType="submit">
+                                        Entrar
+                                    </Button>
+                                    O <Link to={Routes.Register}>Regístrate</Link>
+                                </Space>
                             </Form.Item>
                         </Form>
                     </Col>

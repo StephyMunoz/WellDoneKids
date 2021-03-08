@@ -1,8 +1,7 @@
 import React from 'react';
-import {Image, Layout} from 'antd';
+import {Layout} from 'antd';
 import Nav from "./Nav";
 import '../styles/game.css';
-import logo from '../images/welldonekidslogo.png'
 
 const { Header, Content, Footer } = Layout;
 

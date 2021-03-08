@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/game.css';
-import {Button, Row, Col} from "antd";
+import {Button, Col, Row} from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";

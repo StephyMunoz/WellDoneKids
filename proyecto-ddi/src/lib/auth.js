@@ -1,8 +1,7 @@
-
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
+import React, {createContext, useContext, useEffect, useState} from "react";
+import {auth} from "../firebase";
 import translateMessage from "../utils/translateMessage";
-import { message } from "antd";
+import {message} from "antd";
 
 export const AuthContext = createContext(null);
 
@@ -35,7 +34,7 @@ function useAuthProvider() {
         }
     };
 
-    async function register({ email, password }) {
+    async function register({ email, password, username }) {
         auth
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
