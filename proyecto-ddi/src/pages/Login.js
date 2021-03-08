@@ -110,10 +110,10 @@ const Login = () =>{
                         <Option value="10">10 años</Option>
                         <Option value="11">11 años</Option>
                     </Select></div>
-                    
-            <Form.Item {...tailLayout}>
-            <br></br>
                     <br></br>
+                    <br></br>
+            <Form.Item {...tailLayout}>
+            
       
               <Button type="primary" htmlType="submit">
                   

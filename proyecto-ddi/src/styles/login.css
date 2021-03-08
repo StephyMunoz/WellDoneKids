@@ -13,6 +13,11 @@ Select,
 }
 
 #form1,
+#form2{
+    width: 100%;
+}
+
+#form1,
 #form2, Form.Item button{
     background-color: #A8E065;
     padding: 100px;
