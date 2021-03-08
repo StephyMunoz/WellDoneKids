@@ -16,7 +16,7 @@ const InfoPage = () => {
         <div id="background">
 
         <Row style={{padding:'3em 7em 1em', fontSize:'20px'}} >
-            <Col span={14} id="box">
+            <Col  lg={{span:24}}xl={{span:14}} id="box">
                 <p>Well Done Kids! es un sitio que permite a tus hijos realizar 
                 actividades entretenidas para reforzar los conocimientos adquiridos en la 
                 escuela. Nuestra misión es ser el sitio educativo preferido por los mas 
@@ -27,15 +27,15 @@ const InfoPage = () => {
                     crear una cuenta para acceder a todas las características.
                 </p>
                 </Col>
-            <Col span={8} offset={2}>
+            <Col lg={{span:24}} xl={{span:8, offset:2}}>
                 <Image src={img1} alt="No image found" width='100%' style={{margin:'auto'}}/>
             </Col>
         </Row>
         <Row style={{padding:'1em 7em', fontSize:'18px', textAlign:'end'}}>
-            <Col span={8}>
+            <Col lg={{span:24}} xl={{span:8, offset:2}}>
                 <Image src={img2} alt="No image found" width='100%'/>
             </Col>
-            <Col span={14} offset={2} id="box">
+            <Col lg={{span:24}}xl={{span:14}} id="box">
                 <h1>Juega y aprende</h1>
                 <p>Puedes probar las actividades que tenemos para tu hijo presionando el botón
                     al final de esta sección. Encontrarás una selección aleatoria de actividades
