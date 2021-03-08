@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Col, Row, Select} from "antd";
-import GameTrialNav from "../componentes/GameTrialNav";
+import GameTrialNav from "../components/GameTrialNav";
 import {Link} from "react-router-dom";
 import Routes from "../constants/Routes";
 const { Option } = Select;
@@ -31,7 +31,9 @@ const TrialGame = () => {
             </Row>
             <Row justify='center'>
                 <Col justify='center'>
-                    <Button type="primary" onClick={handleNext}>SIGUIENTE :)</Button>
+                    <Link to={Routes.TRIALGAME1}>
+                        <Button type="primary" onClick={handleNext}>SIGUIENTE :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

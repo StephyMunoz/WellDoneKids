@@ -14,6 +14,7 @@ const Routes ={
     GAME2: '/game2',
     GAME3: '/game3',
     GAME4: '/game4',
+    Register: 'register'
 
 }
 export default Routes;

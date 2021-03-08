@@ -4,6 +4,8 @@ import {Image} from 'antd';
 import logo from "../images/welldonekidslogo.png";
 import { Row, Col } from 'antd';
 import { Button } from 'antd';
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const Landing = () => {
     return(
@@ -30,7 +32,9 @@ const Landing = () => {
                             actividades sin necesidad de registrarte</h3>
                         <Row justify="center">
                             <Col span={5}>
-                                <Button id="colored_button" type="primary" size="large">Juega ahora</Button>
+                                <Link to={Routes.TRIALGAME}>
+                                    <Button id="colored_button" type="primary" size="large">Juega ahora</Button>
+                                </Link>
                             </Col>
                         </Row>
                     </div>
@@ -43,7 +47,9 @@ const Landing = () => {
                             actividades y recompensas</h3>
                         <Row justify="center">
                             <Col span={5}>
-                                <Button id="colored_button" type="primary" size="large">Regístrate</Button>
+                                <Link to={Routes.LOGIN}>
+                                    <Button id="colored_button" type="primary" size="large">Regístrate</Button>
+                                </Link>
                             </Col>
                         </Row>
                     </div>
@@ -57,7 +63,9 @@ const Landing = () => {
                             ayudar a tu hijo</h3>
                         <Row justify="center">
                             <Col span={5}>
-                                <Button id="colored_button" type="primary" size="large">Más información</Button>
+                                <Link to={Routes.INFO}>
+                                    <Button id="colored_button" type="primary" size="large">Más información</Button>
+                                </Link>
                             </Col>
                         </Row>
                     </div>
@@ -66,7 +74,9 @@ const Landing = () => {
                     <h1 id="sub_paragraph">¿Ya estás registrado? Ingresa a continuación</h1>
                     <Row justify="center">
                         <Col span={5}>
-                            <Button id="colored_button" type="primary" size="large">Inicia sesión</Button>
+                            <Link to={Routes.LOGIN}>
+                                <Button id="colored_button" type="primary" size="large">Inicia sesión</Button>
+                            </Link>
                         </Col>
                     </Row>
                 </Col>

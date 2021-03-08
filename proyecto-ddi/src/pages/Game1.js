@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col, Input} from "antd";
-import GameNav from "../componentes/GameNav";
+import GameNav from "../components/GameNav";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const Game1 = () => {
 
@@ -21,12 +23,16 @@ const Game1 = () => {
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >LISTO :)</Button>
+                    <Link to={Routes.GAME2}>
+                        <Button type="primary" >LISTO :)</Button>
+                    </Link>
                 </Col>
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >Necesito ayuda :(</Button>
+                    <Link to={Routes.GAME4}>
+                        <Button type="primary" >Necesito ayuda :(</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

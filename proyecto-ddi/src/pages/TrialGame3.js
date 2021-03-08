@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col} from "antd";
-import GameTrialNav from "../componentes/GameTrialNav";
+import GameTrialNav from "../components/GameTrialNav";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const TrialGame3 = () => {
 
@@ -23,7 +25,9 @@ const TrialGame3 = () => {
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >CREAR CUENTA :)</Button>
+                    <Link to={Routes.LOGIN}>
+                        <Button type="primary" >CREAR CUENTA :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

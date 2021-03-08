@@ -2,7 +2,9 @@ import {db} from "../firebase";
 import React from 'react';
 import '../styles/game.css';
 import {Button, Col, Row, Select} from "antd";
-import GameNav from "../componentes/GameNav";
+import GameNav from "../components/GameNav";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 const { Option } = Select;
 
 
@@ -34,7 +36,9 @@ const Game = () => {
             </Row>
             <Row justify='center'>
                 <Col justify='center'>
-                    <Button type="primary" onClick={handleSave}>SIGUIENTE :)</Button>
+                    <Link to={Routes.GAME1}>
+                        <Button type="primary" onClick={handleSave}>SIGUIENTE :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>
