@@ -1,5 +1,5 @@
 import React from 'react';
-import {Divider, Button, Col, Image, Row, Space} from "antd";
+import {Button, Col, Image, Row, Space} from "antd";
 import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";

@@ -13,12 +13,12 @@ const Login = () =>{
 
     useEffect(() => {
         if (!!user) {
-            history.replace(Routes.GAME);
+            history.replace(Routes.HOME);
         }
     }, [user]);
 
-    const onFinishLog = ({ email, password, username }) => {
-        login(email, password, username);
+    const onFinishLog = ({ email, password}) => {
+        login(email, password);
         console.log('user', user);
     };
 

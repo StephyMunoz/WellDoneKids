@@ -1,14 +1,30 @@
-import React from 'react';
-import {Button, Col, Form, Input, Row, Select} from "antd";
+import React, {useState} from 'react';
+import {Button, Col, Form, Input, message, Row, Select} from "antd";
 import {useAuth} from "../lib/auth";
+import translateMessage from "../utils/translateMessage";
 
 const { Option } = Select;
 
 const Register = () => {
+    const [setLoading] = useState(false);
     const { register } = useAuth();
-    const onFinish = (data) => {
-        register(data);
-        console.log('user', data);
+
+    const onFinish = async (data) => {
+        setLoading(true);
+        try {
+            console.log("FORM data", data);
+            let score = 0;
+
+            await register({
+                ...data,
+                score,
+            });
+            setLoading(false);
+        } catch (error) {
+            const errorCode = error.code;
+            message.error(translateMessage(errorCode));
+            setLoading(false);
+        }
     };
     const layout = {
         labelCol: { span: 8 },
@@ -43,7 +59,7 @@ const Register = () => {
                             </Form.Item>
 
                             <Form.Item
-                                name="emailaddress"
+                                name="email"
                                 rules={[{ required: true, message: 'Correo Electrónico ' }]}
                             >
                                 <Input placeholder="Correo Electrónico"/>
@@ -62,8 +78,10 @@ const Register = () => {
                             >
                                 <Input.Password placeholder="Confirmar contraseña" />
                             </Form.Item>
-                            <div id="seelect-year">
+
+                            <div id="select-year">
                                 <Select defaultValue="Ingrese la edad del niño o niña" style={{ width: 320 }} >
+
                                     <Option value="6">6 años</Option>
                                     <Option value="7">7 años</Option>
                                     <Option value="8">8 años</Option>
@@ -75,13 +93,9 @@ const Register = () => {
 
                             </div>
 
-
                             <Form.Item {...tailLayout}>
-                                <br></br>
-                                <br></br>
 
                                 <Button type="primary" htmlType="submit">
-
                                     Registrarse
                                 </Button>
                             </Form.Item>

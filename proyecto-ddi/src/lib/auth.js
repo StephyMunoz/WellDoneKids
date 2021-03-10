@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
-import {auth} from "../firebase";
+import {auth, db} from "../firebase";
 import translateMessage from "../utils/translateMessage";
 import {message} from "antd";
 
@@ -34,20 +34,35 @@ function useAuthProvider() {
         }
     };
 
-    async function register({ email, password, username }) {
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((user) => {
-                // Signed in
-                message.success("Usuario registrado");
-                handleUser(user);
-            })
-            .catch((error) => {
-                console.log("error", error);
-                const errorCode = error.code;
-                message.error(translateMessage(errorCode));
-                handleUser(false);
+    async function register(data) {
+        console.log("data", data);
+        try {
+            const userData = await auth.createUserWithEmailAndPassword(
+                data.email,
+                data.password
+            );
+            console.log("USER", user);
+            const { uid } = userData.user;
+            let score=0;
+            const { username, email } = data;
+            await db.ref(`users/${userData.user.uid}`).set({
+                username,
+                email,
+                uid,
+                score,
+
             });
+
+            message.success("Usuario registrado");
+            handleUser(user);
+            // return true;
+        } catch (error) {
+            console.log("error", error);
+            const errorCode = error.code;
+            // message.error(translateMessage(errorCode));
+            handleUser(false);
+            throw error;
+        }
     }
 
     async function login(email, password) {
