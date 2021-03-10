@@ -1,32 +1,100 @@
 import React from 'react';
+import {useEffect, useState} from 'react';
 import '../styles/game.css';
-import {Button, Col, Input, Row} from "antd";
+import {Button, Col, Input, Row, Radio} from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
 import withAuth from "../hocs/withAuth";
+import {db} from '../firebase';
+
+
 
 const Game1 = () => {
 
+    var [questionNumber, setQuestionNumber] = useState(0);
+    const [questionList, setQuestionList] = useState([]);
+    var [radioState, setRadioState] = useState(0);
+    var [score, setScore] = useState(0);
+
+    const onChange = e => {
+        setRadioState({
+          value: e.target.value
+        });
+    };
+
+    useEffect( () => {
+        const getQuestions = async() => {
+            db.ref('0/questions').on('value', (snapshot) => {
+                const questions = [];
+                snapshot.forEach((question) => {
+                    const q = question.val();
+                    questions.push({
+                        instructions: q.text,
+                        answer: q.correct_answer,
+                        options: q.options
+                    });
+                });
+                setQuestionList(questions);
+            });
+        };
+        getQuestions();
+        return () => {
+            db.ref('0/questions').off();
+        };
+    }, []);
+    
+    const handleQuestionChange = (questionNumber) => {
+        // if (questionList[questionNumber].options[radioState] === questionList[questionNumber].answer) {
+        //     setScore(score + 1);
+        //     setQuestionNumber(questionNumber + 1);
+        // } else {
+        //     console.log('opcion seleccionada', radioState)
+        //     console.log('puntaje', score)
+        //     console.log('numero pregunta', questionNumber)
+        // }
+        
+    }
+    
+
+    const radioStyle = {
+        display: 'block',
+        height: '30px',
+        lineHeight: '30px',
+    };
+    const {value} = radioState;
     return(
         <div className="Game">
             <GameNav />
             <Row justify='center'>
                 <Col justify='center'>
-                    <h1>Escribe el resultado:</h1>
+                    <h1>{questionList[questionNumber].instructions}</h1>
                 </Col>
             </Row>
             <Row justify='center'>
                 <Col>
-                    <label name="operation"><h1>2 + 2 = </h1></label>
-                    <Input name="operation"></Input>
+                    <Radio.Group onChange={onChange} value={value}>
+                        <Radio style={radioStyle} value={0}>
+                            {questionList[questionNumber].options[0]}
+                        </Radio>
+                        <Radio style={radioStyle} value={1}>
+                            {questionList[questionNumber].options[1]}
+                        </Radio>
+                        <Radio style={radioStyle} value={2}>
+                            {questionList[questionNumber].options[2]}  
+                        </Radio>
+                        <Radio style={radioStyle} value={3}>
+                            {questionList[questionNumber].options[3]}
+                        </Radio>
+                    </Radio.Group>
                 </Col>
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Link to={Routes.GAME2}>
-                        <Button type="primary" >LISTO :)</Button>
+                    <Link to = {Routes.GAME2}>
+                        <Button type="primary" onClick={() => handleQuestionChange(questionNumber)} >LISTO :)</Button>
                     </Link>
+                    
                 </Col>
             </Row>
             <Row justify='center'>
