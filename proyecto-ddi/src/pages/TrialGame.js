@@ -4,6 +4,7 @@ import {Button, Col, Row, Select} from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import {Link} from "react-router-dom";
 import Routes from "../constants/Routes";
+import withoutAuth from "../hocs/withoutAuth";
 
 const { Option } = Select;
 
@@ -40,4 +41,4 @@ const TrialGame = () => {
         </div>
     );
 }
-export default TrialGame;
+export default withoutAuth(TrialGame);

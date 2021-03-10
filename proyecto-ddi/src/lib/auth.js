@@ -51,11 +51,13 @@ function useAuthProvider() {
                 uid,
                 score,
 
-            });
-
-            message.success("Usuario registrado");
-            handleUser(user);
-            // return true;
+            })
+            .then((user) => {
+                // Signed in
+                message.success("Usuario registrado");
+                handleUser(user);
+            })
+            //return true;
         } catch (error) {
             console.log("error", error);
             const errorCode = error.code;
@@ -138,6 +140,7 @@ function useAuthProvider() {
         register,
         login,
         logout,
+
         // sendPasswordResetEmail,
         // confirmPasswordReset
     };

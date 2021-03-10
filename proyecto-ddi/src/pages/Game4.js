@@ -5,6 +5,7 @@ import apple from "../images/apple.png";
 import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withAuth from "../hocs/withAuth";
 
 const Game4 = () => {
 
@@ -104,4 +105,4 @@ const Game4 = () => {
         </div>
     );
 }
-export default Game4;
+export default withAuth(Game4);

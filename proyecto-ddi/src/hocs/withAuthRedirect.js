@@ -3,7 +3,7 @@
  */
 import { useAuth } from "../lib/auth";
 import Loading from "../components/Loading";
-import Routes from "../constants/routes";
+import Routes from "../constants/Routes";
 import { useHistory } from "react-router-dom";
 
 /**

@@ -4,6 +4,7 @@ import {Button, Col, Input, Row} from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withoutAuth from "../hocs/withoutAuth";
 
 const TrialGame1 = () => {
 
@@ -38,4 +39,4 @@ const TrialGame1 = () => {
         </div>
     );
 }
-export default TrialGame1;
+export default withoutAuth(TrialGame1);
