@@ -1,8 +1,10 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col} from "antd";
-import GameNav from "../componentes/GameNav";
+import GameNav from "../components/GameNav";
 import ReactPlayer from 'react-player';
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const Game2 = () => {
 
@@ -33,7 +35,9 @@ const Game2 = () => {
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >CONTINUAR :)</Button>
+                    <Link to={Routes.GAME3}>
+                        <Button type="primary" >CONTINUAR :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

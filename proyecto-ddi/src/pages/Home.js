@@ -7,6 +7,8 @@ import { Row, Col } from 'antd';
 import {Image} from 'antd';
 import { Button } from 'antd';
 import { Collapse } from 'antd';
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const { Panel } = Collapse;
 
@@ -30,7 +32,9 @@ const Home = () => {
                                 <Button id="colored_button" type="primary" size="large">Salir</Button>
                             </Col>
                             <Col span={5}>
-                                <Button id="colored_button" type="primary" size="large">Juega ahora!</Button>
+                                <Link to={Routes.GAME}>
+                                    <Button id="colored_button" type="primary" size="large">Juega ahora!</Button>
+                                </Link>
                             </Col>
                         </Row>
                     </Col>
@@ -69,7 +73,7 @@ const Home = () => {
                                     <Image height={100} width={100} src={trophy_u} alt="No image found"/>
                                 </Col>
                                 <Col span={16}>
-                                    <h3>La ventura comienza! (desbloqueado)</h3>
+                                    <h3>La aventura comienza! (desbloqueado)</h3>
                                     <h4>Realiza tu primera actividad</h4>
                                 </Col>
                             </Row>

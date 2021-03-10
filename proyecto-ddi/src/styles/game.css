@@ -24,6 +24,15 @@
     background-color: #f3ae4b;
     padding-bottom: 20px;
 }
+#box {
+    background-color: #00ffffb3;
+    color:floralwhite;
+    padding: 10px;
+    
+}
+#box h1, h3{
+    color: floralwhite;
+}
 #center_paragraph {
     text-align: center;
 }
@@ -37,6 +46,11 @@
 }
 #colored_button {
     background-color: #de4383;
+    margin-top: 20px;
+}
+#roots_button {
+    background-color: #620bb3;
+    color: #ffffff;
     margin-top: 20px;
 }
 #row_margin {

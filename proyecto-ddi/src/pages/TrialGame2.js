@@ -1,8 +1,10 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col} from "antd";
-import GameTrialNav from "../componentes/GameTrialNav";
+import GameTrialNav from "../components/GameTrialNav";
 import ReactPlayer from 'react-player';
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const TrialGame2 = () => {
 
@@ -26,14 +28,16 @@ const TrialGame2 = () => {
                             playing
                             width='60em'
                             height='30em'
-                            controls='true'
+                            
                         />
                     </div>
                 </Col>
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >CONTINUAR :)</Button>
+                    <Link to={Routes.TRIALGAME3}>
+                        <Button type="primary" >CONTINUAR :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

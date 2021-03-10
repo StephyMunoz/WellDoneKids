@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/game.css';
 import {Button, Row, Col} from "antd";
-import GameNav from "../componentes/GameNav";
+import GameNav from "../components/GameNav";
+import Routes from "../constants/Routes";
+import {Link} from "react-router-dom";
 
 const Game3 = () => {
 
@@ -22,7 +24,9 @@ const Game3 = () => {
             </Row>
             <Row justify='center'>
                 <Col>
-                    <Button type="primary" >VER LOGROS :)</Button>
+                    <Link to={Routes.USERSPROFILE}>
+                        <Button type="primary" >VER LOGROS :)</Button>
+                    </Link>
                 </Col>
             </Row>
         </div>

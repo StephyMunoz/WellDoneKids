@@ -1,29 +1,46 @@
-import React from 'react'
+import React, {useEffect} from 'react';
+import { useAuth } from "../lib/auth";
 import { Form, Input, Button, Checkbox } from 'antd';
 import {Col, Row, Select} from "antd";
-import "../styles/login.css"
+import "../styles/login.css";
+import "../styles/login.css";
+import { Link, useHistory } from "react-router-dom";
+import Routes from "../constants/Routes";
 const { Option } = Select;
 
 const Login = () =>{
-    const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 16 },
-      };
-      const tailLayout = {
+
+
+
+     const onFinish = ( values) => {
+         console.log('Success:', values);
+     };
+
+    const onFinishFailedLog = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
+    const history = useHistory();
+    const { login, user } = useAuth();
+
+    useEffect(() => {
+        if (!!user) {
+            history.replace(Routes.HOME);
+        }
+    }, [user]);
+
+    const onFinishLog = ({ email, password }) => {
+        login(email, password);
+    };
+
+    if (user === null) {
+        return "Verificando sesión...";
+    }
+    const tailLayout = {
         wrapperCol: { offset: 8, span: 16 },
-      };
-      
-     
-        const onFinish = ( values) => {
-          console.log('Success:', values);
-        };
-      
-        const onFinishFailed = (errorInfo) => {
-          console.log('Failed:', errorInfo);
-        };
-    
-        return (
-            <div if="form">
+    };
+
+    return (
+        <div if="form"{...tailLayout} >
             <div id="form1">
           <Row>
             
@@ -32,11 +49,11 @@ const Login = () =>{
                   <Col justify='center'>
                <p><h1>Ingresa</h1></p> 
           <Form
-            {...layout}
+            {...tailLayout}
             name="basic"
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+            onFinishFailedLog ={onFinishFailedLog}
           >
             <Form.Item
               name="username"
@@ -68,11 +85,11 @@ const Login = () =>{
                   <Col justify='center'>
                <p><h1>Si no tienes una cuenta aún... regístrate!</h1></p> 
           <Form
-            {...layout}
+            {...tailLayout}
             name="basic"
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+            onFinishFailedLog ={onFinishFailedLog }
           >
             <Form.Item
               name="username"
