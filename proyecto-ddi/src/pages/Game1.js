@@ -4,6 +4,7 @@ import {Button, Col, Input, Row} from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withAuth from "../hocs/withAuth";
 
 const Game1 = () => {
 
@@ -38,4 +39,4 @@ const Game1 = () => {
         </div>
     );
 }
-export default Game1;
+export default withAuth(Game1);

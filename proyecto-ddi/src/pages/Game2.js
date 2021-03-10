@@ -5,6 +5,7 @@ import GameNav from "../components/GameNav";
 import ReactPlayer from 'react-player';
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withAuth from "../hocs/withAuth";
 
 const Game2 = () => {
 
@@ -43,4 +44,4 @@ const Game2 = () => {
         </div>
     );
 }
-export default Game2;
+export default withAuth(Game2);

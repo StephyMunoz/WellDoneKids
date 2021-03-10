@@ -33,28 +33,28 @@ const Nav = () => {
                     <Spin />
                 ) : user === false ? (
                     <>
-                        <Menu.Item>
+                        <Menu.Item key="loginPage">
                             <Link to={Routes.LOGIN}>Ingresar</Link>
                         </Menu.Item>
-                        <Menu.Item>
+                        <Menu.Item key="registerPage">
                             <Link to={Routes.Register}>Registrarme</Link>
                         </Menu.Item>
-                        <Menu.Item>
+                        <Menu.Item key="trialGamePage">
                             <Link to={Routes.TRIALGAME}>Juega y aprende</Link>
                         </Menu.Item>
                     </>
                 ) : (
                     <>
-                        <Menu.Item>
+                        <Menu.Item key="usersProfile">
                             <Link to={Routes.USERSPROFILE}>Perfil</Link>
                         </Menu.Item>
-                        <Menu.Item>
+                        <Menu.Item key="gameRegister">
                             <Link to={Routes.GAME}>Juega y aprende</Link>
                         </Menu.Item>
 
                         <SubMenu key="sub1" title={user.email}>
                             <Menu.ItemGroup key="g1" title="Tu cuenta">
-                                <Menu.Item key="1" icon={<LogoutOutlined />}>
+                                <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
                                     <Button type="link" style={{ color: "#ffffff" }} onClick={logout}>
                                         Salir
                                     </Button>

@@ -5,6 +5,7 @@ import GameTrialNav from "../components/GameTrialNav";
 import ReactPlayer from 'react-player';
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withoutAuth from "../hocs/withoutAuth";
 
 const TrialGame2 = () => {
 
@@ -43,4 +44,4 @@ const TrialGame2 = () => {
         </div>
     );
 }
-export default TrialGame2;
+export default withoutAuth(TrialGame2);

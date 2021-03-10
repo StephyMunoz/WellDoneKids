@@ -4,6 +4,7 @@ import {Space, Button, Col, Form, Input, Row} from 'antd';
 import "../styles/login.css";
 import {Link, useHistory} from "react-router-dom";
 import Routes from "../constants/Routes";
+import withoutAuth from "../hocs/withoutAuth";
 
 
 const Login = () =>{
@@ -72,4 +73,4 @@ const Login = () =>{
 
 };
 
-export default Login;
+export default withoutAuth(Login);

@@ -5,6 +5,7 @@ import apple from "../images/apple.png";
 import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withoutAuth from "../hocs/withoutAuth";
 
 const TrialGame4 = () => {
 
@@ -104,4 +105,4 @@ const TrialGame4 = () => {
         </div>
     );
 }
-export default TrialGame4;
+export default withoutAuth(TrialGame4);

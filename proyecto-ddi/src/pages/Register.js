@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Col, Form, Input, message, Row, Select} from "antd";
 import {useAuth} from "../lib/auth";
 import translateMessage from "../utils/translateMessage";
+import withoutAuth from "../hocs/withoutAuth";
 
 const { Option } = Select;
 
 const Register = () => {
-    const [setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const { register } = useAuth();
+
+
 
     const onFinish = async (data) => {
         setLoading(true);
@@ -106,4 +109,4 @@ const Register = () => {
         </div>
     );
 }
-export default Register;
+export default withoutAuth(Register);

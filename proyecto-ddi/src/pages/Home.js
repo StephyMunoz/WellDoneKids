@@ -6,6 +6,7 @@ import '../styles/game.css';
 import {Button, Col, Collapse, Image, Row} from 'antd';
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import withAuth from "../hocs/withAuth";
 
 const { Panel } = Collapse;
 
@@ -81,4 +82,4 @@ const Home = () => {
         </>
     );
 }
-export default Home;
+export default withAuth(Home);
