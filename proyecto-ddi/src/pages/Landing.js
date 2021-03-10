@@ -1,9 +1,7 @@
 import React from 'react';
 import '../styles/game.css';
-import {Image} from 'antd';
+import {Button, Col, Image, Row} from 'antd';
 import logo from "../images/welldonekidslogo.png";
-import { Row, Col } from 'antd';
-import { Button } from 'antd';
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
 
