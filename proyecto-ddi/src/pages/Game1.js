@@ -44,19 +44,6 @@ const Game1 = () => {
         };
     }, []);
     
-    const handleQuestionChange = (questionNumber) => {
-        // if (questionList[questionNumber].options[radioState] === questionList[questionNumber].answer) {
-        //     setScore(score + 1);
-        //     setQuestionNumber(questionNumber + 1);
-        // } else {
-        //     console.log('opcion seleccionada', radioState)
-        //     console.log('puntaje', score)
-        //     console.log('numero pregunta', questionNumber)
-        // }
-        
-    }
-    
-
     const radioStyle = {
         display: 'block',
         height: '30px',
@@ -70,6 +57,24 @@ const Game1 = () => {
     const ops = questionList.map(question => {
         return question.options
     });
+
+    const ans = questionList.map(question => {
+        return question.answer
+    });
+
+    const handleQuestionChange = (questionNumber) => {
+        if (ops[questionNumber][radioState] === ans[questionNumber]) {
+            setScore(score + 1);
+            setQuestionNumber(questionNumber + 1);
+            console.log('opcion seleccionada', radioState)
+            console.log('puntaje', score)
+            console.log('numero pregunta', questionNumber)
+        } else {
+            console.log('respuesta incorrecta')
+        }
+        
+    }
+
     const {value} = radioState;
     return(
         <div className="Game">
