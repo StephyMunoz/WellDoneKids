@@ -114,7 +114,6 @@ const Register = () => {
                                         <Option value="8">8 años</Option>
                                         <Option value="9">9 años</Option>
                                         <Option value="10">10 años</Option>
-                                        <Option value="11">11 años</Option>
 
                                     </Select>
 

@@ -43,6 +43,7 @@ const Game1 = () => {
             db.ref('0/questions').off();
         };
     }, []);
+<<<<<<< HEAD
 
     const handleQuestionChange = (questionNumber) => {
         // if (questionList[questionNumber].options[radioState] === questionList[questionNumber].answer) {
@@ -57,6 +58,9 @@ const Game1 = () => {
     }
 
 
+=======
+    
+>>>>>>> 0e6bb3b2d8e43f7f4286a32b12091727434cc916
     const radioStyle = {
         display: 'block',
         height: '30px',
@@ -70,6 +74,27 @@ const Game1 = () => {
     const ops = questionList.map(question => {
         return question.options
     });
+<<<<<<< HEAD
+=======
+
+    const ans = questionList.map(question => {
+        return question.answer
+    });
+
+    const handleQuestionChange = (questionNumber) => {
+        if (ops[questionNumber][radioState] === ans[questionNumber]) {
+            setScore(score + 1);
+            setQuestionNumber(questionNumber + 1);
+            console.log('opcion seleccionada', radioState)
+            console.log('puntaje', score)
+            console.log('numero pregunta', questionNumber)
+        } else {
+            console.log('respuesta incorrecta')
+        }
+        
+    }
+
+>>>>>>> 0e6bb3b2d8e43f7f4286a32b12091727434cc916
     const {value} = radioState;
     return(
         <div className="Game">
@@ -89,7 +114,11 @@ const Game1 = () => {
                             {ops[questionNumber][1]}
                         </Radio>
                         <Radio style={radioStyle} value={2}>
+<<<<<<< HEAD
                             {ops[questionNumber][2]}
+=======
+                            {ops[questionNumber][2]}  
+>>>>>>> 0e6bb3b2d8e43f7f4286a32b12091727434cc916
                         </Radio>
                         <Radio style={radioStyle} value={3}>
                             {ops[questionNumber][3]}
