@@ -19,7 +19,7 @@ const Game1 = () => {
 
     const onChange = e => {
         setRadioState({
-          value: e.target.value
+            value: e.target.value
         });
     };
 
@@ -43,7 +43,7 @@ const Game1 = () => {
             db.ref('0/questions').off();
         };
     }, []);
-    
+
     const handleQuestionChange = (questionNumber) => {
         // if (questionList[questionNumber].options[radioState] === questionList[questionNumber].answer) {
         //     setScore(score + 1);
@@ -53,38 +53,46 @@ const Game1 = () => {
         //     console.log('puntaje', score)
         //     console.log('numero pregunta', questionNumber)
         // }
-        
+
     }
-    
+
 
     const radioStyle = {
         display: 'block',
         height: '30px',
         lineHeight: '30px',
     };
+
+    const inst = questionList.map(question => {
+        return question.instructions
+    });
+
+    const ops = questionList.map(question => {
+        return question.options
+    });
     const {value} = radioState;
     return(
         <div className="Game">
             <GameNav />
             <Row justify='center'>
                 <Col justify='center'>
-                    <h1>{questionList[questionNumber].instructions}</h1>
+                    <h1>{inst[questionNumber]}</h1>
                 </Col>
             </Row>
             <Row justify='center'>
                 <Col>
                     <Radio.Group onChange={onChange} value={value}>
                         <Radio style={radioStyle} value={0}>
-                            {questionList[questionNumber].options[0]}
+                            {ops[questionNumber][0]}
                         </Radio>
                         <Radio style={radioStyle} value={1}>
-                            {questionList[questionNumber].options[1]}
+                            {ops[questionNumber][1]}
                         </Radio>
                         <Radio style={radioStyle} value={2}>
-                            {questionList[questionNumber].options[2]}  
+                            {ops[questionNumber][2]}
                         </Radio>
                         <Radio style={radioStyle} value={3}>
-                            {questionList[questionNumber].options[3]}
+                            {ops[questionNumber][3]}
                         </Radio>
                     </Radio.Group>
                 </Col>
@@ -94,7 +102,7 @@ const Game1 = () => {
                     <Link to = {Routes.GAME2}>
                         <Button type="primary" onClick={() => handleQuestionChange(questionNumber)} >LISTO :)</Button>
                     </Link>
-                    
+
                 </Col>
             </Row>
             <Row justify='center'>

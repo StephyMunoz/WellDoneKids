@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/game.css';
-import {Button, Col, Image, Row} from 'antd';
+import {Modal, Button, Col, Image, Row} from 'antd';
 import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
+import {useAuth} from "../lib/auth";
 
 const Landing = () => {
+    const { user} = useAuth();
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
     return(
         <>
         <div id="background">
@@ -29,11 +45,20 @@ const Landing = () => {
                         <h3 id="sub_paragraph">Este sitio podría ser la solución a tus problemas. Puedes probar nuestras
                             actividades sin necesidad de registrarte</h3>
                         <Row justify="center">
-                            <Col span={5}>
-                                <Link to={Routes.TRIALGAME}>
-                                    <Button id="colored_button" type="primary" size="large">Juega ahora</Button>
-                                </Link>
-                            </Col>
+                            { user ?
+                                <Col span={5}>
+                                    <Link to={Routes.GAME}>
+                                        <Button id="colored_button" type="primary" size="large">Juega ahora</Button>
+                                    </Link>
+                                </Col>
+                                :
+                                <Col span={5}>
+                                    <Link to={Routes.TRIALGAME}>
+                                        <Button id="colored_button" type="primary" size="large">Juega ahora</Button>
+                                    </Link>
+                                </Col>
+                            }
+
                         </Row>
                     </div>
                 </Col>
@@ -44,10 +69,24 @@ const Landing = () => {
                             que va teniendo tu hijo. Además, él/ella podrá acceder a una mayor personalización en sus
                             actividades y recompensas</h3>
                         <Row justify="center">
+
                             <Col span={5}>
-                                <Link to={Routes.LOGIN}>
-                                    <Button id="colored_button" type="primary" size="large">Regístrate</Button>
-                                </Link>
+                                {
+                                    user ?
+                                        <>
+                                            <Button id="colored_button" type="primary" size="large" onClick={showModal}>Registrate</Button>
+                                            <Modal title="Usuario registrado" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                                                <p>Usuario registrado</p>
+                                                <p>ve a la sección de juegos</p>
+                                                <p>para seguir disfrutando</p>
+                                            </Modal>
+                                        </>
+                                        :
+                                        <Link to={Routes.Register}>
+                                            <Button id="colored_button" type="primary" size="large">Regístrate</Button>
+                                        </Link>
+                                }
+
                             </Col>
                         </Row>
                     </div>
@@ -72,9 +111,22 @@ const Landing = () => {
                     <h1 id="sub_paragraph">¿Ya estás registrado? Ingresa a continuación</h1>
                     <Row justify="center">
                         <Col span={5}>
-                            <Link to={Routes.LOGIN}>
-                                <Button id="colored_button" type="primary" size="large">Inicia sesión</Button>
-                            </Link>
+                            {
+                                user ?
+                                    <>
+                                        <Button id="colored_button" type="primary" size="large" onClick={showModal}>Inicia sesión</Button>
+                                        <Modal title="Usuario registrado" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                                            <p>Usuario registrado</p>
+                                            <p>ve a la sección de juegos</p>
+                                            <p>para seguir disfrutando</p>
+                                        </Modal>
+                                    </>
+                                    :
+                                    <Link to={Routes.LOGIN}>
+                                        <Button id="colored_button" type="primary" size="large">Inicia sesión</Button>
+                                    </Link>
+                            }
+
                         </Col>
                     </Row>
                 </Col>

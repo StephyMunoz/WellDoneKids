@@ -9,7 +9,7 @@ import {LogoutOutlined} from '@ant-design/icons';
 
 const Nav = () => {
     const { SubMenu } = Menu;
-    const { user, data, logout } = useAuth();
+    const { user, logout } = useAuth();
     const menuItem = [
         {
             to: Routes.INFO,

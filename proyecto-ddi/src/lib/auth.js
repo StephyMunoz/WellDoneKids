@@ -44,13 +44,13 @@ function useAuthProvider() {
             console.log("USER", user);
             const { uid } = userData.user;
             let score=0;
-            const { username, email } = data;
+            const { username, email, selectedYear } = data;
             await db.ref(`users/${userData.user.uid}`).set({
                 username,
                 email,
                 uid,
                 score,
-
+                selectedYear
             })
             .then((user) => {
                 // Signed in

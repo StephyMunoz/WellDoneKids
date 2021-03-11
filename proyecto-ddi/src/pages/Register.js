@@ -9,7 +9,7 @@ const { Option } = Select;
 const Register = () => {
     const [loading, setLoading] = useState(false);
     const { register } = useAuth();
-
+    const [year, setYear]=useState(6);
 
 
     const onFinish = async (data) => {
@@ -39,6 +39,11 @@ const Register = () => {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+        setYear(value);
+        console.log(`selected year ${year}`);
+    }
 
     return(
         <div if="form">
@@ -77,25 +82,44 @@ const Register = () => {
 
                             <Form.Item
                                 name="passwordconfirm"
-                                rules={[{ required: true, message: 'Confirma tu contraseña' }]}
+                                rules={
+                                    [{
+                                        required: true,
+                                        message: 'Confirma tu contraseña'
+                                    },
+                                    ({ getFieldValue }) => ({
+                                    validator(_, value) {
+                                    if (!value || getFieldValue("password") === value) {
+                                    return Promise.resolve();
+                                }
+                                    return Promise.reject(
+                                    new Error("Las claves no coinciden")
+                                    );
+                                },
+                                }),
+
+                                ]}
                             >
                                 <Input.Password placeholder="Confirmar contraseña" />
                             </Form.Item>
+                            <Form.Item
+                                name="selectedYear"
+                                rules={[{ required: true, message: 'Ingrese la edad del peque' }]}
+                            >
 
-                            <div id="select-year">
-                                <Select defaultValue="Ingrese la edad del niño o niña" style={{ width: 320 }} >
+                                    <Select defaultValue="Ingrese la edad del niño o niña" style={{ width: 320 }} value={year} onChange={()=>handleChange(year)} >
 
-                                    <Option value="6">6 años</Option>
-                                    <Option value="7">7 años</Option>
-                                    <Option value="8">8 años</Option>
-                                    <Option value="9">9 años</Option>
-                                    <Option value="10">10 años</Option>
-                                    <Option value="11">11 años</Option>
+                                        <Option value="6">6 años</Option>
+                                        <Option value="7">7 años</Option>
+                                        <Option value="8">8 años</Option>
+                                        <Option value="9">9 años</Option>
+                                        <Option value="10">10 años</Option>
+                                        <Option value="11">11 años</Option>
 
-                                </Select>
+                                    </Select>
 
-                            </div>
 
+                            </Form.Item>
                             <Form.Item {...tailLayout}>
 
                                 <Button type="primary" htmlType="submit">

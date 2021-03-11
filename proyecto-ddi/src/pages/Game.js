@@ -17,13 +17,7 @@ const Game = () => {
     // const handleChangePage = () => {
     //     return(Routes.TRIALGAME4);
     // }
-    const handleSave = () => {
-        db.ref('users/ID_UNICO').set({
-           username: "stephy",
-           lastname: "munoz",
-           email: "stef_19_yo@hotmail.com"
-        });
-    }
+
     return(
         <div className="Game">
             <GameNav />
@@ -39,7 +33,7 @@ const Game = () => {
             <Row justify='center'>
                 <Col justify='center'>
                     <Link to={Routes.GAME1}>
-                        <Button type="primary" onClick={handleSave}>SIGUIENTE :)</Button>
+                        <Button type="primary" >SIGUIENTE :)</Button>
                     </Link>
                 </Col>
             </Row>
