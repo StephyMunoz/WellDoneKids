@@ -52,11 +52,11 @@ function useAuthProvider() {
                 score,
                 selectedYear
             })
-            .then((user) => {
+            //.then((user) => {
                 // Signed in
                 message.success("Usuario registrado");
-                handleUser(user);
-            })
+                //handleUser(user);
+           // })
             //return true;
         } catch (error) {
             console.log("error", error);
@@ -72,7 +72,7 @@ function useAuthProvider() {
             .signInWithEmailAndPassword(email, password)
             .then((user) => {
                 // Signed in
-                handleUser(user);
+                //handleUser(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
