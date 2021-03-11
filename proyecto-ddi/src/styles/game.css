@@ -1,83 +1,84 @@
 .logo {
-    float: left;
-    width: 120px;
-    height: 31px;
-    margin: -25px 24px 16px 0;
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: -25px 24px 16px 0;
 }
-.gameNav{
-    margin-bottom: 50px;
+.gameNav {
+  margin-bottom: 50px;
 }
-.TrialGame{
-    background-color: #A8E065;
-    min-height: 100vh;
-    padding: 50px;
+.TrialGame {
+  background-color: #a8e065;
+  min-height: 100vh;
+  padding: 50px;
 }
-.TrialGame h1, .Game h1{
-    color: #ffffff;
+.TrialGame h1,
+.Game h1 {
+  color: #ffffff;
 }
-.TrialGame Button, .Game Button{
-    background-color: #de4383;
-    color: #ffffff;
-    margin-top: 50px;
+.TrialGame Button,
+.Game Button {
+  background-color: #de4383;
+  color: #ffffff;
+  margin-top: 50px;
 }
 #landing_logo {
-    margin-top: 60px;
-    
+  margin-top: 60px;
 }
 #background {
-    background-color: #f3ae4b;
-    padding-bottom: 20px;
+  background-color: #f3ae4b;
+  padding-bottom: 20px;
 }
 #box {
-    background-color: #00ffffb3;
-    color:floralwhite;
-    padding: 10px;
-    
+  background-color: #00ffffb3;
+  color: floralwhite;
+  padding: 10px;
 }
-#box h1, h3{
-    color: floralwhite;
+#box h1,
+h3 {
+  color: floralwhite;
 }
 #center_paragraph {
-    text-align: center;
+  text-align: center;
 }
 #rectangle {
-    background-color: #774898;
-    padding: 10px;
+  background-color: #774898;
+  padding: 10px;
 }
 #sub_paragraph {
-    color: #ffffff;
-    text-align: center;
+  color: #ffffff;
+  text-align: center;
 }
 #colored_button {
-    background-color: #de4383;
-    margin-top: 20px;
+  background-color: #de4383;
+  margin-top: 20px;
 }
 #roots_button {
-    background-color: #620bb3;
-    color: #ffffff;
-    margin-top: 20px;
+  background-color: #620bb3;
+  color: #ffffff;
+  margin-top: 20px;
 }
 #row_margin {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 #title {
-    padding: 30px;
-    font-size: large; 
-    font-weight: bold;     
+  padding: 30px;
+  font-size: large;
+  font-weight: bold;
 }
 #trophy {
-    background-color: #00a8b5;
-    padding: 15px;
-    color: #ffffff;
-    width: 50%;
-    margin-bottom: 10px;
+  background-color: #00a8b5;
+  padding: 15px;
+  color: #ffffff;
+  width: 50%;
+  margin-bottom: 10px;
 }
 ul li {
-    font-size: smaller;
-    font-weight: normal;
+  font-size: smaller;
+  font-weight: normal;
 }
-.Game{
-    background-color: #774898;
-    min-height: 100vh;
-    padding: 200px;
+.Game {
+  background-color: #774898;
+  min-height: 100vh;
+  padding: 200px;
 }
