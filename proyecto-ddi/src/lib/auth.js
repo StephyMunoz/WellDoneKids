@@ -131,7 +131,6 @@ function useAuthProvider() {
       });
     };
 
-<<<<<<< HEAD
     async function register(data) {
         console.log("data", data);
         try {
@@ -206,11 +205,10 @@ function useAuthProvider() {
     //     });
     // };
 
-=======
+
     init();
     // } catch (error) {
     //   console.log("NO USER");
->>>>>>> 51eea43fdaba4d2de868513975aa2702fccb32a3
     // }
   }, []);
 
