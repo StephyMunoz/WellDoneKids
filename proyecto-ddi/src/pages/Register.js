@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {Button, Col, Form, Input, message, Row, Select} from "antd";
-import {useAuth} from "../lib/auth";
+import React, { useEffect, useState } from "react";
+import { Button, Col, Form, Input, message, Row, Select } from "antd";
+import { useAuth } from "../lib/auth";
 import translateMessage from "../utils/translateMessage";
 import withoutAuth from "../hocs/withoutAuth";
 
