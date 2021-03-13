@@ -7,7 +7,7 @@ import Routes from "../constants/Routes";
 import {Link} from "react-router-dom";
 import withAuth from "../hocs/withAuth";
 import {db} from '../firebase';
-import {subject} from "../pages/Game";
+//import {subject} from "../pages/Game";
 import Game from "../pages/Game";
 
 
@@ -26,7 +26,7 @@ const Questions = () => {
 
     useEffect( () => {
         const getQuestions = async() => {
-            db.ref('Subjects/0/questions/0/question').on('value', (snapshot) => {
+            db.ref('Asignatures/0/questions/0/question:').on('value', (snapshot) => {
                 const questions = [];
                 snapshot.forEach((question) => {
                     const q = question.val();
@@ -40,7 +40,7 @@ const Questions = () => {
         };
         getQuestions();
         return () => {
-            db.ref('Subjects/0/questions/0/question').off();
+            db.ref('Asignatures/0/questions/0/question:').off();
         };
     }, []);
 
@@ -87,11 +87,11 @@ const Questions = () => {
                                     <Radio.Group onChange={onChange} value={value}>
                                         {
                                             questionList.length > 0 ?
-                                            questionList[questionNumber].options.map((option, i) => {
-                                                return <Radio style={radioStyle} value={option}>
-                                                    {option}
-                                                </Radio>
-                                            }) : <Spin/>
+                                                questionList[questionNumber].options.map((option, i) => {
+                                                    return <Radio style={radioStyle} value={option}>
+                                                        {option}
+                                                    </Radio>
+                                                }) : <Spin/>
                                         }
                                     </Radio.Group>
                                 </Col>
