@@ -1,18 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import "../styles/game.css";
 import { Button, Col, Row, Select } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
 import withoutAuth from "../hocs/withoutAuth";
+import TrialGame1 from "./TrialGame1";
 
 const { Option } = Select;
 
-const TrialGame = () => {
+const TrialGame = ({props}) => {
+  const [age, setAge] = useState(0);
   function handleChange(value) {
-    console.log(`selected ${value}`);
+
+    setAge(value);
+
+
   }
   const handleNext = () => {};
+
   return (
     <div className="TrialGame">
       <GameTrialNav />
@@ -34,7 +40,8 @@ const TrialGame = () => {
       </Row>
       <Row justify="center">
         <Col justify="center">
-          <Link to={Routes.TRIALGAME1}>
+          {/*<TrialGame1 age={age} />*/}
+          <Link to={Routes.TRIALGAME1} >
             <Button type="primary" onClick={handleNext}>
               SIGUIENTE :)
             </Button>

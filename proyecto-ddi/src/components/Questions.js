@@ -26,7 +26,7 @@ const Questions = () => {
 
     useEffect( () => {
         const getQuestions = async() => {
-            db.ref('Asignatures/0/questions/0/question:').on('value', (snapshot) => {
+            db.ref('Asignatures/0/questions/0/question').on('value', (snapshot) => {
                 const questions = [];
                 snapshot.forEach((question) => {
                     const q = question.val();
@@ -40,7 +40,7 @@ const Questions = () => {
         };
         getQuestions();
         return () => {
-            db.ref('Asignatures/0/questions/0/question:').off();
+            db.ref('Asignatures/0/questions/0/question').off();
         };
     }, []);
 
