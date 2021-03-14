@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/game.css";
 import { Button, Col, Row, Select } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
@@ -12,12 +12,8 @@ const { Option } = Select;
 const TrialGame = () => {
   const [age, setAge] = useState(0);
   function handleChange(value) {
-
     setAge(value);
-
-
   }
-
 
   return (
     <div className="TrialGame">
@@ -42,9 +38,7 @@ const TrialGame = () => {
         <Col justify="center">
           {/*<TrialGame1 age={age} />*/}
           <Link to={Routes.TRIALGAME1} age={age}>
-            <Button type="primary" >
-              SIGUIENTE :)
-            </Button>
+            <Button type="primary">SIGUIENTE :)</Button>
           </Link>
         </Col>
       </Row>
