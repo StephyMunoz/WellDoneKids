@@ -8,7 +8,7 @@ import img4 from "../images/info4.jpg";
 import img5 from "../images/info5.jpg";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
-
+//import {FacebookFilled} from "@ant-design/icon";
 const InfoPage = () => {
   return (
     <>
@@ -129,6 +129,7 @@ const InfoPage = () => {
             </h3>
             <h3>Teléfono: 55555555</h3>
             <h3>Redes sociales:</h3>
+           
           </Col>
           <Col span={8} offset={2}>
             <Image id="images"src={img5} alt="No image found" width="100%" />
