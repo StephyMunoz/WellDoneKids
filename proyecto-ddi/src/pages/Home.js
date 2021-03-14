@@ -8,11 +8,13 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
 import {Username} from "../components/Username";
+import {useAuth} from "../lib/auth";
 
 const { Panel } = Collapse;
 
 const Home = () => {
   const {username} = Username();
+  const {logout} = useAuth();
   return (
     <>
       <div id="background">
@@ -34,7 +36,7 @@ const Home = () => {
             </Row>
             <Row>
               <Col span={5}>
-                <Button id="colored_button" type="primary" size="large">
+                <Button id="colored_button" type="primary" size="large" onClick={logout}>
                   Salir
                 </Button>
               </Col>

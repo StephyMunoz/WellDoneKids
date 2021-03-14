@@ -8,7 +8,7 @@ import withoutAuth from "../hocs/withoutAuth";
 import {db} from "../firebase";
 import TrialGame from "./TrialGame";
 
-const TrialGame1 = () => {
+const TrialGame1 = ({props}) => {
     const [questionNumber, setQuestionNumber] = useState(0);
     const [questionList, setQuestionList] = useState([]);
     const [radioState, setRadioState] = useState(0);
@@ -81,6 +81,12 @@ const TrialGame1 = () => {
 
     }
     const {value} = radioState;
+
+    function getAge (age) {
+        return age;
+    };
+    //console.log(props.age);
+
     return(
         <>
             {
@@ -92,6 +98,7 @@ const TrialGame1 = () => {
                             <Row justify='center'>
                                 <Col justify='center'>
                                     <h1>{questionList[questionNumber].text}</h1>
+                                    <h1>{(props)=>getAge(props.age)}</h1>
                                     {/*<h1>{video[questionNumber]}</h1>*/}
                                 </Col>
                             </Row>

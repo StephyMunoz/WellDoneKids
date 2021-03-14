@@ -9,7 +9,7 @@ import TrialGame1 from "./TrialGame1";
 
 const { Option } = Select;
 
-const TrialGame = ({props}) => {
+const TrialGame = () => {
   const [age, setAge] = useState(0);
   function handleChange(value) {
 
@@ -17,7 +17,7 @@ const TrialGame = ({props}) => {
 
 
   }
-  const handleNext = () => {};
+
 
   return (
     <div className="TrialGame">
@@ -41,8 +41,8 @@ const TrialGame = ({props}) => {
       <Row justify="center">
         <Col justify="center">
           {/*<TrialGame1 age={age} />*/}
-          <Link to={Routes.TRIALGAME1} >
-            <Button type="primary" onClick={handleNext}>
+          <Link to={Routes.TRIALGAME1} age={age}>
+            <Button type="primary" >
               SIGUIENTE :)
             </Button>
           </Link>
