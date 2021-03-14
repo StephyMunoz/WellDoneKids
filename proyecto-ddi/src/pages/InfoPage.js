@@ -8,7 +8,7 @@ import img4 from "../images/info4.jpg";
 import img5 from "../images/info5.jpg";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
-//import {FacebookFilled} from "@ant-design/icon";
+import {FacebookFilled, TwitterCircleFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 const InfoPage = () => {
   return (
     <>
@@ -125,14 +125,42 @@ const InfoPage = () => {
             <h1>Contáctanos</h1>
             <h3>Dirección: Ladrón de Guevara E11-253</h3>
             <h3>
-              Correo electrónico:<br></br> Welldondekids.info@gmail.com
+              Correo electrónico:<br></br> Welldonekids.info@gmail.com
             </h3>
             <h3>Teléfono: 55555555</h3>
             <h3>Redes sociales:</h3>
+           <Row>
+          <Col>
+          <a href="https://www.facebook.com/">
+
+           <FacebookFilled style={{fontSize:"50px", color:"white"}}/>
+          </a>
+          </Col>
+          <Col  offset="1">
+            <a href="https://twitter.com/?lang=es">
+
+           <TwitterCircleFilled style={{fontSize:"50px", color:"white"}} />
+            </a>
+          </Col>
+          <Col offset="1">
+            <a href="https://www.instagram.com/">
+
+           <InstagramFilled style={{fontSize:"50px", color:"white"}}/>
+            </a>
+          </Col>
+          <Col offset="1">
+          <a href="https://ec.linkedin.com/">
+            <LinkedinFilled style={{fontSize:"50px", color:"white"}}/>
+          </a>
+          </Col>
+           </Row>
            
           </Col>
           <Col span={8} offset={2}>
+            
             <Image id="images"src={img5} alt="No image found" width="100%" />
+            
+              
           </Col>
         </Row>
       </div>
