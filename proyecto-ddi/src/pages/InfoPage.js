@@ -12,8 +12,8 @@ import { Link } from "react-router-dom";
 const InfoPage = () => {
   return (
     <>
-      <div id="background">
-        <Row style={{ padding: "3em 7em 1em", fontSize: "20px" }}>
+      <div id="background" justify="center" span={18}>
+        <Row className="blocks" /*style={{ padding: "3em 7em 1em", fontSize: "20px" }}*/>
           <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
             <p>
               Well Done Kids! es un sitio que permite a tus hijos realizar
@@ -30,18 +30,19 @@ const InfoPage = () => {
           </Col>
           <Col lg={{ span: 24 }} xl={{ span: 8, offset: 2 }}>
             <Image
+              id="images"
               src={img1}
               alt="No image found"
-              width="100%"
-              style={{ margin: "auto" }}
+              width="110%"
+              
             />
           </Col>
         </Row>
-        <Row style={{ padding: "1em 7em", fontSize: "18px", textAlign: "end" }}>
-          <Col lg={{ span: 24 }} xl={{ span: 8, offset: 2 }}>
-            <Image src={img2} alt="No image found" width="100%" />
+        <Row className="blocks-end"/*style={{ padding: "1em 7em", fontSize: "18px", textAlign: "end" }}*/>
+          <Col lg={{ span: 24 }} xl={{ span: 8}}>
+            <Image id="images"src={img2} alt="No image found" width="110%" />
           </Col>
-          <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
+          <Col lg={{ span: 24 }} xl={{ span: 14 , offset: 2  }} id="box">
             <h1>Juega y aprende</h1>
             <p>
               Puedes probar las actividades que tenemos para tu hijo presionando
@@ -54,18 +55,18 @@ const InfoPage = () => {
             </p>
 
             <Row justify="center">
-              <Col span={4}>
+              
                 <Link to={Routes.TRIALGAME}>
                   <Button id="roots_button" type="primary" size="large">
                     Juega ahora
                   </Button>
                 </Link>
-              </Col>
+              
             </Row>
           </Col>
         </Row>
-        <Row style={{ padding: "1em 7em", fontSize: "20px" }}>
-          <Col span={14} id="box">
+        <Row className="blocks-start" /* style={{ padding: "1em 7em", fontSize: "20px" }}*/>
+          <Col lg={{span:24}} xl={{span:14}} id="box">
             <h1>Regístrate</h1>
             <p>
               Al registrar a tu peque tendrás varios beneficios como recibir vía
@@ -80,22 +81,22 @@ const InfoPage = () => {
               ingresar.
             </p>
             <Row justify="center">
-              <Col span={7}>
+             
                 <Link to={Routes.LOGIN}>
                   <Button id="roots_button" type="primary" size="large">
                     Ingresa o crea tu cuenta
                   </Button>
                 </Link>
-              </Col>
+             
             </Row>
           </Col>
-          <Col span={8} offset={2}>
-            <Image src={img3} alt="No image found" width="100%" />
+          <Col lg={{span:24}} xl={{span:8, offset:2}}>
+            <Image id="images" src={img3} alt="No image found" width="120%" />
           </Col>
         </Row>
-        <Row style={{ padding: "1em 7em", fontSize: "18px", textAlign: "end" }}>
+        <Row className="blocks-end" /*style={{ padding: "1em 7em", fontSize: "18px", textAlign: "end" }}*/>
           <Col span={8}>
-            <Image src={img4} alt="No image found" width="100%" />
+            <Image id="images" src={img4} alt="No image found" width="100%" />
           </Col>
           <Col span={14} offset={2} id="box">
             <h1>¿Quiénes somos?</h1>
@@ -119,7 +120,7 @@ const InfoPage = () => {
             </p>
           </Col>
         </Row>
-        <Row style={{ padding: "1em 7em", fontSize: "22px" }}>
+        <Row className="blocks-start" /*style={{ padding: "1em 7em", fontSize: "22px" }}*/>
           <Col span={14} id="box">
             <h1>Contáctanos</h1>
             <h3>Dirección: Ladrón de Guevara E11-253</h3>
@@ -130,7 +131,7 @@ const InfoPage = () => {
             <h3>Redes sociales:</h3>
           </Col>
           <Col span={8} offset={2}>
-            <Image src={img5} alt="No image found" width="100%" />
+            <Image id="images"src={img5} alt="No image found" width="100%" />
           </Col>
         </Row>
       </div>
