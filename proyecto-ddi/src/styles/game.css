@@ -4,9 +4,6 @@
   height: 31px;
   margin: -25px 24px 16px 0;
 }
-.gameNav {
-  margin-bottom: 50px;
-}
 .TrialGame {
   background-color: #a8e065;
   min-height: 100vh;
@@ -38,6 +35,9 @@
 #landing_logo {
   margin-top: 60px;
   font-size: 20px;
+}
+#gameNav{
+  padding-bottom: 20px;
 }
 #background {
   background-color: #f3ae4b;
@@ -112,5 +112,5 @@ ul li {
 .Game {
   background-color: #774898;
   min-height: 100vh;
-  padding: 200px;
+
 }

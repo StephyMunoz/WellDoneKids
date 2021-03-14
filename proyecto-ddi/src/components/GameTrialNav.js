@@ -17,20 +17,24 @@ const GameTrialNav = () => {
             <Col flex={1} span={24}>
               <h1>Bienvenido a la versión de prueba</h1>
             </Col>
+
           </Row>
-        </Row>
-        <Row>
-          <Col>
-            <Space>
+          <Row>
+            <Col span={10}>
+
               <Link to={Routes.HOME}>
                 <Button>SALIR</Button>
               </Link>
+            </Col>
+            <Col span={10}>
               <Link to={Routes.Register}>
                 <Button>Crear cuenta</Button>
               </Link>
-            </Space>
-          </Col>
+            </Col>
+
+          </Row>
         </Row>
+
       </Row>
     </div>
   );

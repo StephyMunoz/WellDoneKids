@@ -7,7 +7,8 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 
-const TrialGame2 = () => {
+const TrialGame2 = ({videos}) => {
+
   return (
     <div className="TrialGame">
       <GameTrialNav />
@@ -23,7 +24,7 @@ const TrialGame2 = () => {
         <Col>
           <div>
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=W08ToPMihhw"
+              url={videos}
               className="react-player"
               playing
               width="60em"

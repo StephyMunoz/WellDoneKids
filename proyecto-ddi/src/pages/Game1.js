@@ -17,7 +17,8 @@ const Game1 = () => {
 
     return (
         <>
-            <Questions/>
+            hols questions
+            {/*<Questions/>*/}
         </>
     );
 }

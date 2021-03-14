@@ -7,10 +7,12 @@ import { Button, Col, Collapse, Image, Row } from "antd";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
+import {Username} from "../components/Username";
 
 const { Panel } = Collapse;
 
 const Home = () => {
+  const {username} = Username();
   return (
     <>
       <div id="background">
@@ -27,7 +29,7 @@ const Home = () => {
           <Col span={8}>
             <Row>
               <Col span={10}>
-                <h1 id="sub_paragraph">Bienvenido Username!</h1>
+                <h1 id="sub_paragraph">Bienvenid@ {username}!</h1>
               </Col>
             </Row>
             <Row>
