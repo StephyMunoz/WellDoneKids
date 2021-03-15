@@ -8,14 +8,19 @@ import img4 from "../images/info4.jpg";
 import img5 from "../images/info5.jpg";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
-//import {FacebookFilled} from "@ant-design/icon";
+import {FacebookFilled, TwitterCircleFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 const InfoPage = () => {
   return (
     <>
+<<<<<<< HEAD
       <div id="background" justify="center" span={18}>
         <Row
           className="blocks" /*style={{ padding: "3em 7em 1em", fontSize: "20px" }}*/
         >
+=======
+      <div id="background1" justify="center" span={18}>
+        <Row className="blocks" /*style={{ padding: "3em 7em 1em", fontSize: "20px" }}*/>
+>>>>>>> 4ad5e45a578fff1ac2654ab411d838295328e1bd
           <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
             <p>
               Well Done Kids! es un sitio que permite a tus hijos realizar
@@ -125,13 +130,48 @@ const InfoPage = () => {
             <h1>Contáctanos</h1>
             <h3>Dirección: Ladrón de Guevara E11-253</h3>
             <h3>
-              Correo electrónico:<br></br> Welldondekids.info@gmail.com
+              Correo electrónico:<br></br> Welldonekids.info@gmail.com
             </h3>
             <h3>Teléfono: 55555555</h3>
             <h3>Redes sociales:</h3>
+<<<<<<< HEAD
           </Col>
           <Col span={8} offset={2}>
             <Image id="images" src={img5} alt="No image found" width="100%" />
+=======
+           <Row>
+          <Col>
+          <a href="https://www.facebook.com/">
+
+           <FacebookFilled style={{fontSize:"50px", color:"white"}}/>
+          </a>
+          </Col>
+          <Col  offset="1">
+            <a href="https://twitter.com/?lang=es">
+
+           <TwitterCircleFilled style={{fontSize:"50px", color:"white"}} />
+            </a>
+          </Col>
+          <Col offset="1">
+            <a href="https://www.instagram.com/">
+
+           <InstagramFilled style={{fontSize:"50px", color:"white"}}/>
+            </a>
+          </Col>
+          <Col offset="1">
+          <a href="https://ec.linkedin.com/">
+            <LinkedinFilled style={{fontSize:"50px", color:"white"}}/>
+          </a>
+          </Col>
+           </Row>
+           
+          </Col>
+          <Col span={8} offset={2}>
+            
+            <Image id="images"src={img5} alt="No image found" width="100%" />
+            
+              
+>>>>>>> 4ad5e45a578fff1ac2654ab411d838295328e1bd
           </Col>
         </Row>
       </div>
