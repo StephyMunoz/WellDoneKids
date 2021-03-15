@@ -9,6 +9,7 @@ import withAuth from "../hocs/withAuth";
 import { db } from "../firebase";
 //import {subject} from "../pages/Game";
 import Game from "../pages/Game";
+import {Username} from "../components/Username";
 
 const Questions = () => {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -16,6 +17,7 @@ const Questions = () => {
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
   const [subject, setSubject] = useState(0);
+  const {username} = Username();
 
   const onChange = (e) => {
     setRadioState({
@@ -54,26 +56,42 @@ const Questions = () => {
     lineHeight: "30px",
   };
 
+<<<<<<< HEAD
+=======
+  const { value } = radioState;
+
+>>>>>>> 3fd2121cfb2c71c4f6e7cd793ece4469210ead1e
   const handleQuestionChange = (questionNumber) => {
     console.log(value);
     if (value === questionList[questionNumber].correct_answer) {
       setScore(score + 1);
+<<<<<<< HEAD
 
       setQuestionNumber(questionNumber + 1);
 
       setQuestionNumber(random);
 
+=======
+      setQuestionNumber(random);
+>>>>>>> 3fd2121cfb2c71c4f6e7cd793ece4469210ead1e
       console.log("opcion seleccionada", radioState);
       console.log("puntaje", score);
       console.log("numero pregunta", questionNumber);
     } else {
       console.log("respuesta incorrecta");
+<<<<<<< HEAD
 
       alert("Respuesta incorrecta. La explicación completa....");
       console.log("sub from ques", subject);
     }
   };
   const { value } = radioState;
+=======
+      alert("Respuesta incorrecta. Intentalo de nuevo :)");
+      console.log("sub from ques", subject);
+    }
+  };
+>>>>>>> 3fd2121cfb2c71c4f6e7cd793ece4469210ead1e
 
   return (
     <>
@@ -134,7 +152,7 @@ const Questions = () => {
           <GameNav />
           <Row justify={"center"}>
             <Col>
-              <h1>Estamos muy orgullosos de ti!!</h1>
+              <h1>{username}, Estamos muy orgullosos de ti!!</h1>
               <Link to={Routes.GAME2}>
                 <Button>Ir a recompensa!</Button>
               </Link>
