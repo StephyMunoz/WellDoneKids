@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { db } from "../firebase";
->>>>>>> 4ad5e45a578fff1ac2654ab411d838295328e1bd
 import React, { useState } from "react";
 import "../styles/game.css";
 import { Button, Col, Row, Select } from "antd";
@@ -9,11 +6,8 @@ import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
-<<<<<<< HEAD
-=======
 import Questions from "../components/Questions";
 import { onHidden } from "web-vitals/dist/modules/lib/onHidden";
->>>>>>> 4ad5e45a578fff1ac2654ab411d838295328e1bd
 
 const { Option } = Select;
 
