@@ -9,6 +9,7 @@ import withAuth from "../hocs/withAuth";
 import { db } from "../firebase";
 //import {subject} from "../pages/Game";
 import Game from "../pages/Game";
+import {Username} from "../components/Username";
 
 const Questions = () => {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -16,6 +17,7 @@ const Questions = () => {
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
   const [subject, setSubject] = useState(0);
+  const {username} = Username();
 
   const onChange = (e) => {
     setRadioState({
@@ -130,7 +132,7 @@ const Questions = () => {
           <GameNav />
           <Row justify={"center"}>
             <Col>
-              <h1>Estamos muy orgullosos de ti!!</h1>
+              <h1>{username}, Estamos muy orgullosos de ti!!</h1>
               <Link to={Routes.GAME2}>
                 <Button>Ir a recompensa!</Button>
               </Link>
