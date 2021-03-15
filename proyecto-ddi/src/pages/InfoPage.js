@@ -160,38 +160,30 @@ const InfoPage = () => {
                 </h3>
                 <h3>Teléfono: 55555555</h3>
                 <h3>Redes sociales:</h3>
-              </Col>
-              <Col span={8} offset={2}>
-                <Image
-                  id="images"
-                  src={img5}
-                  alt="No image found"
-                  width="100%"
-                />
                 <Row>
                   <Col>
-                    <a href="https://www.facebook.com/">
+                    <a href="https://www.facebook.com/" target="_blank">
                       <FacebookFilled
                         style={{ fontSize: "50px", color: "white" }}
                       />
                     </a>
                   </Col>
                   <Col offset="1">
-                    <a href="https://twitter.com/?lang=es">
+                    <a href="https://twitter.com/?lang=es" target="_blank">
                       <TwitterCircleFilled
                         style={{ fontSize: "50px", color: "white" }}
                       />
                     </a>
                   </Col>
                   <Col offset="1">
-                    <a href="https://www.instagram.com/">
+                    <a href="https://www.instagram.com/" target="_blank">
                       <InstagramFilled
                         style={{ fontSize: "50px", color: "white" }}
                       />
                     </a>
                   </Col>
                   <Col offset="1">
-                    <a href="https://ec.linkedin.com/">
+                    <a href="https://ec.linkedin.com/" target="_blank">
                       <LinkedinFilled
                         style={{ fontSize: "50px", color: "white" }}
                       />
@@ -206,7 +198,9 @@ const InfoPage = () => {
                   alt="No image found"
                   width="100%"
                 />
+                
               </Col>
+              
             </Row>
           </div>
         </Row>

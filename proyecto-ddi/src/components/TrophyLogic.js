@@ -20,9 +20,20 @@ const TrophyLogic = () => {
 
   const getTrophies = [
     {
+      title: "Obtén tu medalla por la primera actividad realizada",
       id: 1,
-      true: first_medal,
-      false: trophy_n,
+      true: [
+        {
+          image: first_medal,
+          subTitle: "La aventura comienza!!! (Logro desbloqueado)",
+        },
+      ],
+      false: [
+        {
+          image: trophy_n,
+          subTitle: "La aventura comienza!!! (Logro bloqueado)",
+        },
+      ],
     },
     {
       id: 2,
@@ -70,22 +81,26 @@ const TrophyLogic = () => {
       false: trophy_n,
     },
   ];
-  console.log("trofeos", getTrophies);
+
+  console.log("trofeos", getTrophies[0].false[0].image);
+  getTrophies.map((trophy) => {
+    console.log(trophy.true);
+  });
   return (
     <>
       <div id="trophy">
         <Row align="middle">
-          <h1>{getTrophies}</h1>
+          {/*<h1>{getTrophies}</h1>*/}
           <Col span={6}>
             <Image
               height={100}
               width={100}
-              src={trophy_n}
+              src={getTrophies[0].false[0].image}
               alt="No image found"
             />
           </Col>
           <Col span={16}>
-            <h3>Buen trabajo! (no desbloqueado)</h3>
+            <h3>{getTrophies[0].false[0].subTitle}</h3>
             <h4>Obten tu primer video de recompensa</h4>
           </Col>
         </Row>
