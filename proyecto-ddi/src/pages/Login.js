@@ -29,10 +29,10 @@ const Login = () => {
   };
 
   return (
-    <div if="form" {...tailLayout}>
+    <div id="form" {...tailLayout}>
       <div id="form1">
         <Row justify="center">
-          <Col span={20}>
+          <Col span={40}>
             <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
             <Form
               name="basic"
@@ -65,7 +65,6 @@ const Login = () => {
           </Col>
         </Row>
       </div>
-      //{" "}
     </div>
   );
 };
