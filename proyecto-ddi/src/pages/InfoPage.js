@@ -12,7 +12,7 @@ import {FacebookFilled, TwitterCircleFilled, InstagramFilled, LinkedinFilled } f
 const InfoPage = () => {
   return (
     <>
-      <div id="background" justify="center" span={18}>
+      <div id="background1" justify="center" span={18}>
         <Row className="blocks" /*style={{ padding: "3em 7em 1em", fontSize: "20px" }}*/>
           <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
             <p>
