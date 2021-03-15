@@ -43,7 +43,7 @@ const Register = () => {
     return(
         <div id="form">
 
-            <div id="form2">
+            <div id="form1">
                 <Row justify='center'>
                     <Col>
                         <p><h1>Si no tienes una cuenta aún... regístrate!</h1></p>
@@ -83,7 +83,7 @@ const Register = () => {
                             </Form.Item>
 
                             <div id="select-year">
-                                <Select defaultValue="Ingrese la edad del niño o niña" style={{ width: 320 }} >
+                                <Select defaultValue="Ingrese la edad del niño o niña" >
 
                                     <Option value="6">6 años</Option>
                                     <Option value="7">7 años</Option>
