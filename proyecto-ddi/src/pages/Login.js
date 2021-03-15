@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useAuth } from "../lib/auth";
-import { Space, Button, Col, Form, Input, Row } from "antd";
+import { Button, Col, Form, Input, Row, Space } from "antd";
 import "../styles/login.css";
 import { Link, useHistory } from "react-router-dom";
 import Routes from "../constants/Routes";

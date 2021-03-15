@@ -7,6 +7,7 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 import { db } from "../firebase";
+import {useAuth} from "../lib/auth";
 
 const TrialGame2 = () => {
   const [videoList, setVideoList] = useState([]);
@@ -43,9 +44,7 @@ const TrialGame2 = () => {
           <GameTrialNav />
           <Row justify="center">
             <Col justify="center">
-              <h1>Buen trabajo!!!</h1>
-              <h1>Disfruta este video que hemos</h1>
-              <h1>preparado para ti.</h1>
+              <h1>Disfruta este video que hemos preparado para ti.</h1>
               <h1>Te lo has ganado</h1>
             </Col>
           </Row>
@@ -77,3 +76,4 @@ const TrialGame2 = () => {
   );
 };
 export default withoutAuth(TrialGame2);
+

@@ -5,7 +5,6 @@ import GameTrialNav from "../components/GameTrialNav";
 import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
 import withoutAuth from "../hocs/withoutAuth";
-import TrialGame1 from "./TrialGame1";
 
 const { Option } = Select;
 
