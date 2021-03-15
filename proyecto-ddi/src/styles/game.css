@@ -43,13 +43,19 @@
   background-color: #f3ae4b;
   padding-bottom: 20px;
 }
+#background1 {
+  background-color: #FFE53B;
+background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+
+}
 #box {
  
   color: floralwhite;
   padding: 16px;
   background-color: #18c737;
-  background-image: linear-gradient(29deg, #18c737 0%, #acac6c 100%);
-  border: 5px solid rgb(63, 135, 163);
+  border: 4px solid white;
+  background-color: #08AEEA;
+  background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
 
 }
 
