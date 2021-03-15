@@ -3,7 +3,7 @@ import "../styles/game.css";
 import { Button, Col, Row } from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
-import { Link } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
 
 const Game3 = () => {
@@ -12,19 +12,26 @@ const Game3 = () => {
       <GameNav />
       <Row justify="center">
         <Col justify="center">
-          <h1>La aventura ha</h1>
-          <h1>terminado... por ahora.</h1>
+          <h1>Mucha mas diversion espera por ti!</h1>
+          <h1>Quieres seguir jugando?</h1>
         </Col>
       </Row>
       <Row justify="center">
-        <Col>
-          <Button type="primary">SALIR :(</Button>
+        <Col span={4} offset={3}>
+          <Link to={Routes.HOME}>
+            <Button type="primary">No :(</Button>
+          </Link>
+        </Col>
+        <Col span={4}>
+          <Link to={Routes.GAME}>
+            <Button type="primary">Si :)</Button>
+          </Link>
         </Col>
       </Row>
       <Row justify="center">
         <Col>
           <Link to={Routes.USERSPROFILE}>
-            <Button type="primary">VER LOGROS :)</Button>
+            <Button type="primary">Ir a mi perfil</Button>
           </Link>
         </Col>
       </Row>
