@@ -30,8 +30,8 @@ const Register = () => {
         }
     };
     const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 16 },
+        labelCol: { span: 40 },
+        wrapperCol: { span: 40 },
     };
     const tailLayout = {
         wrapperCol: { offset: 8, span: 16 },
@@ -41,11 +41,11 @@ const Register = () => {
     };
 
     return(
-        <div if="form">
+        <div id="form">
 
             <div id="form2">
                 <Row justify='center'>
-                    <Col >
+                    <Col>
                         <p><h1>Si no tienes una cuenta aún... regístrate!</h1></p>
                         <Form
                             {...layout}

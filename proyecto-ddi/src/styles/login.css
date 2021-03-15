@@ -1,35 +1,9 @@
-#form1{
-    padding-top: 250px;   
-}
 
-#form2{
-    padding-top: 100px;
-}
-
-Form,
-Select,
-#seelect-year{
-    width: 800px; 
-}
-
-#form1,
-#form2{
-    width: 100%;
-}
-
-#form1,
-#form2, Form.Item button{
-    background-color: #A8E065;
+#form{
+    background-image: radial-gradient(circle at 61.42% 38.58%, #c1fa4c 0, #a8f453 12.5%, #8fec5a 25%, #73e360 37.5%, #55d865 50%, #30cd69 62.5%, #00c26e 75%, #00b973 87.5%, #00b178 100%);
     padding: 100px;
-    text-align: center;
-    justify-content: center;
+    min-height: 100vh;
+    
 }
 
 
-#form input{
-    padding: 300px;
-}
-#seelect-year{
-    padding: 0px;
-    text-align: left;
-}
