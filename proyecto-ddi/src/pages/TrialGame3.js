@@ -25,7 +25,7 @@ const TrialGame3 = () => {
       </Row>
       <Row justify="center">
         <Col>
-          <Link to={Routes.LOGIN}>
+          <Link to={Routes.Register}>
             <Button type="primary">CREAR CUENTA :)</Button>
           </Link>
         </Col>

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 import { db } from "../firebase";
 import TrialGame from "./TrialGame";
+import GameNav from "../components/GameNav";
 
 const TrialGame1 = ({ props }) => {
   const [questionList, setQuestionList] = useState([]);
@@ -126,12 +127,16 @@ const TrialGame1 = ({ props }) => {
         // : videoList.length > 0
         // ? <TrialGame2 videos={videoList} />
         //<Spin />
-        <div className={TrialGame}>
+        <div className="trialGame">
           <GameTrialNav />
-          <h1>Felicidades, ahora obten tu recompensa</h1>
-          <Link to={Routes.TRIALGAME2}>
-            <Button>Genial</Button>
-          </Link>
+          <Row justify={"center"}>
+            <Col>
+              <h1>Estamos muy orgullosos de ti!!</h1>
+              <Link to={Routes.TRIALGAME2}>
+                <Button>Ir a recompensa!</Button>
+              </Link>
+            </Col>
+          </Row>
         </div>
       )}
     </>
