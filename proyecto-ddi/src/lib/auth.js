@@ -132,57 +132,57 @@ function useAuthProvider() {
     };
 
     async function register(data) {
-        console.log("data", data);
-        try {
-            const userData = await auth.createUserWithEmailAndPassword(
-                data.email,
-                data.password
-            );
-            console.log("USER", user);
-            const { uid } = userData.user;
-            let score=0;
-            const { username, email, selectedYear } = data;
-            await db.ref(`users/${userData.user.uid}`).set({
-                username,
-                email,
-                uid,
-                score,
-                selectedYear
-            })
-            //.then((user) => {
-                // Signed in
-                message.success("Usuario registrado");
-                //handleUser(user);
-           // })
-            //return true;
-        } catch (error) {
-            console.log("error", error);
-            const errorCode = error.code;
-            // message.error(translateMessage(errorCode));
-            handleUser(false);
-            throw error;
-        }
+      console.log("data", data);
+      try {
+        const userData = await auth.createUserWithEmailAndPassword(
+          data.email,
+          data.password
+        );
+        console.log("USER", user);
+        const { uid } = userData.user;
+        let score = 0;
+        const { username, email, selectedYear } = data;
+        await db.ref(`users/${userData.user.uid}`).set({
+          username,
+          email,
+          uid,
+          score,
+          selectedYear,
+        });
+        //.then((user) => {
+        // Signed in
+        message.success("Usuario registrado");
+        //handleUser(user);
+        // })
+        //return true;
+      } catch (error) {
+        console.log("error", error);
+        const errorCode = error.code;
+        // message.error(translateMessage(errorCode));
+        handleUser(false);
+        throw error;
+      }
     }
 
     async function login(email, password) {
-        auth
-            .signInWithEmailAndPassword(email, password)
-            .then((user) => {
-                // Signed in
-                //handleUser(user);
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                message.error(translateMessage(errorCode));
-                handleUser(false);
-            });
+      auth
+        .signInWithEmailAndPassword(email, password)
+        .then((user) => {
+          // Signed in
+          //handleUser(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          message.error(translateMessage(errorCode));
+          handleUser(false);
+        });
     }
 
     async function logout() {
-        try {
-            await auth.signOut();
-            handleUser(false);
-        } catch (error) {}
+      try {
+        await auth.signOut();
+        handleUser(false);
+      } catch (error) {}
     }
 
     // const sendPasswordResetEmail = (email) => {
@@ -204,7 +204,6 @@ function useAuthProvider() {
     //       return true;
     //     });
     // };
-
 
     init();
     // } catch (error) {

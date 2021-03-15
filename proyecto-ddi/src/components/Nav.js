@@ -1,16 +1,16 @@
 import React from "react";
-import { Spin, Button, Menu } from "antd";
+import { Button, Menu, Spin } from "antd";
 import { useAuth } from "../lib/auth";
 import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
 import logo from "../images/welldonekidslogo.png";
-import {LogoutOutlined, UserOutlined} from "@ant-design/icons";
-import {Username} from "./Username";
+import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import { Username } from "./Username";
 
 const Nav = () => {
   const { SubMenu } = Menu;
   const { user, logout } = useAuth();
-  const {username} = Username();
+  const { username } = Username();
 
   const menuItem = [
     {
@@ -61,9 +61,8 @@ const Nav = () => {
               <Link to={Routes.GAME}>Juega y aprende</Link>
             </Menu.Item>
 
-
-            <UserOutlined/><SubMenu key="sub1"  title={username}>
-
+            <UserOutlined />
+            <SubMenu key="sub1" title={username}>
               <Menu.ItemGroup key="g1" title="Tu cuenta">
                 <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
                   <Button

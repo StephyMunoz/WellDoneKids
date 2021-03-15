@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/game.css";
-import { Modal, Button, Col, Image, Row } from "antd";
+import { Button, Col, Image, Modal, Row } from "antd";
 import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
