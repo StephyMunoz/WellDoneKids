@@ -4,9 +4,6 @@
   height: 31px;
   margin: -25px 24px 16px 0;
 }
-.gameNav {
-  margin-bottom: 50px;
-}
 .TrialGame {
   background-color: #a8e065;
   min-height: 100vh;
@@ -22,21 +19,54 @@
   color: #ffffff;
   margin-top: 50px;
 }
+.blocks{
+  padding: 3em 7em 1em;
+  font-size: 20px;
+}
+.blocks-end{
+  padding: 1em 7em;
+  font-size: 18px;
+  text-align: end;
+}
+.blocks-start{
+  padding: 1em 7em;
+  font-size: 20px;
+}
 #landing_logo {
   margin-top: 60px;
+  font-size: 20px;
+}
+#gameNav{
+  padding-bottom: 20px;
 }
 #background {
   background-color: #f3ae4b;
   padding-bottom: 20px;
 }
-#box {
-  background-color: #00ffffb3;
-  color: floralwhite;
-  padding: 10px;
+#background1 {
+  background-color: #FFE53B;
+background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+
 }
+#box {
+ 
+  color: floralwhite;
+  padding: 16px;
+  background-color: #18c737;
+  border: 4px solid white;
+  background-color: #08AEEA;
+  background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
+
+}
+
 #box h1,
 h3 {
   color: floralwhite;
+  font-family: -apple-system;
+  font-weight: 600;
+}
+#images{
+  border: 4px solid sienna;
 }
 #center_paragraph {
   text-align: center;
@@ -54,9 +84,17 @@ h3 {
   margin-top: 20px;
 }
 #roots_button {
-  background-color: #620bb3;
+  background-color: #750bb300;
+  border: 3px solid white;
   color: #ffffff;
   margin-top: 20px;
+  width: 14em;
+  font-size: 400;
+}
+#roots_button :hover {
+
+  padding: 3px;
+  
 }
 #row_margin {
   margin-bottom: 20px;
@@ -73,6 +111,7 @@ h3 {
   width: 50%;
   margin-bottom: 10px;
 }
+
 ul li {
   font-size: smaller;
   font-weight: normal;
@@ -80,5 +119,5 @@ ul li {
 .Game {
   background-color: #774898;
   min-height: 100vh;
-  padding: 200px;
+
 }
