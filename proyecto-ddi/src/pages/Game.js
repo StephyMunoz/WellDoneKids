@@ -41,7 +41,7 @@ const Game = () => {
       <Row justify="center">
         <Col justify="center">
           {/*<Questions subject={subject} show={false}/>*/}
-          <Link to={Routes.GAME1}>
+          <Link to={Routes.GAME1} subject={subject}>
             <Button type="primary">SIGUIENTE :)</Button>
           </Link>
         </Col>
