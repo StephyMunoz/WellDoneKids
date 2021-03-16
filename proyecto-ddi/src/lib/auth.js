@@ -43,6 +43,7 @@ function useAuthProvider() {
       );
       console.log("USER", user);
       const { uid } = userData.user;
+<<<<<<< HEAD
       let score = 0;
       let mistake = 0;
       const { username, email, selectedYear } = data;
@@ -61,6 +62,24 @@ function useAuthProvider() {
           message.success("Usuario registrado");
           handleUser(user);
         });
+=======
+      let score = 0,
+        mistakes = 0;
+      const { username, email, selectedYear } = data;
+      await db.ref(`users/${userData.user.uid}`).set({
+        username,
+        email,
+        uid,
+        score,
+        selectedYear,
+        mistakes,
+      });
+      //.then((user) => {
+      // Signed in
+      message.success("Usuario registrado");
+      //handleUser(user);
+      // })
+>>>>>>> 7f1792182f2c1a56ed9e4aac8d4fe06b821e730e
       //return true;
     } catch (error) {
       console.log("error", error);
