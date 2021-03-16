@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAuth } from "../lib/auth";
 import { Button, Col, Form, Input, Row, Space } from "antd";
 import "../styles/login.css";
-import logo from "../images/welldonekidslogo.png";
+import monster from "../images/monster.png";
 import { Link, useHistory } from "react-router-dom";
 import Routes from "../constants/Routes";
 import withoutAuth from "../hocs/withoutAuth";
@@ -33,8 +33,9 @@ const Login = () => {
     <div id="form" {...tailLayout}>
       <div id="form1">
         <Row justify="center" gutter={{ xs: 8, sm: 24, md: 24, lg: 32 }}>
-          <Col className="gutter-row" span={10}>
+          <Col className="gutter-row" span={10} gutter={{ xs: 12, sm: 24, md: 24, lg: 32 }}>
           <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
+          <img src={monster} width={150}></img>
           </Col>
           <Col className="gutter-row" span={10}>
             
@@ -70,6 +71,7 @@ const Login = () => {
         </Row>
       </div>
     </div>
+    
   );
 };
 

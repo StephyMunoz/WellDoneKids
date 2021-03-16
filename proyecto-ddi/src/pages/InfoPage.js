@@ -16,12 +16,11 @@ import {
 } from "@ant-design/icons";
 const InfoPage = () => {
   return (
-    <>
-      <div id="background" justify="center" span={18}>
+      <div id="background1">
         <Row
           className="blocks" /*style={{ padding: "3em 7em 1em", fontSize: "20px" }}*/
         >
-          <div id="background1" justify="center" span={18}>
+          <div  justify="center" span={18}>
             <Row
               className="blocks" /*style={{ padding: "3em 7em 1em", fontSize: "20px" }}*/
             >
@@ -205,7 +204,6 @@ const InfoPage = () => {
           </div>
         </Row>
       </div>
-    </>
   );
 };
 export default InfoPage;
