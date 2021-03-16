@@ -44,6 +44,7 @@ function useAuthProvider() {
       console.log("USER", user);
       const { uid } = userData.user;
       let score = 0;
+      let mistake = 0;
       const { username, email, selectedYear } = data;
       await db
         .ref(`users/${userData.user.uid}`)
@@ -53,6 +54,7 @@ function useAuthProvider() {
           uid,
           score,
           selectedYear,
+          mistake,
         })
         .then((user) => {
           // Signed in
@@ -119,7 +121,6 @@ function useAuthProvider() {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-          console.log("SESIÓN ACTIVA", user);
           const userSnap = await db.ref(`users/${user.uid}`).once("value");
           const userData = userSnap.val();
 
@@ -145,6 +146,7 @@ function useAuthProvider() {
         const { uid } = userData.user;
         let score = 0,
           mistakes = 0;
+        let trophies = ["No tienes trofeos aún"];
         const { username, email, selectedYear } = data;
         await db.ref(`users/${userData.user.uid}`).set({
           username,
@@ -153,11 +155,12 @@ function useAuthProvider() {
           score,
           selectedYear,
           mistakes,
+          trophies,
         });
         //.then((user) => {
         // Signed in
         message.success("Usuario registrado");
-        handleUser(user);
+        //handleUser(user);
         // })
         //return true;
       } catch (error) {

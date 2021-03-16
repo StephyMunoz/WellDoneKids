@@ -35,16 +35,18 @@ const TrialGame1 = ({ age }) => {
       } else {
         number = 2;
       }
-      db.ref(`subjects/3/questions/${number}`).on("value", (snapshot) => {
-        const questions = [];
-        snapshot.forEach((question) => {
-          const q = question.val();
-          questions.push(q);
-        });
-        setQuestionList(questions);
+      await db
+        .ref(`subjects/3/questions/${number}`)
+        .once("value", (snapshot) => {
+          const questions = [];
+          snapshot.forEach((question) => {
+            const q = question.val();
+            questions.push(q);
+          });
+          setQuestionList(questions);
 
-        console.log("select age", number);
-      });
+          console.log("select age", number);
+        });
     };
     getQuestions();
     return () => {

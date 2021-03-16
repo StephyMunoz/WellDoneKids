@@ -7,7 +7,6 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 import { db } from "../firebase";
-import { useAuth } from "../lib/auth";
 
 const TrialGame2 = () => {
   const [videoList, setVideoList] = useState([]);
@@ -16,18 +15,16 @@ const TrialGame2 = () => {
 
   useEffect(() => {
     const getVideos = async () => {
-      db.ref(`videos/${getRandom}/url_videos/${random}`).on(
-        "value",
-        (snapshot) => {
+      await db
+        .ref(`videos/${getRandom}/url_videos/${random}`)
+        .once("value", (snapshot) => {
           const videos = [];
           snapshot.forEach((video) => {
             const vid = video.val();
             videos.push(vid);
           });
           setVideoList(videos);
-          console.log("video", videoList);
-        }
-      );
+        });
     };
     getVideos();
     return () => {
