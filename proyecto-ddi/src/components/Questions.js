@@ -10,15 +10,18 @@ import { db } from "../firebase";
 //import {subject} from "../pages/Game";
 import Game from "../pages/Game";
 import { Username } from "../components/Username";
+import { useAuth } from "../lib/auth";
 
-const Questions = ({ selecSubject }) => {
+const Questions = ({ selectSubject }) => {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
-  const [subject, setSubject] = useState(0);
+  //const [subject, setSubject] = useState(0);
   const { username } = Username();
-  const [number, setNumber] = useState(-1);
+  const {user} = useAuth();
+  
+  let number = -1; // English
 
   const onChange = (e) => {
     setRadioState({
@@ -26,46 +29,47 @@ const Questions = ({ selecSubject }) => {
     });
   };
 
-  const random = Math.round(Math.random() * 20);
-
-  useEffect(() => {
-    setSubject(selecSubject);
-    if (subject === "English") {
-      setNumber(0);
-    }
-    if (subject === "Math") {
-      setNumber(1);
-      console.log("uno", number);
-    }
-    if (subject === "Language") {
-      setNumber(2);
-      console.log("dlan", number);
-    }
-  }, []);
+  const random = Math.round(Math.random() * 10);
 
   useEffect(() => {
     const getQuestions = async () => {
-      if (number >= 0) {
-        db.ref(`Subjects/${number}/questions/0/question`).on(
-          "value",
-          (snapshot) => {
-            const questions = [];
-            snapshot.forEach((question) => {
-              const q = question.val();
-              questions.push(q);
-            });
-            setQuestionList(questions);
-            console.log("Subjects/" + number + "/questions/0/question");
-            setSubject(selecSubject);
-          }
-        );
+      if (selectSubject === "English") {
+        number = 0;
+      } else if (selectSubject === "Math") {
+        number = 1;
+        console.log("uno", number);
+      } else {
+        number = 2;
+        console.log("dlan", number);
       }
+
+      //if (number >= 0) {
+      db.ref(`subjects/${number}/questions/0`).on(
+        "value",
+        (snapshot) => {
+          const questions = [];
+          snapshot.forEach((question) => {
+            const q = question.val();
+            questions.push(q);
+          });
+          setQuestionList(questions);
+          console.log("questions", questions);
+          console.log("subjects/" + number + "/questions/0/question");
+          // setSubject(selecSubject);
+          console.log('username', username);
+        }
+      );
+      // }
     };
     getQuestions();
     return () => {
-      db.ref(`Subjects/${number}/questions/0/question`).off();
+      db.ref(`subjects/${number}/questions/0/question`).off();
     };
   }, []);
+
+  const uploadScore = (score) => {
+    db.ref(`users`)
+  }
 
   const radioStyle = {
     display: "block",
@@ -86,8 +90,8 @@ const Questions = ({ selecSubject }) => {
     } else {
       console.log("respuesta incorrecta");
 
-      alert("Respuesta incorrecta. La explicación completa....");
-      console.log("sub from ques", subject);
+      alert("Respuesta incorrecta. Intentalo de nuevo :)");
+      console.log("sub from ques", selectSubject);
     }
   };
   const { value } = radioState;
@@ -151,7 +155,7 @@ const Questions = ({ selecSubject }) => {
           <GameNav />
           <Row justify={"center"}>
             <Col>
-              <h1>{username}, Estamos muy orgullosos de ti!!</h1>
+              <h1>{user.username}, Estamos muy orgullosos de ti!!</h1>
               <Link to={Routes.GAME2}>
                 <Button>Ir a recompensa!</Button>
               </Link>

@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
 import logo from "../images/welldonekidslogo.png";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
-import { Username } from "./Username";
 
 const Nav = () => {
   const { SubMenu } = Menu;
   const { user, logout } = useAuth();
-  const { username } = Username();
 
   const menuItem = [
     {
@@ -18,13 +16,13 @@ const Nav = () => {
       text: "Info",
     },
   ];
+
   return (
     <>
       <Menu
-        theme="dark"
         mode="horizontal"
         defaultSelectedKeys={["2"]}
-        style={{ padding: "0.6em" }}
+        style={{ padding: "0.6em", background: "#42BAF5" }}
       >
         <Menu.Item key="routeHome">
           <Link to={Routes.HOME}>
@@ -62,7 +60,7 @@ const Nav = () => {
             </Menu.Item>
 
             <UserOutlined />
-            <SubMenu key="sub1" title={username}>
+            <SubMenu key="sub1" title={user.username}>
               <Menu.ItemGroup key="g1" title="Tu cuenta">
                 <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
                   <Button

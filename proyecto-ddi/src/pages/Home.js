@@ -1,21 +1,18 @@
 import React from "react";
 import logo from "../images/welldonekidslogo.png";
-import trophy_n from "../images/trophies/trophy_not_unlocked.jpg";
-import trophy_u from "../images/trophies/trophy_unlocked.png";
 import "../styles/game.css";
 import { Button, Col, Collapse, Image, Row } from "antd";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
-import { Username } from "../components/Username";
 import { useAuth } from "../lib/auth";
 import TrophyLogic from "../components/TrophyLogic";
 
 const { Panel } = Collapse;
 
 const Home = () => {
-  const { username } = Username();
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
+  let videos = user.score % 10;
   return (
     <>
       <div id="background">
@@ -32,7 +29,7 @@ const Home = () => {
           <Col span={8}>
             <Row>
               <Col span={10}>
-                <h1 id="sub_paragraph">Bienvenid@ {username}!</h1>
+                <h1 id="sub_paragraph">Bienvenid@ {user.username}!</h1>
               </Col>
             </Row>
             <Row>
@@ -61,9 +58,9 @@ const Home = () => {
         <Collapse bordered={false} defaultActiveKey={["1"]}>
           <Panel id="title" header="Estadísticas" key="1">
             <ul>
-              <li>Haz realizado # de actividades</li>
-              <li>Haz visto # de videos</li>
-              <li>Haz cometido # de errores</li>
+              <li>Haz realizado {user.score} de actividades</li>
+              <li>Haz visto {videos} videos</li>
+              <li>Haz cometido {user.mistake} de errores</li>
             </ul>
           </Panel>
           <Panel id="title" header="Notificaciones" key="2">

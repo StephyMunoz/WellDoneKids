@@ -7,7 +7,6 @@ import { Link, Router } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
 
 const Game3 = () => {
-
   return (
     <div className="Game">
       <GameNav />

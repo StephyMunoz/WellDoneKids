@@ -13,179 +13,92 @@ import trophy_6 from "../images/trophies/trophy6.jpg";
 import trophy_7 from "../images/trophies/trophy7.jpg";
 import trophy_8 from "../images/trophies/trophy8.jpg";
 import trophy_9 from "../images/trophies/trophy9.png";
-import trophy_10 from "../images/trophies/trophy10.jpg";
+import { useAuth } from "../lib/auth";
 
 const TrophyLogic = () => {
-  const [score, setScore] = useState(0);
-  const [unlock, setUnlock] = useState(false);
+  const { user } = useAuth();
 
   const getTrophies = [
     {
       id: 0,
       title: "Obtén tu medalla por la primera actividad realizada",
       image: first_medal,
-      subTitle: "La aventura comienza!!! (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 0,
-      image: trophy_n,
-      subTitle: "La aventura comienza!!! (Logro bloqueado)",
-      success: false,
+      subTitle: "La aventura comienza!!!",
+      // success: true,
+      points: 0,
     },
     {
       id: 1,
       image: cute_trophy,
-      subTitle:
-        "Obtén 5 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 1,
-      image: trophy_n,
-      subTitle: "Obtén 5 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo feliz",
+      subTitle: "Obtén 5 puntos por actividades realizadas",
+      // success: true,
+      points: 5,
     },
     {
       id: 2,
       image: trophy_1,
-      subTitle:
-        "Obtén 10 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 2,
-      image: trophy_n,
-      subTitle:
-        "Obtén 10 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de chocolate",
+      subTitle: "Obtén 10 puntos por actividades realizadas",
+      points: 10,
     },
     {
       id: 3,
+      title: "Trofeo de papel",
       image: trophy_2,
-      subTitle:
-        "Obtén 20 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 3,
-      image: trophy_n,
-      subTitle:
-        "Obtén 20 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      subTitle: "Obtén 20 puntos por actividades realizadas",
+      point: 20,
     },
     {
       id: 4,
       image: trophy_3,
-      subTitle:
-        "Obtén 30 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 4,
-      image: trophy_n,
-      subTitle:
-        "Obtén 30 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de esfuerzo",
+      subTitle: "Obtén 30 puntos por actividades realizadas",
+      points: 30,
     },
     {
       id: 5,
       image: trophy_4,
-      subTitle:
-        "Obtén 50 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 5,
-      image: trophy_n,
-      subTitle:
-        "Obtén 50 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo por esfuerzo arduo",
+      subTitle: "Obtén 50 puntos por actividades realizadas",
+      points: 50,
     },
     {
       id: 6,
       image: trophy_5,
-      subTitle:
-        "Obtén 60 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 6,
-      image: trophy_n,
-      subTitle:
-        "Obtén 60 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de inteligencia",
+      subTitle: "Obtén 60 puntos por actividades realizadas",
+      points: 60,
     },
     {
       id: 7,
       image: trophy_6,
-      subTitle:
-        "Obtén 70 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 7,
-      image: trophy_n,
-      subTitle:
-        "Obtén 70 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de logros sin fin",
+      subTitle: "Obtén 70 puntos por actividades realizadas",
+      points: 70,
     },
     {
       id: 8,
       image: trophy_7,
-      subTitle:
-        "Obtén 80 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 8,
-      image: trophy_n,
-      subTitle:
-        "Obtén 80 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de bronce",
+      subTitle: "Obtén 80 puntos por actividades realizadas",
+      points: 80,
     },
     {
       id: 9,
       image: trophy_8,
-      subTitle:
-        "Obtén 90 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 9,
-      image: trophy_n,
-      subTitle:
-        "Obtén 90 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de plata",
+      subTitle: "Obtén 80 puntos por actividades realizadas",
+      points: 90,
     },
     {
       id: 10,
       image: trophy_9,
-      subTitle:
-        "Obtén 100 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 10,
-      image: trophy_n,
-      subTitle:
-        "Obtén 100 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      title: "Trofeo de oro. El logro definitivo",
+      subTitle: "Obtén 100 puntos por actividades realizadas",
+      points: 100,
     },
   ];
-  useEffect(() => {
-    getTrophies.map((trophy) => {
-      if (!trophy.success) {
-        if (trophy.id === 0) {
-          trophy.success = true;
-          //console.log("trophy", trophy.subTitle);
-        }
-      } else {
-        trophy.success = false;
-      }
-      //console.log(trophy);
-    });
-  }, [unlock]);
 
   return (
     <>
@@ -195,18 +108,38 @@ const TrophyLogic = () => {
           // console.log("cc", trophy.id);
           return (
             <Row align="middle">
-              <Col span={6}>
-                <Image
-                  height={100}
-                  width={100}
-                  src={trophy.image}
-                  alt="No image found"
-                />
-              </Col>
-              <Col span={16}>
-                <h4>{trophy.subTitle}</h4>
-                {/*<h4>Obten tu primer video de recompensa</h4>*/}
-              </Col>
+              {user.score >= trophy.points ? (
+                <Row>
+                  <Col span={6}>
+                    <Image
+                      height={100}
+                      width={100}
+                      alt="No image found"
+                      src={trophy.image}
+                    />
+                  </Col>
+                  <Col span={16}>
+                    <h3>{trophy.title}</h3>
+                    <h4>{trophy.subTitle}</h4>
+                  </Col>
+                </Row>
+              ) : (
+                <Row>
+                  <Col span={6}>
+                    <Image
+                      height={100}
+                      width={100}
+                      alt="No image found"
+                      src={trophy_n}
+                    />
+                  </Col>
+                  <Col span={16}>
+                    <h3>{trophy.title}</h3>
+                    <h4>{trophy.subTitle} </h4>
+                    <h6>Logro bloqueado</h6>
+                  </Col>
+                </Row>
+              )}
             </Row>
           );
         })}

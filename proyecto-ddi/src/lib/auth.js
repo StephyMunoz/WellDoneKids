@@ -43,22 +43,22 @@ function useAuthProvider() {
       );
       console.log("USER", user);
       const { uid } = userData.user;
-      let score = 0;
+      let score = 0,
+        mistakes = 0;
       const { username, email, selectedYear } = data;
-      await db
-        .ref(`users/${userData.user.uid}`)
-        .set({
-          username,
-          email,
-          uid,
-          score,
-          selectedYear,
-        })
-        .then((user) => {
-          // Signed in
-          message.success("Usuario registrado");
-          handleUser(user);
-        });
+      await db.ref(`users/${userData.user.uid}`).set({
+        username,
+        email,
+        uid,
+        score,
+        selectedYear,
+        mistakes,
+      });
+      //.then((user) => {
+      // Signed in
+      message.success("Usuario registrado");
+      //handleUser(user);
+      // })
       //return true;
     } catch (error) {
       console.log("error", error);
@@ -115,12 +115,15 @@ function useAuthProvider() {
   useEffect(() => {
     // try {
     const init = () => {
-      auth.onAuthStateChanged((user) => {
+      auth.onAuthStateChanged(async (user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           console.log("SESIÓN ACTIVA", user);
-          handleUser(user);
+          const userSnap = await db.ref(`users/${user.uid}`).once("value");
+          const userData = userSnap.val();
+
+          handleUser({ ...user, ...userData });
 
           // history.replace(Routes.HOME);
         } else {
@@ -141,7 +144,8 @@ function useAuthProvider() {
         console.log("USER", user);
         const { uid } = userData.user;
         let score = 0,
-          mistakes = 0;
+          mistakes = 0,
+          trophies = [];
         const { username, email, selectedYear } = data;
         await db.ref(`users/${userData.user.uid}`).set({
           username,
@@ -150,6 +154,7 @@ function useAuthProvider() {
           score,
           selectedYear,
           mistakes,
+          trophies,
         });
         //.then((user) => {
         // Signed in

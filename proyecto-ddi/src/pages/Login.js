@@ -32,12 +32,12 @@ const Login = () => {
   return (
     <div id="form" {...tailLayout}>
       <div id="form1">
-        <Row justify="center" gutter={{ xs: 8, sm: 24, md: 24, lg: 32 }}>
-          <Col className="gutter-row" span={10} gutter={{ xs: 12, sm: 24, md: 24, lg: 32 }}>
+        <Row justify="center" gutter={{ sm: 12, md: 24}}>
+          <Col className="gutter-row" gutter={{ sm: 24, md: 4}}>
           <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
-          <img src={monster} width={150}></img>
+          <img justify="center" src={monster} width={150}></img>
           </Col>
-          <Col className="gutter-row" span={10}>
+          <Col className="gutter-row" gutter={{ sm: 24, md: 12}}>
             
             <Form
               name="basic"
