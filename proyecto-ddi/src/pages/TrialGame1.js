@@ -9,7 +9,7 @@ import { db } from "../firebase";
 import TrialGame from "./TrialGame";
 import GameNav from "../components/GameNav";
 
-const TrialGame1 = ({ props }) => {
+const TrialGame1 = ({ age }) => {
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
@@ -18,6 +18,7 @@ const TrialGame1 = ({ props }) => {
   const [questionNumber, setQuestionNumber] = useState(random);
 
   //const {age} = TrialGame();
+  console.log("edad de 1", age);
 
   const onChange = (e) => {
     setRadioState({
@@ -79,8 +80,6 @@ const TrialGame1 = ({ props }) => {
             <Row justify="center">
               <Col justify="center">
                 <h1>{questionList[questionNumber].text}</h1>
-                <h1>{(props) => getAge(props.age)}</h1>
-                {/*<h1>{video[questionNumber]}</h1>*/}
               </Col>
             </Row>
             <Row justify="center">
