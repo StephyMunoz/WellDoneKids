@@ -20,7 +20,7 @@ const Nav = () => {
   return (
     <>
       <Menu
-        theme="light"
+        theme="dark"
         mode="horizontal"
         defaultSelectedKeys={["2"]}
         style={{ padding: "0.6em" }}
