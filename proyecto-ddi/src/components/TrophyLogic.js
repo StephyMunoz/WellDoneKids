@@ -24,27 +24,16 @@ const TrophyLogic = () => {
       id: 0,
       title: "Obtén tu medalla por la primera actividad realizada",
       image: first_medal,
-      subTitle: "La aventura comienza!!! (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 0,
-      image: trophy_n,
-      subTitle: "La aventura comienza!!! (Logro bloqueado)",
-      success: false,
+      subTitle: "La aventura comienza!!!",
+      // success: true,
+      points: 1,
     },
     {
       id: 1,
       image: cute_trophy,
       subTitle:
         "Obtén 5 puntos por actividades realizadas\n (Logro desbloqueado)",
-      success: true,
-    },
-    {
-      id: 1,
-      image: trophy_n,
-      subTitle: "Obtén 5 puntos por actividades realizadas\n (Logro bloqueado)",
-      success: false,
+      // success: true,
     },
     {
       id: 2,

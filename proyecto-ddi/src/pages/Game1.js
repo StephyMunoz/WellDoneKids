@@ -5,14 +5,14 @@ import Questions from "../components/Questions";
 
 const Game1 = ({ subject }) => {
   //console.log("sub from game", subject);
-  const [selecSubject, setSelecSubject] = useState(null);
+  //const [selecSubject, setSelecSubject] = useState(null);
 
-  useEffect(() => {
-    setSelecSubject(subject);
-  }, [selecSubject]);
+  //useEffect(() => {
+  //  setSelecSubject(subject);
+  // }, [selecSubject]);
   return (
     <>
-      <Questions selecSubject={selecSubject} />
+      <Questions selectSubject={subject} />
     </>
   );
 };

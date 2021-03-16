@@ -10,7 +10,7 @@ import { Username } from "./Username";
 const Nav = () => {
   const { SubMenu } = Menu;
   const { user, logout } = useAuth();
-  const { username } = Username();
+  //const { username } = Username();
 
   const menuItem = [
     {
@@ -18,6 +18,7 @@ const Nav = () => {
       text: "Info",
     },
   ];
+
   return (
     <>
       <Menu
@@ -62,7 +63,7 @@ const Nav = () => {
             </Menu.Item>
 
             <UserOutlined />
-            <SubMenu key="sub1" title={username}>
+            <SubMenu key="sub1" title={user.username}>
               <Menu.ItemGroup key="g1" title="Tu cuenta">
                 <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
                   <Button

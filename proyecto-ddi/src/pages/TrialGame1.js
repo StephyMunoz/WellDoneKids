@@ -129,7 +129,7 @@ const TrialGame1 = ({ age }) => {
         // : videoList.length > 0
         // ? <TrialGame2 videos={videoList} />
         //<Spin />
-        <div className="trialGame">
+        <div className="TrialGame">
           <GameTrialNav />
           <Row justify={"center"}>
             <Col>
