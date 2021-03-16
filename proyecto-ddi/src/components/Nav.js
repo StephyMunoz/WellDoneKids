@@ -20,9 +20,10 @@ const Nav = () => {
   return (
     <>
       <Menu
+        theme="light"
         mode="horizontal"
         defaultSelectedKeys={["2"]}
-        style={{ padding: "0.6em", background: "#42BAF5" }}
+        style={{ padding: "0.6em" }}
       >
         <Menu.Item key="routeHome">
           <Link to={Routes.HOME}>
