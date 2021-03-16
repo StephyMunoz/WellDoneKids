@@ -43,26 +43,6 @@ function useAuthProvider() {
       );
       console.log("USER", user);
       const { uid } = userData.user;
-<<<<<<< HEAD
-      let score = 0;
-      let mistake = 0;
-      const { username, email, selectedYear } = data;
-      await db
-        .ref(`users/${userData.user.uid}`)
-        .set({
-          username,
-          email,
-          uid,
-          score,
-          selectedYear,
-          mistake,
-        })
-        .then((user) => {
-          // Signed in
-          message.success("Usuario registrado");
-          handleUser(user);
-        });
-=======
       let score = 0,
         mistakes = 0;
       const { username, email, selectedYear } = data;
@@ -79,7 +59,6 @@ function useAuthProvider() {
       message.success("Usuario registrado");
       //handleUser(user);
       // })
->>>>>>> 7f1792182f2c1a56ed9e4aac8d4fe06b821e730e
       //return true;
     } catch (error) {
       console.log("error", error);
@@ -140,6 +119,7 @@ function useAuthProvider() {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
+          console.log("SESIÓN ACTIVA", user);
           const userSnap = await db.ref(`users/${user.uid}`).once("value");
           const userData = userSnap.val();
 
@@ -164,8 +144,8 @@ function useAuthProvider() {
         console.log("USER", user);
         const { uid } = userData.user;
         let score = 0,
-          mistakes = 0;
-        let trophies = ["No tienes trofeos aún"];
+          mistakes = 0,
+          trophies = [];
         const { username, email, selectedYear } = data;
         await db.ref(`users/${userData.user.uid}`).set({
           username,
@@ -179,7 +159,7 @@ function useAuthProvider() {
         //.then((user) => {
         // Signed in
         message.success("Usuario registrado");
-        //handleUser(user);
+        handleUser(user);
         // })
         //return true;
       } catch (error) {
