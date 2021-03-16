@@ -86,12 +86,16 @@ h3 {
   margin-top: 20px;
 }
 #roots_button {
-  background-color: #750bb300;
-  border: 3px solid white;
-  color: #ffffff;
+  background-color: skyblue;
+  color: black;
   margin-top: 20px;
   width: 14em;
-  font-size: 400;
+  font-size: 500;
+}
+.modals{
+  font-size: 25px;
+  font-family:fantasy;
+  text-align: center;
 }
 #roots_button :hover {
   padding: 3px;

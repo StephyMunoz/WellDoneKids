@@ -102,14 +102,12 @@ const Landing = () => {
                         Registrate
                       </Button>
                       <Modal
-                        title="Usuario registrado"
+                        title="Usuario ya registrado!!"
                         visible={isModalVisible}
                         onOk={handleOk}
                         onCancel={handleCancel}
                       >
-                        <p>Usuario registrado</p>
-                        <p>ve a la sección de juegos</p>
-                        <p>para seguir disfrutando</p>
+                        
                       </Modal>
                     </>
                   ) : (
@@ -160,14 +158,12 @@ const Landing = () => {
                       Inicia sesión
                     </Button>
                     <Modal
-                      title="Usuario registrado"
+                      title="Usuario ya registrado!!"
                       visible={isModalVisible}
                       onOk={handleOk}
                       onCancel={handleCancel}
                     >
-                      <p>Usuario registrado</p>
-                      <p>ve a la sección de juegos</p>
-                      <p>para seguir disfrutando</p>
+                     <p className="modals">Usuario registrado <br></br>ve a la seccion de juegos <br></br> para seguir disfrutando</p>
                     </Modal>
                   </>
                 ) : (

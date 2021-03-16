@@ -1,6 +1,6 @@
-import React from "react";
+import React , { useState } from "react";
 import "../styles/game.css";
-import { Button, Col, Image, Row } from "antd";
+import { Button, Col, Image, Row, Modal } from "antd";
 import img1 from "../images/info1.jpg";
 import img2 from "../images/info2.jpg";
 import img3 from "../images/info3.jpg";
@@ -8,6 +8,7 @@ import img4 from "../images/info4.jpg";
 import img5 from "../images/info5.jpg";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
+import { useAuth } from "../lib/auth";
 import {
   FacebookFilled,
   TwitterCircleFilled,
@@ -15,6 +16,21 @@ import {
   LinkedinFilled,
 } from "@ant-design/icons";
 const InfoPage = () => {
+  const { user } = useAuth();
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
   return (
     <>
       <div id="background" justify="center" span={18}>
@@ -73,11 +89,17 @@ const InfoPage = () => {
                 </p>
 
                 <Row justify="center">
-                  <Link to={Routes.TRIALGAME}>
+                  {user ? <Link to={Routes.GAME}>
                     <Button id="roots_button" type="primary" size="large">
                       Juega ahora
                     </Button>
-                  </Link>
+                  </Link> :
+                  <Link to={Routes.TRIALGAME}>
+                  <Button id="roots_button" type="primary" size="large">
+                    Juega ahora
+                  </Button>
+                </Link> }
+                  
                 </Row>
               </Col>
             </Row>
@@ -99,11 +121,31 @@ const InfoPage = () => {
                   registrado, ingresar.
                 </p>
                 <Row justify="center">
-                  <Link to={Routes.LOGIN}>
-                    <Button id="roots_button" type="primary" size="large">
-                      Ingresa o crea tu cuenta
-                    </Button>
-                  </Link>
+
+                  {user ? 
+                  (
+                    <>
+                  <Button id="roots_button" type="primary" size="large" onClick={showModal}>
+                  Ingresa o crea tu cuenta
+                </Button>
+                  <Modal
+                  title="Usuario ya registrado!!"
+                  visible={isModalVisible}
+                  onOk={handleOk}
+                  onCancel={handleCancel}
+                >
+                  <p className="modals">Usuario registrado <br></br>ve a la seccion de juegos <br></br> para seguir disfrutando</p>
+                  
+                </Modal>
+                </>):
+                  
+                <Link to={Routes.LOGIN}>
+                <Button id="roots_button" type="primary" size="large">
+                  Ingresa o crea tu cuenta
+                </Button>
+              </Link> 
+                  }
+                  
                 </Row>
               </Col>
               <Col lg={{ span: 24 }} xl={{ span: 8, offset: 2 }}>
@@ -118,7 +160,7 @@ const InfoPage = () => {
             <Row
               className="blocks-end" /*style={{ padding: "1em 7em", fontSize: "18px", textAlign: "end" }}*/
             >
-              <Col span={8}>
+              <Col lg={{ span: 24 }} xl={{ span: 8, offset: 2 }}>
                 <Image
                   id="images"
                   src={img4}
@@ -126,7 +168,7 @@ const InfoPage = () => {
                   width="100%"
                 />
               </Col>
-              <Col span={14} offset={2} id="box">
+              <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
                 <h1>¿Quiénes somos?</h1>
                 <p>
                   Somos cuatro estudiantes de la Escuela Politécnica Nacional de
@@ -152,7 +194,7 @@ const InfoPage = () => {
             <Row
               className="blocks-start" /*style={{ padding: "1em 7em", fontSize: "22px" }}*/
             >
-              <Col span={14} id="box">
+              <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
                 <h1>Contáctanos</h1>
                 <h3>Dirección: Ladrón de Guevara E11-253</h3>
                 <h3>
@@ -191,7 +233,7 @@ const InfoPage = () => {
                   </Col>
                 </Row>
               </Col>
-              <Col span={8} offset={2}>
+              <Col lg={{ span: 24 }} xl={{ span: 8, offset: 2 }}>
                 <Image
                   id="images"
                   src={img5}
