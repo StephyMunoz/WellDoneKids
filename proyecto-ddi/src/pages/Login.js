@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useAuth } from "../lib/auth";
 import { Button, Col, Form, Input, Row, Space } from "antd";
 import "../styles/login.css";
+import logo from "../images/welldonekidslogo.png";
 import { Link, useHistory } from "react-router-dom";
 import Routes from "../constants/Routes";
 import withoutAuth from "../hocs/withoutAuth";
@@ -31,9 +32,12 @@ const Login = () => {
   return (
     <div id="form" {...tailLayout}>
       <div id="form1">
-        <Row justify="center">
-          <Col span={40}>
-            <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
+        <Row justify="center" gutter={{ xs: 8, sm: 24, md: 24, lg: 32 }}>
+          <Col className="gutter-row" span={10}>
+          <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
+          </Col>
+          <Col className="gutter-row" span={10}>
+            
             <Form
               name="basic"
               initialValues={{ remember: true }}
