@@ -30,6 +30,7 @@ const TrialGame = () => {
                 defaultValue="Ingrese la edad del niño o niña"
                 style={{ width: 320 }}
                 onChange={handleChange}
+                rules={[{ required: true, message: "Ingresa tu edad" }]}
               >
                 <Option value="6">6 años</Option>
                 <Option value="7">7 años</Option>

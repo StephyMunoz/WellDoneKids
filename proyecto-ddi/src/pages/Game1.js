@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/game.css";
 import withAuth from "../hocs/withAuth";
 import Questions from "../components/Questions";
 
-const Game1 = (props) => {
-  const subject = props.subject;
-  console.log("sub from game", subject);
+const Game1 = ({ subject }) => {
+  //console.log("sub from game", subject);
+  const [selecSubject, setSelecSubject] = useState(null);
+
+  useEffect(() => {
+    setSelecSubject(subject);
+  }, [selecSubject]);
   return (
     <>
-      <Questions />
+      <Questions selecSubject={selecSubject} />
     </>
   );
 };

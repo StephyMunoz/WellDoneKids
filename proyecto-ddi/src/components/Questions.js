@@ -11,13 +11,14 @@ import { db } from "../firebase";
 import Game from "../pages/Game";
 import { Username } from "../components/Username";
 
-const Questions = () => {
+const Questions = ({ selecSubject }) => {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
   const [subject, setSubject] = useState(0);
   const { username } = Username();
+  const [number, setNumber] = useState(-1);
 
   const onChange = (e) => {
     setRadioState({
@@ -28,25 +29,41 @@ const Questions = () => {
   const random = Math.round(Math.random() * 20);
 
   useEffect(() => {
+    setSubject(selecSubject);
+    if (subject === "English") {
+      setNumber(0);
+    }
+    if (subject === "Math") {
+      setNumber(1);
+      console.log("uno", number);
+    }
+    if (subject === "Language") {
+      setNumber(2);
+      console.log("dlan", number);
+    }
+  }, []);
+
+  useEffect(() => {
     const getQuestions = async () => {
-      db.ref("Subjects/" + subject + "/questions/0/question").on(
-        "value",
-        (snapshot) => {
-          const questions = [];
-          snapshot.forEach((question) => {
-            const q = question.val();
-            questions.push(q);
-          });
-          setQuestionList(questions);
-          // console.log('questions', questionList);
-          setSubject(subject);
-          // console.log('sub from ques', subject);
-        }
-      );
+      if (number >= 0) {
+        db.ref(`Subjects/${number}/questions/0/question`).on(
+          "value",
+          (snapshot) => {
+            const questions = [];
+            snapshot.forEach((question) => {
+              const q = question.val();
+              questions.push(q);
+            });
+            setQuestionList(questions);
+            console.log("Subjects/" + number + "/questions/0/question");
+            setSubject(selecSubject);
+          }
+        );
+      }
     };
     getQuestions();
     return () => {
-      db.ref("Subjects/" + subject + "/questions/0/question").off();
+      db.ref(`Subjects/${number}/questions/0/question`).off();
     };
   }, []);
 
