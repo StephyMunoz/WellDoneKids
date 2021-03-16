@@ -15,20 +15,8 @@
   min-height: 100vh;
 }
 
-#form1 {
-  background-image: radial-gradient(
-    circle at 61.42% 38.58%,
-    #c1fa4c 0,
-    #a8f453 12.5%,
-    #8fec5a 25%,
-    #73e360 37.5%,
-    #55d865 51%,
-    #30cd69 63.5%,
-    #00c26e 76%,
-    #00b973 88.5%,
-    #00b178 100%
-  );
-
-  padding: 15px;
-  border-radius: 20px;
+#form1{
+    background-image: radial-gradient(circle at 61.42% 38.58%, #c1fa4c 0, #a8f453 12.5%, #8fec5a 25%, #73e360 37.5%, #55d865 51%, #30cd69 63.5%, #00c26e 76%, #00b973 88.5%, #00b178 100%);
+    padding: 15px;
+    border-radius: 20px;
 }
