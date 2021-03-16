@@ -10,6 +10,7 @@ import { db } from "../firebase";
 //import {subject} from "../pages/Game";
 import Game from "../pages/Game";
 import { Username } from "../components/Username";
+import { useAuth } from "../lib/auth";
 
 const Questions = ({ selectSubject }) => {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -18,6 +19,7 @@ const Questions = ({ selectSubject }) => {
   const [score, setScore] = useState(0);
   //const [subject, setSubject] = useState(0);
   const { username } = Username();
+  const {user} = useAuth();
   
   let number = -1; // English
 
@@ -52,17 +54,22 @@ const Questions = ({ selectSubject }) => {
           });
           setQuestionList(questions);
           console.log("questions", questions);
-          console.log("Subjects/" + number + "/questions/0/question");
+          console.log("subjects/" + number + "/questions/0/question");
           // setSubject(selecSubject);
+          console.log('username', username);
         }
       );
       // }
     };
     getQuestions();
     return () => {
-      db.ref(`Subjects/${number}/questions/0/question`).off();
+      db.ref(`subjects/${number}/questions/0/question`).off();
     };
   }, []);
+
+  const uploadScore = (score) => {
+    db.ref(`users`)
+  }
 
   const radioStyle = {
     display: "block",
@@ -83,7 +90,7 @@ const Questions = ({ selectSubject }) => {
     } else {
       console.log("respuesta incorrecta");
 
-      alert("Respuesta incorrecta. La explicación completa....");
+      alert("Respuesta incorrecta. Intentalo de nuevo :)");
       console.log("sub from ques", selectSubject);
     }
   };
@@ -148,7 +155,7 @@ const Questions = ({ selectSubject }) => {
           <GameNav />
           <Row justify={"center"}>
             <Col>
-              <h1>{username}, Estamos muy orgullosos de ti!!</h1>
+              <h1>{user.username}, Estamos muy orgullosos de ti!!</h1>
               <Link to={Routes.GAME2}>
                 <Button>Ir a recompensa!</Button>
               </Link>
