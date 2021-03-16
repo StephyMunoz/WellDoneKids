@@ -17,110 +17,211 @@ import trophy_10 from "../images/trophies/trophy10.jpg";
 
 const TrophyLogic = () => {
   const [score, setScore] = useState(0);
+  const [unlock, setUnlock] = useState(false);
 
   const getTrophies = [
     {
+      id: 0,
       title: "Obtén tu medalla por la primera actividad realizada",
+      image: first_medal,
+      subTitle: "La aventura comienza!!! (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 0,
+      image: trophy_n,
+      subTitle: "La aventura comienza!!! (Logro bloqueado)",
+      success: false,
+    },
+    {
       id: 1,
-      true: [
-        {
-          image: first_medal,
-          subTitle: "La aventura comienza!!! (Logro desbloqueado)",
-        },
-      ],
-      false: [
-        {
-          image: trophy_n,
-          subTitle: "La aventura comienza!!! (Logro bloqueado)",
-        },
-      ],
+      image: cute_trophy,
+      subTitle:
+        "Obtén 5 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 1,
+      image: trophy_n,
+      subTitle: "Obtén 5 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 2,
-      true: cute_trophy,
-      false: trophy_n,
+      image: trophy_1,
+      subTitle:
+        "Obtén 10 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 2,
+      image: trophy_n,
+      subTitle:
+        "Obtén 10 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 3,
-      true: trophy_1,
-      false: trophy_n,
+      image: trophy_2,
+      subTitle:
+        "Obtén 20 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 3,
+      image: trophy_n,
+      subTitle:
+        "Obtén 20 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 4,
-      true: trophy_2,
-      false: trophy_n,
+      image: trophy_3,
+      subTitle:
+        "Obtén 30 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 4,
+      image: trophy_n,
+      subTitle:
+        "Obtén 30 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 5,
-      true: trophy_3,
-      false: trophy_n,
+      image: trophy_4,
+      subTitle:
+        "Obtén 50 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 5,
+      image: trophy_n,
+      subTitle:
+        "Obtén 50 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 6,
-      true: trophy_4,
-      false: trophy_n,
+      image: trophy_5,
+      subTitle:
+        "Obtén 60 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 6,
+      image: trophy_n,
+      subTitle:
+        "Obtén 60 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 7,
-      true: trophy_5,
-      false: trophy_n,
+      image: trophy_6,
+      subTitle:
+        "Obtén 70 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 7,
+      image: trophy_n,
+      subTitle:
+        "Obtén 70 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 8,
-      true: trophy_6,
-      false: trophy_n,
+      image: trophy_7,
+      subTitle:
+        "Obtén 80 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 8,
+      image: trophy_n,
+      subTitle:
+        "Obtén 80 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 9,
-      true: trophy_7,
-      false: trophy_n,
+      image: trophy_8,
+      subTitle:
+        "Obtén 90 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 9,
+      image: trophy_n,
+      subTitle:
+        "Obtén 90 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
     {
       id: 10,
-      true: trophy_8,
-      false: trophy_n,
+      image: trophy_9,
+      subTitle:
+        "Obtén 100 puntos por actividades realizadas\n (Logro desbloqueado)",
+      success: true,
+    },
+    {
+      id: 10,
+      image: trophy_n,
+      subTitle:
+        "Obtén 100 puntos por actividades realizadas\n (Logro bloqueado)",
+      success: false,
     },
   ];
-
-  console.log("trofeos", getTrophies[0].false[0].image);
-  getTrophies.map((trophy) => {
-    console.log(trophy.true);
+  getTrophies.map((trophy, i) => {
+    if (i === 0) {
+      trophy.success = false;
+    }
+    if (!trophy.success) {
+      console.log("hell", trophy);
+    }
   });
+
   return (
     <>
+      {}
       <div id="trophy">
-        <Row align="middle">
-          {/*<h1>{getTrophies}</h1>*/}
-          <Col span={6}>
-            <Image
-              height={100}
-              width={100}
-              src={getTrophies[0].false[0].image}
-              alt="No image found"
-            />
-          </Col>
-          <Col span={16}>
-            <h3>{getTrophies[0].false[0].subTitle}</h3>
-            <h4>Obten tu primer video de recompensa</h4>
-          </Col>
-        </Row>
+        {getTrophies.map((trophy) => {
+          // console.log("cc", trophy.id);
+          return (
+            <Row align="middle">
+              <Col span={6}>
+                <Image
+                  height={100}
+                  width={100}
+                  src={getTrophies[0].image}
+                  alt="No image found"
+                />
+              </Col>
+              <Col span={16}>
+                {/*<h4>{trophy[unlock][0].subTitle}</h4>*/}
+                {/*<h4>Obten tu primer video de recompensa</h4>*/}
+              </Col>
+            </Row>
+          );
+        })}
       </div>
-      <div id="trophy">
-        <Row align="middle">
-          <Col span={6}>
-            <Image
-              height={100}
-              width={100}
-              src={trophy_u}
-              alt="No image found"
-            />
-          </Col>
-          <Col span={16}>
-            <h3>La aventura comienza! (desbloqueado)</h3>
-            <h4>Realiza tu primera actividad</h4>
-          </Col>
-        </Row>
-      </div>
+      {/*<div id="trophy">*/}
+      {/*  <Row align="middle">*/}
+      {/*    <Col span={6}>*/}
+      {/*      <Image*/}
+      {/*        height={100}*/}
+      {/*        width={100}*/}
+      {/*        src={getTrophies[0].true[0].image}*/}
+      {/*        alt="No image found"*/}
+      {/*      />*/}
+      {/*    </Col>*/}
+      {/*    <Col span={16}>*/}
+      {/*      <h3>La aventura comienza! (desbloqueado)</h3>*/}
+      {/*      <h4>Realiza tu primera actividad</h4>*/}
+      {/*    </Col>*/}
+      {/*  </Row>*/}
+      {/*</div>*/}
     </>
   );
 };
