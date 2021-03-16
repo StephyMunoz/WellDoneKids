@@ -18,7 +18,8 @@ const Questions = ({ selectSubject }) => {
   const [score, setScore] = useState(0);
   //const [subject, setSubject] = useState(0);
   const { username } = Username();
-  const [number, setNumber] = useState(-1);
+  
+  let number = -1; // English
 
   const onChange = (e) => {
     setRadioState({
@@ -26,13 +27,13 @@ const Questions = ({ selectSubject }) => {
     });
   };
 
-  const random = Math.round(Math.random() * 20);
+  const random = Math.round(Math.random() * 10);
 
   useEffect(() => {
     const getQuestions = async () => {
-      let number = 0; // English
-
-      if (selectSubject === "Math") {
+      if (selectSubject === "English") {
+        number = 0;
+      } else if (selectSubject === "Math") {
         number = 1;
         console.log("uno", number);
       } else {
@@ -41,7 +42,7 @@ const Questions = ({ selectSubject }) => {
       }
 
       //if (number >= 0) {
-      db.ref(`Subjects/${number}/questions/0/question`).on(
+      db.ref(`subjects/${number}/questions/0`).on(
         "value",
         (snapshot) => {
           const questions = [];
