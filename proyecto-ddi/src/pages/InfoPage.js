@@ -198,9 +198,7 @@ const InfoPage = () => {
                   alt="No image found"
                   width="100%"
                 />
-                
               </Col>
-              
             </Row>
           </div>
         </Row>

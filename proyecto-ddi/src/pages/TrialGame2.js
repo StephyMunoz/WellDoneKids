@@ -7,7 +7,7 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 import { db } from "../firebase";
-import {useAuth} from "../lib/auth";
+import { useAuth } from "../lib/auth";
 
 const TrialGame2 = () => {
   const [videoList, setVideoList] = useState([]);
@@ -76,4 +76,3 @@ const TrialGame2 = () => {
   );
 };
 export default withoutAuth(TrialGame2);
-

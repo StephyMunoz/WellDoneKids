@@ -5,12 +5,10 @@ import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
 import logo from "../images/welldonekidslogo.png";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
-import { Username } from "./Username";
 
 const Nav = () => {
   const { SubMenu } = Menu;
   const { user, logout } = useAuth();
-  //const { username } = Username();
 
   const menuItem = [
     {

@@ -20,16 +20,16 @@
   margin-top: 50px;
   margin-bottom: 20px;
 }
-.blocks{
+.blocks {
   padding: 3em 7em 1em;
   font-size: 20px;
 }
-.blocks-end{
+.blocks-end {
   padding: 1em 7em;
   font-size: 18px;
   text-align: end;
 }
-.blocks-start{
+.blocks-start {
   padding: 1em 7em;
   font-size: 20px;
 }
@@ -37,7 +37,7 @@
   margin-top: 60px;
   font-size: 20px;
 }
-#gameNav{
+#gameNav {
   padding-bottom: 20px;
 }
 #background {
@@ -45,19 +45,20 @@
   padding-bottom: 20px;
 }
 #background1 {
-  background-color: #FFE53B;
-background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
-
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
 }
 #box {
- 
   color: floralwhite;
   padding: 16px;
   background-color: #18c737;
   border: 4px solid white;
-  background-color: #08AEEA;
-  background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
-
+  background-color: #08aeea;
+  background-image: radial-gradient(
+    circle farthest-corner at 16.5% 28.1%,
+    rgba(15, 27, 49, 1) 0%,
+    rgba(0, 112, 218, 1) 90%
+  );
 }
 
 #box h1,
@@ -66,7 +67,7 @@ h3 {
   font-family: -apple-system;
   font-weight: 600;
 }
-#images{
+#images {
   border: 4px solid sienna;
 }
 #center_paragraph {
@@ -93,9 +94,7 @@ h3 {
   font-size: 400;
 }
 #roots_button :hover {
-
   padding: 3px;
-  
 }
 #row_margin {
   margin-bottom: 20px;
@@ -120,5 +119,4 @@ ul li {
 .Game {
   background-color: #774898;
   min-height: 100vh;
-
 }

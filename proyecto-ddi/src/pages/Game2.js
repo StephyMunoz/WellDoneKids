@@ -7,14 +7,14 @@ import ReactPlayer from "react-player";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
-import {Username} from "../components/Username";
+import { Username } from "../components/Username";
 import { db } from "../firebase";
 
 const Game2 = () => {
   const [videoList, setVideoList] = useState([]);
   const random = Math.round(Math.random() * 10);
   const getRandom = Math.round(Math.random() * 3);
-  const {username} = Username();
+  const { username } = Username();
 
   useEffect(() => {
     const getVideos = async () => {

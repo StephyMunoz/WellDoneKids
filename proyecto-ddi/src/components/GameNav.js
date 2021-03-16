@@ -4,11 +4,9 @@ import logo from "../images/welldonekidslogo.png";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import { useAuth } from "../lib/auth";
-import { Username } from "./Username";
 
 const GameNav = () => {
-  const { logout } = useAuth();
-  const { username } = Username();
+  const { user, logout } = useAuth();
 
   return (
     <div id="gameNav">
@@ -25,7 +23,7 @@ const GameNav = () => {
         <Col span={8}>
           <Row>
             <Col span={10}>
-              <h1 id="sub_paragraph">Bienvenid@ {username}!</h1>
+              <h1 id="sub_paragraph">Bienvenid@ {user.username}!</h1>
             </Col>
           </Row>
           <Row>

@@ -120,9 +120,7 @@ function useAuthProvider() {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           console.log("SESIÓN ACTIVA", user);
-          const userSnap = await db
-            .ref(`users/${user.uid}/username`)
-            .once("value");
+          const userSnap = await db.ref(`users/${user.uid}`).once("value");
           const userData = userSnap.val();
 
           handleUser({ ...user, ...userData });

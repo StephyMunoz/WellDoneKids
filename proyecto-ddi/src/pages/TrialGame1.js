@@ -14,9 +14,8 @@ const TrialGame1 = ({ age }) => {
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
   const random = Math.round(Math.random() * 14);
-  //const [age, setAge] = useState(6);
+  let number;
   const [questionNumber, setQuestionNumber] = useState(random);
-  const [number, setNumber] = useState(0);
 
   //const {age} = TrialGame();
 
@@ -29,23 +28,27 @@ const TrialGame1 = ({ age }) => {
 
   useEffect(() => {
     const getQuestions = async () => {
-      if (age === 6) {
-        setNumber(1);
+      if (age === "6" || age === "7") {
+        number = 0;
+      } else if (age === "8" || age === "9") {
+        number = 1;
+      } else {
+        number = 2;
       }
-      db.ref(`Subjects/3/questions/0`).on("value", (snapshot) => {
+      db.ref(`subjects/3/questions/${number}`).on("value", (snapshot) => {
         const questions = [];
         snapshot.forEach((question) => {
           const q = question.val();
           questions.push(q);
         });
         setQuestionList(questions);
-        console.log("trial question", questionList);
-        //console.log('age fron trial', age);
+
+        console.log("select age", number);
       });
     };
     getQuestions();
     return () => {
-      db.ref(`Subjects/3/questions/0`).off();
+      db.ref(`subjects/3/questions/${number}`).off();
     };
   }, []);
 
