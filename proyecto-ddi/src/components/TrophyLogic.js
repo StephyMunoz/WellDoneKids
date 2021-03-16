@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Collapse, Image, Row } from "antd";
 import trophy_n from "../images/trophies/trophy_not_unlocked.jpg";
 import trophy_u from "../images/trophies/trophy_unlocked.png";
@@ -173,14 +173,19 @@ const TrophyLogic = () => {
       success: false,
     },
   ];
-  getTrophies.map((trophy, i) => {
-    if (i === 0) {
-      trophy.success = false;
-    }
-    if (!trophy.success) {
-      console.log("hell", trophy);
-    }
-  });
+  useEffect(() => {
+    getTrophies.map((trophy) => {
+      if (!trophy.success) {
+        if (trophy.id === 0) {
+          trophy.success = true;
+          //console.log("trophy", trophy.subTitle);
+        }
+      } else {
+        trophy.success = false;
+      }
+      //console.log(trophy);
+    });
+  }, [unlock]);
 
   return (
     <>
@@ -194,34 +199,18 @@ const TrophyLogic = () => {
                 <Image
                   height={100}
                   width={100}
-                  src={getTrophies[0].image}
+                  src={trophy.image}
                   alt="No image found"
                 />
               </Col>
               <Col span={16}>
-                {/*<h4>{trophy[unlock][0].subTitle}</h4>*/}
+                <h4>{trophy.subTitle}</h4>
                 {/*<h4>Obten tu primer video de recompensa</h4>*/}
               </Col>
             </Row>
           );
         })}
       </div>
-      {/*<div id="trophy">*/}
-      {/*  <Row align="middle">*/}
-      {/*    <Col span={6}>*/}
-      {/*      <Image*/}
-      {/*        height={100}*/}
-      {/*        width={100}*/}
-      {/*        src={getTrophies[0].true[0].image}*/}
-      {/*        alt="No image found"*/}
-      {/*      />*/}
-      {/*    </Col>*/}
-      {/*    <Col span={16}>*/}
-      {/*      <h3>La aventura comienza! (desbloqueado)</h3>*/}
-      {/*      <h4>Realiza tu primera actividad</h4>*/}
-      {/*    </Col>*/}
-      {/*  </Row>*/}
-      {/*</div>*/}
     </>
   );
 };

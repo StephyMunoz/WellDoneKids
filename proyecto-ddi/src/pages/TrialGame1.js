@@ -13,12 +13,12 @@ const TrialGame1 = ({ age }) => {
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
   const [score, setScore] = useState(0);
-  const random = Math.round(Math.random() * 48);
+  const random = Math.round(Math.random() * 14);
   //const [age, setAge] = useState(6);
   const [questionNumber, setQuestionNumber] = useState(random);
+  const [number, setNumber] = useState(0);
 
   //const {age} = TrialGame();
-  console.log("edad de 1", age);
 
   const onChange = (e) => {
     setRadioState({
@@ -29,7 +29,10 @@ const TrialGame1 = ({ age }) => {
 
   useEffect(() => {
     const getQuestions = async () => {
-      db.ref(`Subjects/3/questions/`).on("value", (snapshot) => {
+      if (age === 6) {
+        setNumber(1);
+      }
+      db.ref(`Subjects/3/questions/0`).on("value", (snapshot) => {
         const questions = [];
         snapshot.forEach((question) => {
           const q = question.val();
@@ -42,7 +45,7 @@ const TrialGame1 = ({ age }) => {
     };
     getQuestions();
     return () => {
-      db.ref(`Subjects/3/questions/`).off();
+      db.ref(`Subjects/3/questions/0`).off();
     };
   }, []);
 

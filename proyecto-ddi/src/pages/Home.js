@@ -61,7 +61,7 @@ const Home = () => {
         <Collapse bordered={false} defaultActiveKey={["1"]}>
           <Panel id="title" header="Estadísticas" key="1">
             <ul>
-              <li>Haz realizado # de actividades esta semana</li>
+              <li>Haz realizado # de actividades</li>
               <li>Haz visto # de videos</li>
               <li>Haz cometido # de errores</li>
             </ul>

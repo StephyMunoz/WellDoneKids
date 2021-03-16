@@ -140,8 +140,8 @@ function useAuthProvider() {
         );
         console.log("USER", user);
         const { uid } = userData.user;
-        let score = 0;
-        let mistakes = 0;
+        let score = 0,
+          mistakes = 0;
         const { username, email, selectedYear } = data;
         await db.ref(`users/${userData.user.uid}`).set({
           username,
@@ -154,7 +154,7 @@ function useAuthProvider() {
         //.then((user) => {
         // Signed in
         message.success("Usuario registrado");
-        //handleUser(user);
+        handleUser(user);
         // })
         //return true;
       } catch (error) {
