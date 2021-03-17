@@ -159,7 +159,7 @@ const InfoPage = () => {
             <Row
               className="blocks-end" /*style={{ padding: "1em 7em", fontSize: "18px", textAlign: "end" }}*/
             >
-              <Col lg={{ span: 24 }} xl={{ span: 8, offset: 2 }}>
+              <Col lg={{ span: 24 }} xl={{ span: 8 }}>
                 <Image
                   id="images"
                   src={img4}
@@ -167,7 +167,7 @@ const InfoPage = () => {
                   width="100%"
                 />
               </Col>
-              <Col lg={{ span: 24 }} xl={{ span: 14 }} id="box">
+              <Col lg={{ span: 24 }} xl={{ span: 14 , offset:2}} id="box">
                 <h1>¿Quiénes somos?</h1>
                 <p>
                   Somos cuatro estudiantes de la Escuela Politécnica Nacional de

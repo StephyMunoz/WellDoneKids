@@ -90,6 +90,10 @@ h3 {
   background-color: #de4383;
   margin-top: 20px;
 }
+#colored_button:hover{
+  padding-top: 10px;
+  color: black;
+}
 #roots_button {
   background-color: skyblue;
   color: black;
@@ -97,14 +101,18 @@ h3 {
   width: 14em;
   font-size: 500;
 }
+#roots_button:hover {
+ 
+  background-color: burlywood;
+  padding: 10px;
+}
+
 .modals{
   font-size: 25px;
   font-family:fantasy;
   text-align: center;
 }
-#roots_button :hover {
-  padding: 3px;
-}
+
 #row_margin {
   margin-bottom: 20px;
 }
