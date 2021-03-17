@@ -62,16 +62,7 @@ const Home = () => {
             <ul>
               <li>Haz realizado {user.score} de actividades</li>
               <li>Haz visto {videos} videos</li>
-              <li>Haz cometido {user.mistake} de errores</li>
-            </ul>
-          </Panel>
-          <Panel id="title" header="Notificaciones" key="2">
-            <ul>
-              <li>
-                Padre/madre recuerda revisar tu correo para ver el reporte
-                semanal de actividades
-              </li>
-              <li>Felicitaciones, haz obtenido un trofeo!</li>
+              <li>Haz cometido {user.mistakes} de errores</li>
             </ul>
           </Panel>
           <Panel id="title" header="Trofeos" key="3">

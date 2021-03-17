@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Image, Row, Space } from "antd";
+import { Col, Image, message, Row, Space } from "antd";
 import trophy_n from "../images/trophies/trophy_not_unlocked.jpg";
 import cute_trophy from "../images/trophies/cute-trophy.jpg";
 import first_medal from "../images/trophies/first-medal.png";
@@ -87,7 +87,7 @@ const TrophyLogic = () => {
       id: 9,
       image: trophy_8,
       title: "Trofeo de plata",
-      subTitle: "Obtén 80 puntos por actividades realizadas",
+      subTitle: "Obtén 90 puntos por actividades realizadas",
       points: 90,
     },
     {
@@ -121,6 +121,9 @@ const TrophyLogic = () => {
                     </Col>
 
                     <Col span={16}>
+                      {message.success(
+                        `Genial, logro desbloqueado ${trophy.title}`
+                      )}
                       <h3>{trophy.title}</h3>
                       <h4>{trophy.subTitle}</h4>
                       <h6>Logro desbloqueado</h6>

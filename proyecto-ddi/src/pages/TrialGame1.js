@@ -114,13 +114,6 @@ const TrialGame1 = ({ age }) => {
                 </Button>
               </Col>
             </Row>
-            <Row justify="center">
-              <Col>
-                <Link to={Routes.GAME4}>
-                  <Button type="primary">Necesito ayuda :(</Button>
-                </Link>
-              </Col>
-            </Row>
           </div>
         ) : (
           <Spin />

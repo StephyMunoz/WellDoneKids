@@ -1,7 +1,7 @@
 import { db } from "../firebase";
 import React, { useState } from "react";
 import "../styles/game.css";
-import { Button, Col, Row, Select } from "antd";
+import { Button, Col, message, Row, Select } from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
@@ -21,7 +21,11 @@ const Game = () => {
     setSubject(value);
   }
   const handleChangePage = () => {
-    setNextPage(true);
+    if (!!subject) {
+      setNextPage(true);
+    } else {
+      message.error("Por favor selecciona una materia para poder continuar");
+    }
   };
 
   return (
