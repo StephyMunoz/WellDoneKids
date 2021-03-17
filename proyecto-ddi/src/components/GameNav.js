@@ -23,7 +23,9 @@ const GameNav = () => {
         <Col span={8}>
           <Row>
             <Col span={10}>
-              <h1 id="sub_paragraph">Bienvenid@ {user.username}!</h1>
+              <h1 id="sub_paragraph">
+                Bienvenid@ {user.username.toUpperCase()}!
+              </h1>
             </Col>
           </Row>
           <Row>
@@ -39,37 +41,6 @@ const GameNav = () => {
         </Col>
       </Row>
     </div>
-    // <div className="gameNav">
-    //   <Row justify="space-around" align="middle">
-    //     <Col flex={2}>
-    //       <Image
-    //           src={logo}
-    //           id="landing_logo"
-    //           height={190}
-    //           width={320}
-    //       />
-    //     </Col>
-    //
-    //     <Row>
-    //       <Row>
-    //         <Col flex={3}>
-    //           <h1>Bienvenido UserName</h1>
-    //         </Col>
-    //       </Row>
-    //
-    //       <Row>
-    //         <Space>
-    //           <Col span={24}>
-    //             <Button onClick={logout}>Cerrar sesión</Button>
-    //             <Link to={Routes.USERSPROFILE}>
-    //               <Button>Ver estadísticas</Button>
-    //             </Link>
-    //           </Col>
-    //         </Space>
-    //       </Row>
-    //     </Row>
-    //   </Row>
-    // </div>
   );
 };
 export default GameNav;

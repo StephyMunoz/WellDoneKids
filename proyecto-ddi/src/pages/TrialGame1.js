@@ -73,11 +73,6 @@ const TrialGame1 = ({ age }) => {
   };
   const { value } = radioState;
 
-  function getAge(age) {
-    return age;
-  }
-  //console.log(props.age);
-
   return (
     <>
       {score <= 10 ? (
@@ -117,13 +112,6 @@ const TrialGame1 = ({ age }) => {
                 >
                   LISTO :)
                 </Button>
-              </Col>
-            </Row>
-            <Row justify="center">
-              <Col>
-                <Link to={Routes.GAME4}>
-                  <Button type="primary">Necesito ayuda :(</Button>
-                </Link>
               </Col>
             </Row>
           </div>

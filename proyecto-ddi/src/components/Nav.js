@@ -1,10 +1,10 @@
-import React from 'react';
-import { Button, Menu, Spin } from 'antd';
-import { useAuth } from '../lib/auth';
-import { Link } from 'react-router-dom';
-import Routes from '../constants/Routes';
-import logo from '../images/welldonekidslogo.png';
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
+import React from "react";
+import { Button, Menu, Spin } from "antd";
+import { useAuth } from "../lib/auth";
+import { Link } from "react-router-dom";
+import Routes from "../constants/Routes";
+import logo from "../images/welldonekidslogo.png";
+import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 
 const Nav = () => {
   const { SubMenu } = Menu;
@@ -13,21 +13,22 @@ const Nav = () => {
   const menuItem = [
     {
       to: Routes.INFO,
-      text: 'Info',
+      text: "Info",
     },
   ];
 
   return (
     <>
       <Menu
-        theme="light"
+        theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ padding: '0.6em' }}
+        defaultSelectedKeys={["2"]}
+        style={{ padding: "0.6em" }}
+        defaultCollapsed="true"
       >
         <Menu.Item key="routeHome">
           <Link to={Routes.HOME}>
-            {<img src={logo} alt="Well Done Kids" style={{ width: '100px' }} />}
+            {<img src={logo} alt="Well Done Kids" style={{ width: "100px" }} />}
           </Link>
         </Menu.Item>
         {menuItem.map((item, index) => {
@@ -61,19 +62,23 @@ const Nav = () => {
             </Menu.Item>
 
             <UserOutlined />
-            <SubMenu key="sub1" title={user.username}>
-              <Menu.ItemGroup key="g1" title="Tu cuenta">
-                <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
-                  <Button
-                    type="link"
-                    style={{ color: '#ffffff' }}
-                    onClick={logout}
-                  >
-                    Salir
-                  </Button>
-                </Menu.Item>
-              </Menu.ItemGroup>
-            </SubMenu>
+            {!!user.username === true ? (
+              <SubMenu key="sub1" title={user.username.toUpperCase()}>
+                <Menu.ItemGroup key="g1" title="Tu cuenta">
+                  <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
+                    <Button
+                      type="link"
+                      style={{ color: "#ffffff" }}
+                      onClick={logout}
+                    >
+                      Salir
+                    </Button>
+                  </Menu.Item>
+                </Menu.ItemGroup>
+              </SubMenu>
+            ) : (
+              <Spin />
+            )}
           </>
         )}
       </Menu>

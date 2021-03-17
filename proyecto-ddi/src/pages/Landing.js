@@ -26,18 +26,17 @@ const Landing = () => {
     <>
       <div id="background">
         <Row justify="center">
-          <Col span={8}>
+          <Col sm={{ span: 20 }} xl={{ span: 14 }}>
             <Image
               id="landing_logo"
-              height={290}
-              width={420}
+              width="100%"
               src={logo}
               alt="No image found"
             />
           </Col>
         </Row>
         <Row id="row_margin" justify="center">
-          <Col span={14}>
+          <Col xs={{ span: 23 }} xl={{ span: 14 }}>
             <h1 id="center_paragraph">
               Well Done Kids! es un sitio educativo que permite a los más peques
               de la casa aprender con actividades cortas y entretenidas, y al
@@ -46,7 +45,7 @@ const Landing = () => {
           </Col>
         </Row>
         <Row id="row_margin" justify="center" gutter={64} align="middle">
-          <Col span={10}>
+          <Col xs={{ span: 22 }} xl={{ span: 10 }}>
             <h1 id="sub_paragraph">¿Por qué usar nuestro sitio?</h1>
             <div id="rectangle">
               <h3 id="sub_paragraph">
@@ -61,7 +60,7 @@ const Landing = () => {
               </h3>
               <Row justify="center">
                 {user ? (
-                  <Col span={5}>
+                  <Col lg={{ span: 8 }} xl={{ span: 5 }}>
                     <Link to={Routes.GAME}>
                       <Button id="colored_button" type="primary" size="large">
                         Juega ahora
@@ -69,7 +68,7 @@ const Landing = () => {
                     </Link>
                   </Col>
                 ) : (
-                  <Col span={5}>
+                  <Col lg={{ span: 8 }} xl={{ span: 5 }}>
                     <Link to={Routes.TRIALGAME}>
                       <Button id="colored_button" type="primary" size="large">
                         Juega ahora
@@ -80,17 +79,15 @@ const Landing = () => {
               </Row>
             </div>
           </Col>
-          <Col span={10}>
+          <Col xs={{ span: 22 }} xl={{ span: 10 }}>
             <h1 id="sub_paragraph">¿Por qué registrarse?</h1>
             <div id="rectangle">
               <h3 id="sub_paragraph">
-                Al registrarte en nuestro sitio puedes recibir notificaciones a
-                tu correo electrónico del avance que va teniendo tu hijo.
-                Además, él/ella podrá acceder a una mayor personalización en sus
+                Tu peque podrá acceder a una mayor personalización en sus
                 actividades y recompensas
               </h3>
               <Row justify="center">
-                <Col span={5}>
+                <Col lg={{ span: 8 }} xl={{ span: 5 }}>
                   {user ? (
                     <>
                       <Button
@@ -102,15 +99,11 @@ const Landing = () => {
                         Registrate
                       </Button>
                       <Modal
-                        title="Usuario registrado"
+                        title="Usuario ya registrado!!"
                         visible={isModalVisible}
                         onOk={handleOk}
                         onCancel={handleCancel}
-                      >
-                        <p>Usuario registrado</p>
-                        <p>ve a la sección de juegos</p>
-                        <p>para seguir disfrutando</p>
-                      </Modal>
+                      ></Modal>
                     </>
                   ) : (
                     <Link to={Routes.Register}>
@@ -125,7 +118,7 @@ const Landing = () => {
           </Col>
         </Row>
         <Row id="row_margin" justify="center" gutter={64} align="middle">
-          <Col span={10}>
+          <Col xs={{ span: 22 }} xl={{ span: 10 }}>
             <h1 id="sub_paragraph">¿Quieres conocer más?</h1>
             <div id="rectangle">
               <h3 id="sub_paragraph">
@@ -133,7 +126,7 @@ const Landing = () => {
                 podría ayudar a tu hijo
               </h3>
               <Row justify="center">
-                <Col span={5}>
+                <Col lg={{ span: 8 }} xl={{ span: 5 }}>
                   <Link to={Routes.INFO}>
                     <Button id="colored_button" type="primary" size="large">
                       Más información
@@ -143,12 +136,12 @@ const Landing = () => {
               </Row>
             </div>
           </Col>
-          <Col span={10}>
+          <Col xs={{ span: 22 }} xl={{ span: 10 }}>
             <h1 id="sub_paragraph">
               ¿Ya estás registrado? Ingresa a continuación
             </h1>
             <Row justify="center">
-              <Col span={5}>
+              <Col lg={{ span: 8 }} xl={{ span: 5 }}>
                 {user ? (
                   <>
                     <Button
@@ -160,14 +153,15 @@ const Landing = () => {
                       Inicia sesión
                     </Button>
                     <Modal
-                      title="Usuario registrado"
+                      title="Usuario ya registrado!!"
                       visible={isModalVisible}
                       onOk={handleOk}
                       onCancel={handleCancel}
                     >
-                      <p>Usuario registrado</p>
-                      <p>ve a la sección de juegos</p>
-                      <p>para seguir disfrutando</p>
+                      <p className="modals">
+                        Usuario registrado <br></br>ve a la seccion de juegos{" "}
+                        <br></br> para seguir disfrutando
+                      </p>
                     </Modal>
                   </>
                 ) : (

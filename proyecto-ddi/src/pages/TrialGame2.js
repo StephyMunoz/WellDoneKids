@@ -10,7 +10,7 @@ import { db } from "../firebase";
 
 const TrialGame2 = () => {
   const [videoList, setVideoList] = useState([]);
-  const random = Math.round(Math.random() * 10);
+  const random = Math.round(Math.random() * 9);
   const getRandom = Math.round(Math.random() * 3);
 
   useEffect(() => {

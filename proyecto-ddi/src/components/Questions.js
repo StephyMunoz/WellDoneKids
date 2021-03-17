@@ -1,27 +1,20 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "../styles/game.css";
-import { Spin, Button, Col, Input, Row, Radio } from "antd";
+import { Spin, Button, Col, Input, Row, Radio, message } from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
-import withAuth from "../hocs/withAuth";
 import { db } from "../firebase";
-//import {subject} from "../pages/Game";
-import Game from "../pages/Game";
-import { Username } from "../components/Username";
 import { useAuth } from "../lib/auth";
 
 const Questions = ({ selectSubject }) => {
+  const { user } = useAuth();
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
-  const [score, setScore] = useState(0);
-  //const [subject, setSubject] = useState(0);
-  const { username } = Username();
-  const {user} = useAuth();
-  
-  let number = -1; // English
+  const [gameScore, setGameScore] = useState(0);
+  const [pivot, setPivot] = useState(true);
 
   const onChange = (e) => {
     setRadioState({
@@ -32,6 +25,8 @@ const Questions = ({ selectSubject }) => {
   const random = Math.round(Math.random() * 10);
 
   useEffect(() => {
+    let number = 0,
+      age = 0;
     const getQuestions = async () => {
       if (selectSubject === "English") {
         number = 0;
@@ -43,68 +38,71 @@ const Questions = ({ selectSubject }) => {
         console.log("dlan", number);
       }
 
+      if (user.selectedYear === 6 || user.selectedYear === 7) {
+        age = 0;
+      } else if (user.selectedYear === 8 || user.selectedYear === 9) {
+        age = 1;
+      } else {
+        age = 2;
+      }
+
       //if (number >= 0) {
-      db.ref(`subjects/${number}/questions/0`).on(
-        "value",
-        (snapshot) => {
-          const questions = [];
-          snapshot.forEach((question) => {
-            const q = question.val();
-            questions.push(q);
-          });
-          setQuestionList(questions);
-          console.log("questions", questions);
-          console.log("subjects/" + number + "/questions/0/question");
-          // setSubject(selecSubject);
-          console.log('username', username);
-        }
-      );
+      db.ref(`subjects/${number}/questions/${age}`).on("value", (snapshot) => {
+        const questions = [];
+        snapshot.forEach((question) => {
+          const q = question.val();
+          questions.push(q);
+        });
+        setQuestionList(questions);
+        // setSubject(selecSubject);
+      });
       // }
     };
     getQuestions();
     return () => {
-      db.ref(`subjects/${number}/questions/0/question`).off();
+      db.ref(`subjects/${number}/questions/${age}`).off();
     };
   }, []);
-
-  const uploadScore = (score) => {
-    db.ref(`users`)
-  }
 
   const radioStyle = {
     display: "block",
     height: "30px",
     lineHeight: "30px",
   };
+  const { value } = radioState;
 
-  const handleQuestionChange = (questionNumber) => {
-    console.log(value);
+  const handleQuestionChange = async (questionNumber) => {
     if (value === questionList[questionNumber].correct_answer) {
-      setScore(score + 1);
-      setQuestionNumber(questionNumber + 1);
-
+      setGameScore(gameScore + 1);
       setQuestionNumber(random);
-      console.log("opcion seleccionada", radioState);
-      console.log("puntaje", score);
-      console.log("numero pregunta", questionNumber);
+      await handleSaveScore();
+      //db.ref(`users/${user.uid}/score`).set(user.score + 1);
+      console.log("res", user.score);
     } else {
-      console.log("respuesta incorrecta");
-
-      alert("Respuesta incorrecta. Intentalo de nuevo :)");
-      console.log("sub from ques", selectSubject);
+      await handleSaveMistake();
     }
   };
-  const { value } = radioState;
+  const handleSaveScore = async () => {
+    await db.ref(`users/${user.uid}/score`).set((user.score = user.score + 1));
+  };
+  const handleSaveMistake = async () => {
+    await db
+      .ref(`users/${user.uid}/mistakes`)
+      .set((user.mistakes = user.mistakes + 1));
+  };
+  const handleEverything = async () => {
+    await handleQuestionChange(questionNumber);
+  };
 
   return (
     <>
-      {score <= 10 ? (
+      {gameScore <= 10 ? (
         questionList.length > 0 ? (
           <div className="Game">
             <GameNav />
             <Row>
               <Col span={4} offset={4}>
-                <h1>Puntaje: {score}</h1>
+                <h1>Puntaje: {gameScore}</h1>
               </Col>
             </Row>
             <Row justify="center">
@@ -116,7 +114,7 @@ const Questions = ({ selectSubject }) => {
               <Col>
                 <Radio.Group onChange={onChange} value={value}>
                   {questionList.length > 0 ? (
-                    questionList[questionNumber].options.map((option, i) => {
+                    questionList[questionNumber].options.map((option) => {
                       return (
                         <Radio style={radioStyle} value={option}>
                           {option}
@@ -131,31 +129,21 @@ const Questions = ({ selectSubject }) => {
             </Row>
             <Row justify="center">
               <Col>
-                <Button
-                  type="primary"
-                  onClick={() => handleQuestionChange(questionNumber)}
-                >
+                <Button type="primary" onClick={handleEverything}>
                   LISTO :)
                 </Button>
               </Col>
             </Row>
-            <Row justify="center">
-              <Col>
-                <Link to={Routes.GAME4}>
-                  <Button type="primary">Necesito ayuda :(</Button>
-                </Link>
-              </Col>
-            </Row>
           </div>
         ) : (
-          "Cargando pregunta..."
+          <Spin />
         )
       ) : (
         <div className="Game">
           <GameNav />
           <Row justify={"center"}>
             <Col>
-              <h1>{user.username}, Estamos muy orgullosos de ti!!</h1>
+              <h1>{user.username}, estamos muy orgullosos de ti!!!</h1>
               <Link to={Routes.GAME2}>
                 <Button>Ir a recompensa!</Button>
               </Link>
