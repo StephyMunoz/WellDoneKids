@@ -38,15 +38,16 @@ Página de inicio de sesión, notese el enlace para ir a la página de registro.
 
 Página de registro con los campos requeridos para crear una cuenta.
 
-![image](https://user-images.githubusercontent.com/58042139/111418821-61540c00-86b6-11eb-9bc7-842e408dbdf1.png)
+![image](https://user-images.githubusercontent.com/58042139/111419137-e5a68f00-86b6-11eb-8ebc-8e0e1433d5f5.png)
 
 Selección de edad para las actividades de prueba.
 
-![image](https://user-images.githubusercontent.com/58042139/111418347-901db280-86b5-11eb-9db5-40b29e3abb1a.png)
+![image](https://user-images.githubusercontent.com/58042139/111419116-dfb0ae00-86b6-11eb-9d6d-1bdc29c8acf1.png)
 
 Página de inicio mostrando un usuario registrado.
 
-![image](https://user-images.githubusercontent.com/58042139/111418853-716beb80-86b6-11eb-9f87-defd3d2a0ff0.png)
+![image](https://user-images.githubusercontent.com/58042139/111419093-d1fb2880-86b6-11eb-962c-fcbf745cc085.png)
+
 
 Página del perfil del usuario registrado
 
