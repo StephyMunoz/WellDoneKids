@@ -19,23 +19,26 @@ Se llevará una puntuación y, luego de un cierto número de preguntas respondid
 Página de inicio mostrando el logo de la aplicación.
 
 
-![image](https://user-images.githubusercontent.com/58042139/111418063-fa822300-86b4-11eb-92b1-befe12fd27ee.png)
+![image](https://user-images.githubusercontent.com/58042139/111418752-3ff32000-86b6-11eb-9517-5757a7b1ffe1.png)
+
 
 Página de inicio mostrando las diferentes opciones de navegación e ingreso.
 
-![image](https://user-images.githubusercontent.com/58042139/111418109-14bc0100-86b5-11eb-8048-6768a21afa8d.png)
+![image](https://user-images.githubusercontent.com/58042139/111418776-4b464b80-86b6-11eb-9685-0d2711f21b51.png)
 
 Página de información mostrando el enlace para ir a las actividades.
 
-![image](https://user-images.githubusercontent.com/58042139/111418182-30bfa280-86b5-11eb-9819-aaf5750d54a9.png)
+![image](https://user-images.githubusercontent.com/58042139/111418788-51d4c300-86b6-11eb-9cbe-8fcdda18f50c.png)
+
 
 Página de inicio de sesión, notese el enlace para ir a la página de registro.
 
-![image](https://user-images.githubusercontent.com/58042139/111418240-4af98080-86b5-11eb-8c4e-b139d81792b3.png)
+![image](https://user-images.githubusercontent.com/58042139/111418805-5a2cfe00-86b6-11eb-8737-e4d815dfac45.png)
+
 
 Página de registro con los campos requeridos para crear una cuenta.
 
-![image](https://user-images.githubusercontent.com/58042139/111418271-619fd780-86b5-11eb-8125-47d9d3826770.png)
+![image](https://user-images.githubusercontent.com/58042139/111418821-61540c00-86b6-11eb-9bc7-842e408dbdf1.png)
 
 Selección de edad para las actividades de prueba.
 
@@ -43,27 +46,30 @@ Selección de edad para las actividades de prueba.
 
 Página de inicio mostrando un usuario registrado.
 
-![image](https://user-images.githubusercontent.com/58042139/111418371-9c097480-86b5-11eb-86a4-13b348af5399.png)
+![image](https://user-images.githubusercontent.com/58042139/111418853-716beb80-86b6-11eb-9f87-defd3d2a0ff0.png)
 
 Página del perfil del usuario registrado
 
-![image](https://user-images.githubusercontent.com/58042139/111418403-aaf02700-86b5-11eb-809f-cb8f887b6c92.png)
+![image](https://user-images.githubusercontent.com/58042139/111418921-86487f00-86b6-11eb-88f0-38d68a41b289.png)
 
 Lista de trofeos visualizada en el perfil del usuario.
 
-![image](https://user-images.githubusercontent.com/58042139/111418445-be02f700-86b5-11eb-8bea-b788b24953b4.png)
+![image](https://user-images.githubusercontent.com/58042139/111418936-8ea0ba00-86b6-11eb-95bb-cf9e28075ad0.png)
+
 
 Selección de materia para las actividades en la versión completa.
 
-![image](https://user-images.githubusercontent.com/58042139/111418489-cd824000-86b5-11eb-9d5f-536f7c9d2fba.png)
+![image](https://user-images.githubusercontent.com/58042139/111418952-94969b00-86b6-11eb-9ab8-0107fadfe991.png)
 
 Pregunta en la versión completa.
 
-![image](https://user-images.githubusercontent.com/58042139/111418540-dd9a1f80-86b5-11eb-8dce-8cacce7c9100.png)
+![image](https://user-images.githubusercontent.com/58042139/111418966-99f3e580-86b6-11eb-95b0-d1d156a16f7f.png)
+
 
 Página de recompensas de la versión completa.
 
-![image](https://user-images.githubusercontent.com/58042139/111418591-f1de1c80-86b5-11eb-961d-6a0baa38679e.png)
+![image](https://user-images.githubusercontent.com/58042139/111418980-a0825d00-86b6-11eb-86a8-c658db69e196.png)
+
 
 Página de continuación de actividades, solo disponible en la versión completa.
 
