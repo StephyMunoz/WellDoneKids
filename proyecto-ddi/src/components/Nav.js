@@ -24,6 +24,7 @@ const Nav = () => {
         mode="horizontal"
         defaultSelectedKeys={["2"]}
         style={{ padding: "0.6em" }}
+        defaultCollapsed="true"
       >
         <Menu.Item key="routeHome">
           <Link to={Routes.HOME}>
@@ -32,7 +33,7 @@ const Nav = () => {
         </Menu.Item>
         {menuItem.map((item, index) => {
           return (
-            <Menu.Item key={index}>
+              <Menu.Item key={index}>
               <Link to={item.to}>{item.text} </Link>
             </Menu.Item>
           );
