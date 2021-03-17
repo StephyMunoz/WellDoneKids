@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Col, Collapse, Image, Row } from "antd";
+import React from "react";
+import { Col, Image, Row, Space } from "antd";
 import trophy_n from "../images/trophies/trophy_not_unlocked.jpg";
-import trophy_u from "../images/trophies/trophy_unlocked.png";
 import cute_trophy from "../images/trophies/cute-trophy.jpg";
 import first_medal from "../images/trophies/first-medal.png";
 import trophy_1 from "../images/trophies/trophy1.jpg";
@@ -14,6 +13,7 @@ import trophy_7 from "../images/trophies/trophy7.jpg";
 import trophy_8 from "../images/trophies/trophy8.jpg";
 import trophy_9 from "../images/trophies/trophy9.png";
 import { useAuth } from "../lib/auth";
+import "../styles/game.css";
 
 const TrophyLogic = () => {
   const { user } = useAuth();
@@ -21,10 +21,9 @@ const TrophyLogic = () => {
   const getTrophies = [
     {
       id: 0,
-      title: "Obtén tu medalla por la primera actividad realizada",
+      title: "Medalla de iniciación",
       image: first_medal,
       subTitle: "La aventura comienza!!!",
-      // success: true,
       points: 0,
     },
     {
@@ -103,42 +102,49 @@ const TrophyLogic = () => {
   return (
     <>
       {}
-      <div id="trophy">
+      <div>
         {getTrophies.map((trophy) => {
           // console.log("cc", trophy.id);
           return (
             <Row align="middle">
               {user.score >= trophy.points ? (
-                <Row>
-                  <Col span={6}>
-                    <Image
-                      height={100}
-                      width={100}
-                      alt="No image found"
-                      src={trophy.image}
-                    />
-                  </Col>
-                  <Col span={16}>
-                    <h3>{trophy.title}</h3>
-                    <h4>{trophy.subTitle}</h4>
-                  </Col>
-                </Row>
+                <div id="trophy">
+                  <Row>
+                    <Col span={6}>
+                      <Image
+                        height={100}
+                        width={90}
+                        alt="No image found"
+                        src={trophy.image}
+                      />
+                    </Col>
+
+                    <Col span={16}>
+                      <h3>{trophy.title}</h3>
+                      <h4>{trophy.subTitle}</h4>
+                      <h6>Logro desbloqueado</h6>
+                    </Col>
+                  </Row>
+                </div>
               ) : (
-                <Row>
-                  <Col span={6}>
-                    <Image
-                      height={100}
-                      width={100}
-                      alt="No image found"
-                      src={trophy_n}
-                    />
-                  </Col>
-                  <Col span={16}>
-                    <h3>{trophy.title}</h3>
-                    <h4>{trophy.subTitle} </h4>
-                    <h6>Logro bloqueado</h6>
-                  </Col>
-                </Row>
+                <div id="trophy">
+                  <Row>
+                    <Col span={6}>
+                      <Image
+                        height={100}
+                        width={100}
+                        alt="No image found"
+                        src={trophy_n}
+                      />
+                    </Col>
+                    <Col span={16}>
+                      <h3>{trophy.title}</h3>
+                      <h4>{trophy.subTitle} </h4>
+                      <h6>Logro bloqueado</h6>
+                    </Col>
+                    <Space />
+                  </Row>
+                </div>
               )}
             </Row>
           );

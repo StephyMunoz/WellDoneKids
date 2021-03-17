@@ -34,6 +34,32 @@ function useAuthProvider() {
     }
   };
 
+  useEffect(() => {
+    // try {
+    const init = () => {
+      auth.onAuthStateChanged(async (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          console.log("SESIÓN ACTIVA", user);
+          const userSnap = await db.ref(`users/${user.uid}`).once("value");
+          const userData = userSnap.val();
+
+          handleUser({ ...user, ...userData });
+
+          // history.replace(Routes.HOME);
+        } else {
+          // User is signed out
+          console.log("SIN SESIÓN", user);
+          handleUser(false);
+        }
+      });
+    };
+    init();
+    // } catch (error) {
+    //   console.log("NO USER");
+    // }
+  }, []);
   async function register(data) {
     console.log("data", data);
     try {
@@ -44,7 +70,9 @@ function useAuthProvider() {
       console.log("USER", user);
       const { uid } = userData.user;
       let score = 0,
-        mistakes = 0;
+        mistakes = 0,
+        trophies = [];
+
       const { username, email, selectedYear } = data;
       await db.ref(`users/${userData.user.uid}`).set({
         username,
@@ -53,6 +81,7 @@ function useAuthProvider() {
         score,
         selectedYear,
         mistakes,
+        trophies,
       });
       //.then((user) => {
       // Signed in
@@ -112,111 +141,25 @@ function useAuthProvider() {
 
   // }
 
-  useEffect(() => {
-    // try {
-    const init = () => {
-      auth.onAuthStateChanged(async (user) => {
-        if (user) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          console.log("SESIÓN ACTIVA", user);
-          const userSnap = await db.ref(`users/${user.uid}`).once("value");
-          const userData = userSnap.val();
-
-          handleUser({ ...user, ...userData });
-
-          // history.replace(Routes.HOME);
-        } else {
-          // User is signed out
-          console.log("SIN SESIÓN", user);
-          handleUser(false);
-        }
-      });
-    };
-
-    async function register(data) {
-      console.log("data", data);
-      try {
-        const userData = await auth.createUserWithEmailAndPassword(
-          data.email,
-          data.password
-        );
-        console.log("USER", user);
-        const { uid } = userData.user;
-        let score = 0,
-          mistakes = 0,
-          trophies = [];
-        const { username, email, selectedYear } = data;
-        await db.ref(`users/${userData.user.uid}`).set({
-          username,
-          email,
-          uid,
-          score,
-          selectedYear,
-          mistakes,
-          trophies,
-        });
-        //.then((user) => {
-        // Signed in
-        message.success("Usuario registrado");
-        handleUser(user);
-        // })
-        //return true;
-      } catch (error) {
-        console.log("error", error);
-        const errorCode = error.code;
-        // message.error(translateMessage(errorCode));
-        handleUser(false);
-        throw error;
-      }
-    }
-
-    async function login(email, password) {
-      auth
-        .signInWithEmailAndPassword(email, password)
-        .then((user) => {
-          // Signed in
-          //handleUser(user);
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          message.error(translateMessage(errorCode));
-          handleUser(false);
-        });
-    }
-
-    async function logout() {
-      try {
-        await auth.signOut();
-        handleUser(false);
-      } catch (error) {}
-    }
-
-    // const sendPasswordResetEmail = (email) => {
-    //   return firebase
-    //     .auth()
-    //     .sendPasswordResetEmail(email)
-    //     .then(() => {
-    //       return true;
-    //     });
-    // };
-    //
-    // const confirmPasswordReset = (password, code) => {
-    //   const resetCode = code || getFromQueryString('oobCode');
-    //
-    //   return firebase
-    //     .auth()
-    //     .confirmPasswordReset(resetCode, password)
-    //     .then(() => {
-    //       return true;
-    //     });
-    // };
-
-    init();
-    // } catch (error) {
-    //   console.log("NO USER");
-    // }
-  }, []);
+  // const sendPasswordResetEmail = (email) => {
+  //   return firebase
+  //     .auth()
+  //     .sendPasswordResetEmail(email)
+  //     .then(() => {
+  //       return true;
+  //     });
+  // };
+  //
+  // const confirmPasswordReset = (password, code) => {
+  //   const resetCode = code || getFromQueryString('oobCode');
+  //
+  //   return firebase
+  //     .auth()
+  //     .confirmPasswordReset(resetCode, password)
+  //     .then(() => {
+  //       return true;
+  //     });
+  // };
 
   return {
     user,

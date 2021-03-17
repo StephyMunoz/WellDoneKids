@@ -73,11 +73,6 @@ const TrialGame1 = ({ age }) => {
   };
   const { value } = radioState;
 
-  function getAge(age) {
-    return age;
-  }
-  //console.log(props.age);
-
   return (
     <>
       {score <= 10 ? (

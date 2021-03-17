@@ -61,7 +61,7 @@ const Nav = () => {
             </Menu.Item>
 
             <UserOutlined />
-            <SubMenu key="sub1" title={user.username}>
+            <SubMenu key="sub1" title={user.username.toUpperCase()}>
               <Menu.ItemGroup key="g1" title="Tu cuenta">
                 <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
                   <Button

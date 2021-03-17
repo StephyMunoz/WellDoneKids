@@ -29,7 +29,9 @@ const Home = () => {
           <Col span={8}>
             <Row>
               <Col span={10}>
-                <h1 id="sub_paragraph">Bienvenid@ {user.username}!</h1>
+                <h1 id="sub_paragraph">
+                  Bienvenid@ {user.username.toUpperCase()}!
+                </h1>
               </Col>
             </Row>
             <Row>
