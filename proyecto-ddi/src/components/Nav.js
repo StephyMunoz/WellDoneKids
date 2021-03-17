@@ -1,10 +1,10 @@
-import React from "react";
-import { Button, Menu, Spin } from "antd";
-import { useAuth } from "../lib/auth";
-import { Link } from "react-router-dom";
-import Routes from "../constants/Routes";
-import logo from "../images/welldonekidslogo.png";
-import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import React from 'react';
+import { Button, Menu, Spin } from 'antd';
+import { useAuth } from '../lib/auth';
+import { Link } from 'react-router-dom';
+import Routes from '../constants/Routes';
+import logo from '../images/welldonekidslogo.png';
+import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
 
 const Nav = () => {
   const { SubMenu } = Menu;
@@ -13,7 +13,7 @@ const Nav = () => {
   const menuItem = [
     {
       to: Routes.INFO,
-      text: "Info",
+      text: 'Info',
     },
   ];
 
@@ -22,12 +22,12 @@ const Nav = () => {
       <Menu
         theme="light"
         mode="horizontal"
-        defaultSelectedKeys={["2"]}
-        style={{ padding: "0.6em" }}
+        defaultSelectedKeys={['2']}
+        style={{ padding: '0.6em' }}
       >
         <Menu.Item key="routeHome">
           <Link to={Routes.HOME}>
-            {<img src={logo} alt="Well Done Kids" style={{ width: "100px" }} />}
+            {<img src={logo} alt="Well Done Kids" style={{ width: '100px' }} />}
           </Link>
         </Menu.Item>
         {menuItem.map((item, index) => {
@@ -66,7 +66,7 @@ const Nav = () => {
                 <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
                   <Button
                     type="link"
-                    style={{ color: "#ffffff" }}
+                    style={{ color: '#ffffff' }}
                     onClick={logout}
                   >
                     Salir
