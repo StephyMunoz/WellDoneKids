@@ -61,19 +61,23 @@ const Nav = () => {
             </Menu.Item>
 
             <UserOutlined />
-            <SubMenu key="sub1" title={user.username.toUpperCase()}>
-              <Menu.ItemGroup key="g1" title="Tu cuenta">
-                <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
-                  <Button
-                    type="link"
-                    style={{ color: "#ffffff" }}
-                    onClick={logout}
-                  >
-                    Salir
-                  </Button>
-                </Menu.Item>
-              </Menu.ItemGroup>
-            </SubMenu>
+            {!!user.username === true ? (
+              <SubMenu key="sub1" title={user.username.toUpperCase()}>
+                <Menu.ItemGroup key="g1" title="Tu cuenta">
+                  <Menu.Item key="submenuLogout" icon={<LogoutOutlined />}>
+                    <Button
+                      type="link"
+                      style={{ color: "#ffffff" }}
+                      onClick={logout}
+                    >
+                      Salir
+                    </Button>
+                  </Menu.Item>
+                </Menu.ItemGroup>
+              </SubMenu>
+            ) : (
+              <Spin />
+            )}
           </>
         )}
       </Menu>

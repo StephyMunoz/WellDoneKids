@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/game.css";
-import { Button, Col, Row, Select } from "antd";
+import { Button, Col, message, Row, Select } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
@@ -16,7 +16,11 @@ const TrialGame = () => {
     setAge(value);
   }
   const handleNext = () => {
-    setNextPage(true);
+    if (!!age) {
+      setNextPage(true);
+    } else {
+      message.error("Por favor selecciona tu edad para continuar");
+    }
   };
 
   return (
@@ -30,7 +34,6 @@ const TrialGame = () => {
                 defaultValue="Ingrese la edad del niño o niña"
                 style={{ width: 320 }}
                 onChange={handleChange}
-                rules={[{ required: true, message: "Ingresa tu edad" }]}
               >
                 <Option value="6">6 años</Option>
                 <Option value="7">7 años</Option>
