@@ -1,7 +1,6 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/game.css";
-import { Spin, Button, Col, Input, Row, Radio, message } from "antd";
+import { Button, Col, message, Radio, Row, Spin } from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
@@ -14,7 +13,6 @@ const Questions = ({ selectSubject }) => {
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
   const [gameScore, setGameScore] = useState(0);
-  const [pivot, setPivot] = useState(true);
 
   const onChange = (e) => {
     setRadioState({
@@ -32,21 +30,19 @@ const Questions = ({ selectSubject }) => {
         number = 0;
       } else if (selectSubject === "Math") {
         number = 1;
-        console.log("uno", number);
       } else {
         number = 2;
-        console.log("dlan", number);
       }
 
-      if (user.selectedYear === 6 || user.selectedYear === 7) {
+      if (user.selectedYear === "6" || user.selectedYear === "7") {
         age = 0;
-      } else if (user.selectedYear === 8 || user.selectedYear === 9) {
+        console.log("uno", 0);
+      } else if (user.selectedYear === "8" || user.selectedYear === "9") {
         age = 1;
       } else {
         age = 2;
       }
 
-      //if (number >= 0) {
       db.ref(`subjects/${number}/questions/${age}`).on("value", (snapshot) => {
         const questions = [];
         snapshot.forEach((question) => {
@@ -54,9 +50,7 @@ const Questions = ({ selectSubject }) => {
           questions.push(q);
         });
         setQuestionList(questions);
-        // setSubject(selecSubject);
       });
-      // }
     };
     getQuestions();
     return () => {
@@ -76,10 +70,9 @@ const Questions = ({ selectSubject }) => {
       setGameScore(gameScore + 1);
       setQuestionNumber(random);
       await handleSaveScore();
-      //db.ref(`users/${user.uid}/score`).set(user.score + 1);
-      console.log("res", user.score);
     } else {
       await handleSaveMistake();
+      message.error("Respuesta incorrecta, intenta de nuevo =) !!! ");
     }
   };
   const handleSaveScore = async () => {
@@ -90,13 +83,10 @@ const Questions = ({ selectSubject }) => {
       .ref(`users/${user.uid}/mistakes`)
       .set((user.mistakes = user.mistakes + 1));
   };
-  const handleEverything = async () => {
-    await handleQuestionChange(questionNumber);
-  };
 
   return (
     <>
-      {gameScore <= 10 ? (
+      {gameScore < 10 ? (
         questionList.length > 0 ? (
           <div className="Game">
             <GameNav />
@@ -129,7 +119,10 @@ const Questions = ({ selectSubject }) => {
             </Row>
             <Row justify="center">
               <Col>
-                <Button type="primary" onClick={handleEverything}>
+                <Button
+                  type="primary"
+                  onClick={() => handleQuestionChange(questionNumber)}
+                >
                   LISTO :)
                 </Button>
               </Col>

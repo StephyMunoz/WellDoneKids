@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/game.css";
-import { Button, Col, Image, Row, Modal } from "antd";
+import { Button, Col, Image, Modal, Row } from "antd";
 import img1 from "../images/info1.jpg";
 import img2 from "../images/info2.jpg";
 import img3 from "../images/info3.jpg";
@@ -11,10 +11,11 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../lib/auth";
 import {
   FacebookFilled,
-  TwitterCircleFilled,
   InstagramFilled,
   LinkedinFilled,
+  TwitterCircleFilled,
 } from "@ant-design/icons";
+
 const InfoPage = () => {
   const { user } = useAuth();
   const [isModalVisible, setIsModalVisible] = useState(false);

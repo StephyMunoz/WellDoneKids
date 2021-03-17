@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "../styles/game.css";
 import { Button, Col, message, Row, Select } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
-import { Link } from "react-router-dom";
-import Routes from "../constants/Routes";
 import withoutAuth from "../hocs/withoutAuth";
 import TrialGame1 from "./TrialGame1";
 

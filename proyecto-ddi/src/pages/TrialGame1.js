@@ -6,8 +6,6 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 import { db } from "../firebase";
-import TrialGame from "./TrialGame";
-import GameNav from "../components/GameNav";
 
 const TrialGame1 = ({ age }) => {
   const [questionList, setQuestionList] = useState([]);

@@ -3,7 +3,7 @@ import "../styles/game.css";
 import { Button, Col, Row } from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
-import { Link, Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
 
 const Game3 = () => {
