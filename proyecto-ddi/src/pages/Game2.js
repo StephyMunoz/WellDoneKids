@@ -12,28 +12,24 @@ import { db } from "../firebase";
 
 const Game2 = () => {
   const [videoList, setVideoList] = useState([]);
-  const random = Math.round(Math.random() * 10);
-  const getRandom = Math.round(Math.random() * 3);
+  const random = Math.round(Math.random() * 28);
+  //const getRandom = Math.round(Math.random() * 3);
   const { username } = Username();
 
   useEffect(() => {
     const getVideos = async () => {
-      db.ref(`videos/${getRandom}/url_videos/${random}`).on(
-        "value",
-        (snapshot) => {
-          const videos = [];
-          snapshot.forEach((video) => {
-            const vid = video.val();
-            videos.push(vid);
-          });
-          setVideoList(videos);
-          console.log("video", videoList);
-        }
-      );
+      db.ref(`videos/${random}`).on("value", (snapshot) => {
+        const videos = [];
+        snapshot.forEach((video) => {
+          const vid = video.val();
+          videos.push(vid);
+        });
+        setVideoList(videos);
+      });
     };
     getVideos();
     return () => {
-      db.ref(`videos/${getRandom}/url_videos/${random}`).off();
+      db.ref(`videos/${random}`).off();
     };
   }, []);
 
