@@ -17,7 +17,7 @@ const Questions = ({ selectSubject }) => {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questionList, setQuestionList] = useState([]);
   const [radioState, setRadioState] = useState(0);
-  var [gameScore, setGameScore] = useState(user.score);
+  const [gameScore, setGameScore] = useState(user.score);
   const [gameMistakes, setGameMistakes] = useState(user.mistakes);
   //const [subject, setSubject] = useState(0);
 
@@ -47,9 +47,9 @@ const Questions = ({ selectSubject }) => {
       if (user.selectedYear === 6 || user.selectedYear === 7) {
         age = 0;
       } else if (user.selectedYear === 8 || user.selectedYear === 9) {
-        age = 1
+        age = 1;
       } else {
-        age = 2
+        age = 2;
       }
 
       //if (number >= 0) {
@@ -107,10 +107,13 @@ const Questions = ({ selectSubject }) => {
     }
   };
   const { value } = radioState;
+  if (gameScore % 10 === 0) {
+    console.log("cuanto", gameScore % 10);
+  }
 
   return (
     <>
-      {gameScore < 10 ? (
+      {(user.score === 70) ^ (user.score === 80) ? (
         questionList.length > 0 ? (
           <div className="Game">
             <GameNav />

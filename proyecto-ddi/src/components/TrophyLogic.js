@@ -24,7 +24,7 @@ const TrophyLogic = () => {
       title: "Medalla de iniciación",
       image: first_medal,
       subTitle: "La aventura comienza!!!",
-      points: 0,
+      points: 1,
     },
     {
       id: 1,
@@ -32,7 +32,7 @@ const TrophyLogic = () => {
       title: "Trofeo feliz",
       subTitle: "Obtén 5 puntos por actividades realizadas",
       // success: true,
-      points: 5,
+      points: 10,
     },
     {
       id: 2,
@@ -46,7 +46,7 @@ const TrophyLogic = () => {
       title: "Trofeo de papel",
       image: trophy_2,
       subTitle: "Obtén 20 puntos por actividades realizadas",
-      point: 20,
+      points: 20,
     },
     {
       id: 4,
@@ -98,6 +98,7 @@ const TrophyLogic = () => {
       points: 100,
     },
   ];
+  console.log("score", user.score);
 
   return (
     <>

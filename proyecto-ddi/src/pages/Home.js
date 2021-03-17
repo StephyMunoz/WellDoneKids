@@ -12,7 +12,7 @@ const { Panel } = Collapse;
 
 const Home = () => {
   const { user, logout } = useAuth();
-  let videos = user.score % 10;
+  let videos = Math.floor(user.score / 10);
   return (
     <>
       <div id="background">
