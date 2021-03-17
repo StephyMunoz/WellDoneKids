@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/game.css";
 import { Button, Col, Row } from "antd";
-import { useEffect, useState } from "react";
 import GameNav from "../components/GameNav";
 import ReactPlayer from "react-player";
 import Routes from "../constants/Routes";

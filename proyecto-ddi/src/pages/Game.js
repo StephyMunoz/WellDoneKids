@@ -1,13 +1,8 @@
-import { db } from "../firebase";
 import React, { useState } from "react";
 import "../styles/game.css";
 import { Button, Col, message, Row, Select } from "antd";
 import GameNav from "../components/GameNav";
-import Routes from "../constants/Routes";
-import { Link } from "react-router-dom";
 import withAuth from "../hocs/withAuth";
-import Questions from "../components/Questions";
-import { onHidden } from "web-vitals/dist/modules/lib/onHidden";
 import Game1 from "./Game1";
 
 const { Option } = Select;
