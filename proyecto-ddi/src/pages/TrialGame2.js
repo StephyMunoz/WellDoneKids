@@ -27,7 +27,7 @@ const TrialGame2 = () => {
     return () => {
       db.ref(`videos/${random}`).off();
     };
-  }, []);
+  }, [random]);
 
   return (
     <>

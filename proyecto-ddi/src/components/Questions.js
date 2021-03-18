@@ -6,6 +6,7 @@ import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import { useAuth } from "../lib/auth";
+import monster from "../images/monster.png";
 
 const Questions = ({ selectSubject }) => {
   const { user } = useAuth();
@@ -56,7 +57,7 @@ const Questions = ({ selectSubject }) => {
     return () => {
       db.ref(`subjects/${number}/questions/${age}`).off();
     };
-  }, []);
+  }, [selectSubject, user.selectedYear]);
 
   const radioStyle = {
     display: "block",
@@ -125,6 +126,11 @@ const Questions = ({ selectSubject }) => {
                 >
                   LISTO :)
                 </Button>
+              </Col>
+            </Row>
+            <Row justify="center">
+              <Col>
+                <img justify="center" src={monster} width={150}></img>
               </Col>
             </Row>
           </div>

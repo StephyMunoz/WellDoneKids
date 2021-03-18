@@ -102,10 +102,8 @@ const TrophyLogic = () => {
 
   return (
     <>
-      {}
       <div>
         {getTrophies.map((trophy) => {
-          // console.log("cc", trophy.id);
           return (
             <Row align="middle">
               {user.score >= trophy.points ? (

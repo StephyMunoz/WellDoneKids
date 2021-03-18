@@ -30,11 +30,13 @@ const GameNav = () => {
           </Row>
           <Row>
             <Col span={10}>
-              <Button onClick={logout}>Cerrar sesión</Button>
+              <Button id="gamefirst" onClick={logout}>
+                Cerrar sesión
+              </Button>
             </Col>
             <Col span={10}>
               <Link to={Routes.USERSPROFILE}>
-                <Button>Ver estadísticas</Button>
+                <Button id="gamefirst">Ver estadísticas</Button>
               </Link>
             </Col>
           </Row>
