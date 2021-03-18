@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Input, message, Row, Select } from "antd";
+import { Button, Col, Form, Input, message, Row, Select, Image } from "antd";
 import { useAuth } from "../lib/auth";
 import translateMessage from "../utils/translateMessage";
 import withoutAuth from "../hocs/withoutAuth";

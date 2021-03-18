@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "../styles/game.css";
-import { Button, Col, message, Row, Select } from "antd";
+import { Button, Col, message, Row, Select, Image } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import withoutAuth from "../hocs/withoutAuth";
 import TrialGame1 from "./TrialGame1";
+import monster from "../images/monster.png";
 
 const { Option } = Select;
 
@@ -50,6 +51,11 @@ const TrialGame = () => {
                 SIGUIENTE :)
               </Button>
               {/*</Link>*/}
+            </Col>
+          </Row>
+          <Row justify="center">
+            <Col span={{ sm: 24, md: 4 }}>
+              <Image justify="center" src={monster} width={150} />
             </Col>
           </Row>
         </div>

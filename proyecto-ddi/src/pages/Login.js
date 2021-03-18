@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useAuth } from "../lib/auth";
-import { Button, Col, Form, Input, Row, Space } from "antd";
+import { Button, Col, Form, Input, Row, Space, Image } from "antd";
 import "../styles/login.css";
 import monster from "../images/monster.png";
 import { Link, useHistory } from "react-router-dom";
@@ -35,7 +35,7 @@ const Login = () => {
         <Row justify="center" gutter={16}>
           <Col className="gutter-row" span={{ sm: 24, md: 4 }}>
             <h1>Ingresa para disfrutar de todos los beneficios!!!</h1>
-            <img justify="center" src={monster} width={150}></img>
+            <Image justify="center" src={monster} width={150} />
           </Col>
           <Col className="gutter-row" span={{ sm: 24, md: 12 }}>
             <Form

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/game.css";
-import { Button, Col, message, Radio, Row, Spin } from "antd";
+import { Button, Col, message, Radio, Row, Spin, Image } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import withoutAuth from "../hocs/withoutAuth";
 import { db } from "../firebase";
+import monster from "../images/monster.png";
 
 const TrialGame1 = ({ age }) => {
   const [questionList, setQuestionList] = useState([]);
@@ -110,6 +111,11 @@ const TrialGame1 = ({ age }) => {
                 >
                   LISTO :)
                 </Button>
+              </Col>
+            </Row>
+            <Row justify="center">
+              <Col>
+                <Image justify="center" src={monster} width={150} />
               </Col>
             </Row>
           </div>

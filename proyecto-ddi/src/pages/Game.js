@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/game.css";
-import { Button, Col, message, Row, Select } from "antd";
+import { Button, Col, message, Row, Select, Image } from "antd";
 import GameNav from "../components/GameNav";
 import withAuth from "../hocs/withAuth";
 import Game1 from "./Game1";
@@ -54,7 +54,7 @@ const Game = () => {
           </Row>
           <Row justify="center">
             <Col>
-              <img justify="center" src={monster} width={150}></img>
+              <Image justify="center" src={monster} width={150} />
             </Col>
           </Row>
         </div>
