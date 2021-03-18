@@ -30,7 +30,7 @@ const Game2 = () => {
     return () => {
       db.ref(`videos/${random}`).off();
     };
-  }, [random]);
+  }, []);
 
   return (
     <div className="Game">

@@ -7,14 +7,19 @@ import { Link } from "react-router-dom";
 const GameTrialNav = () => {
   return (
     <div className="gameNav">
-      <Row>
-        <Col flex={2}>
-          <Image src={logo} width={200} />
+      <Row justify="space-around" align="middle">
+        <Col span={8}>
+          <Image
+            id="landing_logo"
+            height={190}
+            width={320}
+            src={logo}
+            alt="No image found"
+          />
         </Col>
-
-        <Row>
+        <Col span={8}>
           <Row>
-            <Col flex={1} span={24}>
+            <Col span={16}>
               <h1>Bienvenido a la versión de prueba</h1>
             </Col>
           </Row>
@@ -30,7 +35,7 @@ const GameTrialNav = () => {
               </Link>
             </Col>
           </Row>
-        </Row>
+        </Col>
       </Row>
     </div>
   );

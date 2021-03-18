@@ -74,7 +74,7 @@ const TrialGame1 = ({ age }) => {
 
   return (
     <>
-      {score <= 10 ? (
+      {score < 10 ? (
         questionList.length > 0 ? (
           <div className="TrialGame">
             <GameTrialNav />
