@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../styles/game.css";
-import { Button, Col, message, Radio, Row, Spin } from "antd";
+import { Button, Col, message, Radio, Row, Spin, Image } from "antd";
 import GameNav from "../components/GameNav";
 import Routes from "../constants/Routes";
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import { useAuth } from "../lib/auth";
+import monster from "../images/monster3.png";
 
 const Questions = ({ selectSubject }) => {
   const { user } = useAuth();
@@ -125,6 +126,11 @@ const Questions = ({ selectSubject }) => {
                 >
                   LISTO :)
                 </Button>
+              </Col>
+            </Row>
+            <Row justify="center">
+              <Col>
+                <Image justify="center" src={monster} width={150} />
               </Col>
             </Row>
           </div>

@@ -4,7 +4,7 @@ import { Button, Col, message, Row, Select, Image } from "antd";
 import GameTrialNav from "../components/GameTrialNav";
 import withoutAuth from "../hocs/withoutAuth";
 import TrialGame1 from "./TrialGame1";
-import monster from "../images/monster.png";
+import monster from "../images/monster2.png";
 
 const { Option } = Select;
 

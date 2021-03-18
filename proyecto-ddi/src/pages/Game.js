@@ -4,7 +4,7 @@ import { Button, Col, message, Row, Select, Image } from "antd";
 import GameNav from "../components/GameNav";
 import withAuth from "../hocs/withAuth";
 import Game1 from "./Game1";
-import monster from "../images/monster.png";
+import monster from "../images/monster3.png";
 
 const { Option } = Select;
 
