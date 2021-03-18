@@ -9,7 +9,6 @@ import InfoPage from "../pages/InfoPage";
 import TrialGame1 from "../pages/TrialGame1";
 import TrialGame2 from "../pages/TrialGame2";
 import TrialGame3 from "../pages/TrialGame3";
-import TrialGame4 from "../pages/TrialGame4";
 
 import Login from "../pages/Login";
 
@@ -17,7 +16,6 @@ import Game from "../pages/Game";
 import Game1 from "../pages/Game1";
 import Game2 from "../pages/Game2";
 import Game3 from "../pages/Game3";
-import Game4 from "../pages/Game4";
 import Routes from "../constants/Routes";
 import { AuthProvider } from "../lib/auth";
 import Register from "../pages/Register";
@@ -35,43 +33,37 @@ function App() {
               <Route exact path={Routes.TRIALGAME}>
                 <TrialGame />
               </Route>
-              <Route exact path="/usersprofile">
+              <Route exact path={Routes.USERSPROFILE}>
                 <Home />
               </Route>
-              <Route exact path="/trialgame1">
+              <Route exact path={Routes.TRIALGAME1}>
                 <TrialGame1 />
               </Route>
-              <Route exact path="/trialgame2">
+              <Route exact path={Routes.TRIALGAME2}>
                 <TrialGame2 />
               </Route>
-              <Route exact path="/trialgame3">
+              <Route exact path={Routes.TRIALGAME3}>
                 <TrialGame3 />
               </Route>
-              <Route exact path="/trialgame4">
-                <TrialGame4 />
-              </Route>
-              <Route exact path="/infopage">
+              <Route exact path={Routes.INFO}>
                 <InfoPage />
               </Route>
-              <Route exact path="/login">
+              <Route exact path={Routes.LOGIN}>
                 <Login />
               </Route>
-              <Route exact path="/game">
+              <Route exact path={Routes.GAME}>
                 <Game />
               </Route>
-              <Route exact path="/game1">
+              <Route exact path={Routes.GAME1}>
                 <Game1 />
               </Route>
-              <Route exact path="/game2">
+              <Route exact path={Routes.GAME2}>
                 <Game2 />
               </Route>
-              <Route exact path="/game3">
+              <Route exact path={Routes.GAME3}>
                 <Game3 />
               </Route>
-              <Route exact path="/game4">
-                <Game4 />
-              </Route>
-              <Route exact path="/register">
+              <Route exact path={Routes.Register}>
                 <Register />
               </Route>
             </Switch>
