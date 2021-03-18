@@ -4,6 +4,7 @@ import { Button, Col, message, Row, Select } from "antd";
 import GameNav from "../components/GameNav";
 import withAuth from "../hocs/withAuth";
 import Game1 from "./Game1";
+import monster from "../images/monster.png";
 
 const { Option } = Select;
 
@@ -30,7 +31,7 @@ const Game = () => {
           <GameNav />
 
           <Row justify="center">
-            <Col justify="center">
+            <Col justify="initial">
               <Select
                 defaultValue="Ingresa la materia que deseas estudiar"
                 style={{ width: 320 }}
@@ -49,6 +50,11 @@ const Game = () => {
               <Button type="primary" onClick={handleChangePage}>
                 SIGUIENTE :)
               </Button>
+            </Col>
+          </Row>
+          <Row justify="center">
+            <Col>
+              <img justify="center" src={monster} width={150}></img>
             </Col>
           </Row>
         </div>
