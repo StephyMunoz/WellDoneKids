@@ -1,10 +1,10 @@
-import React from "react";
-import { Button, Menu, Spin } from "antd";
+import React, { useState } from "react";
+import { Button, Drawer, Menu, Spin } from "antd";
 import { useAuth } from "../lib/auth";
 import { Link } from "react-router-dom";
 import Routes from "../constants/Routes";
 import logo from "../images/welldonekidslogo.png";
-import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import { LogoutOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 
 const Nav = () => {
   const { SubMenu } = Menu;
@@ -16,6 +16,16 @@ const Nav = () => {
       text: "Info",
     },
   ];
+
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
     <>
