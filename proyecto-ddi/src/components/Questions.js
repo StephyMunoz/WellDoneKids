@@ -56,7 +56,7 @@ const Questions = ({ selectSubject }) => {
     return () => {
       db.ref(`subjects/${number}/questions/${age}`).off();
     };
-  }, []);
+  }, [selectSubject, user.selectedYear]);
 
   const radioStyle = {
     display: "block",

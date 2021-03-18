@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { useAuth } from "../lib/auth";
 
@@ -19,6 +19,6 @@ export const Username = () => {
         db.ref(`users/${user.uid}/username`).off();
       };
     }
-  }, []);
+  }, [user]);
   return { username };
 };
