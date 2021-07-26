@@ -61,6 +61,9 @@ const Nav = () => {
             <Menu.Item key="trialGamePage">
               <Link to={Routes.TRIALGAME}>Juega y aprende</Link>
             </Menu.Item>
+            <Menu.Item key="Paypal">
+              <Link to={Routes.PayPal}>Accede a suscripción Premium</Link>
+            </Menu.Item>
           </>
         ) : (
           <>
