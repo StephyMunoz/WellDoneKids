@@ -13,6 +13,5 @@ const Routes = {
   GAME2: "/game2",
   GAME3: "/game3",
   Register: "/register",
-  PayPal: "/paypal",
 };
 export default Routes;

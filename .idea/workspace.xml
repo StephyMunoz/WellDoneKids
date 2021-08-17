@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="defa091a-6f96-4f3d-bba8-e560d737e24c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/proyecto-ddi/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto-ddi/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto-ddi/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto-ddi/src/components/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto-ddi/src/constants/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto-ddi/src/constants/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyecto-ddi/src/pages/PayPal.js" beforeDir="false" afterPath="$PROJECT_DIR$/proyecto-ddi/src/pages/PayPal.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1p8KSEzOz7xNHDimnykmYfnd7fI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\EPN\Tercero\DDI\proyecto-semestre-2020b-well-done-kids\proyecto-ddi\src\paypal" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\EPN\Tercero\DDI\proyecto-semestre-2020b-well-done-kids\proyecto-ddi\src\components" />
+      <recent name="D:\Documents\EPN\Tercero\DDI\proyecto-semestre-2020b-well-done-kids\proyecto-ddi\src" />
+      <recent name="D:\Documents\EPN\Tercero\DDI\proyecto-semestre-2020b-well-done-kids\proyecto-ddi\src\hocs" />
+      <recent name="D:\Documents\EPN\Tercero\DDI\proyecto-semestre-2020b-well-done-kids\proyecto-ddi\src\images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="defa091a-6f96-4f3d-bba8-e560d737e24c" name="Default Changelist" comment="" />
+      <created>1614559274534</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614559274534</updated>
+      <workItem from="1614559275585" duration="6521000" />
+      <workItem from="1614601748731" duration="9124000" />
+      <workItem from="1615209696279" duration="4129000" />
+      <workItem from="1615213893061" duration="364000" />
+      <workItem from="1615244665117" duration="607000" />
+      <workItem from="1615291520703" duration="15012000" />
+      <workItem from="1625675240251" duration="2328000" />
+      <workItem from="1627318380737" duration="4105000" />
+      <workItem from="1627432284409" duration="592000" />
+      <workItem from="1627489546828" duration="32000" />
+      <workItem from="1629241974533" duration="323000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="450" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1627321105934">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="450" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1627321105934" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629242272353">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1629242272353" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1627489578118">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1627489578118" />
+  </component>
+</project>

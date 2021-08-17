@@ -19,7 +19,6 @@ import Game3 from "../pages/Game3";
 import Routes from "../constants/Routes";
 import { AuthProvider } from "../lib/auth";
 import Register from "../pages/Register";
-import PayPal from "../pages/PayPal";
 
 function App() {
   return (
@@ -66,9 +65,6 @@ function App() {
               </Route>
               <Route exact path={Routes.Register}>
                 <Register />
-              </Route>
-              <Route exact path={Routes.PayPal}>
-                <PayPal />
               </Route>
             </Switch>
           </MainLayout>
